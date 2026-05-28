@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Durham Garden Plan 2026</title>
+  <style>
+    :root {
+      --green-900: #1a3a1a;
+      --green-800: #2d5a27;
+      --green-700: #3a7d32;
+      --green-600: #4a9e3f;
+      --green-500: #5cb85c;
+      --green-100: #e8f5e9;
+      --green-50: #f1f8f1;
+      --earth-700: #5d4037;
+      --earth-600: #6d4c41;
+      --earth-500: #8d6e63;
+      --earth-400: #a1887f;
+      --earth-100: #efebe9;
+      --sun-500: #f9a825;
+      --sun-400: #fbc02d;
+      --sun-300: #fdd835;
+      --sun-100: #fff9c4;
+      --tomato: #e53935;
+      --pepper-green: #43a047;
+      --pepper-yellow: #fdd835;
+      --pepper-purple: #7b1fa2;
+      --cucumber: #66bb6a;
+      --eggplant: #6a1b9a;
+      --melon: #c62828;
+      --herb: #2e7d32;
+      --flower-gold: #f9a825;
+      --flower-purple: #8e24aa;
+      --sky: #e3f2fd;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #eeeeee;
+      --gray-300: #e0e0e0;
+      --gray-600: #757575;
+      --gray-800: #424242;
+      --gray-900: #212121;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green-800) 0%, var(--green-700) 50%, var(--earth-600) 100%);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero .subtitle { font-size: 1.15rem; opacity: 0.9; }
+    .hero .zone-badge {
+      display: inline-block;
+      background: var(--sun-400);
+      color: var(--gray-900);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+    .hero .meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+      flex-wrap: wrap;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    section {
+      padding: 3rem 0;
+    }
+    section + section { border-top: 1px solid var(--gray-200); }
+
+    .section-label {
+      display: inline-block;
+      background: var(--green-700);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--green-900);
+    }
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--earth-700);
+    }
+    .section-desc {
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    /* Bed Diagram */
+    .bed-diagram {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+    .fence-label {
+      text-align: center;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--earth-500);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .fence-bar {
+      height: 8px;
+      background: repeating-linear-gradient(90deg, var(--earth-500) 0px, var(--earth-500) 20px, var(--earth-400) 20px, var(--earth-400) 22px);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .beds-row {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .bed-box {
+      border: 2px solid var(--earth-600);
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--earth-100) 0%, #d7ccc8 100%);
+      width: 220px;
+      min-height: 180px;
+      padding: 0;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .bed-header {
+      background: var(--earth-600);
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.35rem;
+    }
+    .bed-content {
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .bed-row-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--earth-500);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .plant-tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin: 1px;
+    }
+    .tag-tomato { background: #ffcdd2; color: #b71c1c; }
+    .tag-pepper { background: #fff9c4; color: #f57f17; }
+    .tag-pepper-purple { background: #e1bee7; color: #6a1b9a; }
+    .tag-pepper-hot { background: #ffe0b2; color: #e65100; }
+    .tag-cucumber { background: #c8e6c9; color: #1b5e20; }
+    .tag-eggplant { background: #ce93d8; color: #4a148c; }
+    .tag-squash { background: #fff3e0; color: #e65100; }
+    .tag-melon { background: #ffcdd2; color: #c62828; }
+    .tag-herb { background: #c8e6c9; color: #2e7d32; }
+    .tag-lettuce { background: #dcedc8; color: #33691e; }
+    .tag-flower { background: #fff9c4; color: #f57f17; }
+    .tag-flower-purple { background: #e1bee7; color: #7b1fa2; }
+    .tag-strawberry { background: #ffcdd2; color: #c62828; }
+
+    .vine-zone {
+      text-align: center;
+      padding: 0.75rem;
+      color: var(--green-700);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+    .vine-zone .arrows {
+      font-size: 1.5rem;
+      letter-spacing: 0.5rem;
+      display: block;
+      color: var(--green-600);
+    }
+    .yard-label {
+      text-align: center;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green-600);
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .yard-bar {
+      height: 8px;
+      background: repeating-linear-gradient(90deg, var(--green-500) 0px, var(--green-500) 14px, var(--green-600) 14px, var(--green-600) 16px);
+      border-radius: 4px;
+    }
+
+    /* Bed detail cards */
+    .bed-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .bed-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .bed-card-header {
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+    }
+    .bed-card-header.bed1 { background: var(--tomato); }
+    .bed-card-header.bed2 { background: var(--pepper-green); }
+    .bed-card-header.bed3 { background: var(--sun-500); color: var(--gray-900); }
+    .bed-card-header.bed4 { background: var(--cucumber); color: var(--gray-900); }
+    .bed-card-body { padding: 1rem; }
+    .bed-card-body table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .bed-card-body th {
+      text-align: left;
+      font-weight: 600;
+      padding: 0.4rem 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-600);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .bed-card-body td {
+      padding: 0.4rem 0.5rem;
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: top;
+    }
+    .bed-card-body tr:last-child td { border-bottom: none; }
+    .note { font-size: 0.8rem; color: var(--gray-600); margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: var(--gray-100); border-radius: 6px; border-left: 3px solid var(--green-600); }
+
+    /* Pots section */
+    .pots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .pot-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--herb);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .pot-card.strawberry { border-left-color: var(--tomato); }
+    .pot-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-100);
+    }
+    .pot-card.strawberry .pot-icon { background: #ffebee; }
+    .pot-info h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .pot-info p { font-size: 0.85rem; color: var(--gray-600); }
+
+    /* Front yard */
+    .front-yard-layout {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+    }
+    .fy-zones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .fy-card {
+      background: var(--gray-50);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .fy-card-header {
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .fy-card-header.sun { background: var(--sun-100); color: var(--earth-700); }
+    .fy-card-header.shade { background: #ede7f6; color: var(--flower-purple); }
+    .fy-card-body { padding: 0.75rem 1rem; }
+    .fy-plant {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .fy-plant:last-child { border-bottom: none; }
+    .fy-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .fy-plant-info { flex: 1; }
+    .fy-plant-name { font-weight: 600; font-size: 0.9rem; }
+    .fy-plant-detail { font-size: 0.8rem; color: var(--gray-600); }
+    .fy-qty {
+      background: var(--gray-200);
+      color: var(--gray-800);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Pest table */
+    .pest-section { margin-top: 1.5rem; }
+    .pest-table-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+    .pest-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 600px; }
+    .pest-table thead th {
+      background: var(--green-800);
+      color: white;
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .pest-table td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: top;
+    }
+    .pest-table tbody tr:hover { background: var(--green-50); }
+    .pest-table tbody tr:last-child td { border-bottom: none; }
+    .threat-badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .threat-high { background: #ffcdd2; color: #b71c1c; }
+    .threat-med { background: #fff3e0; color: #e65100; }
+    .threat-low { background: #dcedc8; color: #33691e; }
+
+    /* Defense network */
+    .defense-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .defense-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-top: 3px solid var(--green-600);
+    }
+    .defense-card h4 { font-size: 0.9rem; margin-bottom: 0.25rem; color: var(--green-800); }
+    .defense-card p { font-size: 0.82rem; color: var(--gray-600); }
+    .defense-card .location { font-size: 0.75rem; color: var(--green-600); font-weight: 600; margin-top: 0.35rem; }
+
+    /* Calendar */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .cal-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .cal-month {
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+    }
+    .cal-month.may { background: #66bb6a; }
+    .cal-month.jun { background: #43a047; }
+    .cal-month.jul { background: #e53935; }
+    .cal-month.aug { background: #f57c00; }
+    .cal-month.sep { background: #ff8f00; }
+    .cal-month.oct { background: #8d6e63; }
+    .cal-month.nov { background: #78909c; }
+    .cal-month.feb { background: #5c6bc0; }
+    .cal-body { padding: 0.75rem 1rem; }
+    .cal-body ul { list-style: none; }
+    .cal-body li {
+      font-size: 0.85rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .cal-body li:last-child { border-bottom: none; }
+    .cal-body li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-600);
+    }
+
+    /* Watering */
+    .water-table-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+    .water-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 500px; }
+    .water-table thead th {
+      background: #1565c0;
+      color: white;
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .water-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: top;
+    }
+    .water-table tbody tr:last-child td { border-bottom: none; }
+    .water-level {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .water-high { background: #bbdefb; color: #0d47a1; }
+    .water-med { background: #e3f2fd; color: #1565c0; }
+    .water-low { background: #e8f5e9; color: #2e7d32; }
+
+    /* Tally */
+    .tally-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+    .tally-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .tally-table thead th {
+      background: var(--earth-600);
+      color: white;
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tally-table td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .tally-table tfoot td {
+      font-weight: 700;
+      border-top: 2px solid var(--earth-600);
+      background: var(--earth-100);
+    }
+
+    /* Vine tips */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .tip-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .tip-card h4 { font-size: 0.9rem; color: var(--green-800); margin-bottom: 0.35rem; }
+    .tip-card p { font-size: 0.82rem; color: var(--gray-600); }
+
+    /* Nav */
+    .toc {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0.75rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .toc-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+    .toc a {
+      color: var(--green-800);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .toc a:hover { background: var(--green-100); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--gray-600);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 1.75rem; }
+      .beds-row { flex-direction: column; align-items: center; }
+      .bed-box { width: 100%; max-width: 320px; }
+      .hero .meta { flex-direction: column; gap: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Durham Garden Plan</h1>
+  <p class="subtitle">A pest-resistant companion-planted garden for the Triangle</p>
+  <span class="zone-badge">USDA Zone 8a</span>
+  <div class="meta">
+    <span>Planted May 28, 2026</span>
+    <span>Last frost ~Mar 25</span>
+    <span>First frost ~Nov 15</span>
+    <span>~235 day season</span>
+  </div>
+</div>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#beds">Raised Beds</a>
+    <a href="#pots">Pots</a>
+    <a href="#frontyard">Front Yard</a>
+    <a href="#vines">Vine Management</a>
+    <a href="#pests">Pest Defense</a>
+    <a href="#watering">Watering</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#tally">Full Tally</a>
+  </div>
+</nav>
+
+<!-- RAISED BEDS -->
+<section id="beds">
+  <div class="container">
+    <span class="section-label">Zone 1</span>
+    <h2>Raised Beds</h2>
+    <p class="section-desc">Four 48"&times;32" beds along the backyard fence. All fruits and vegetables live here. Squash and watermelon root in the beds and trail into the yard.</p>
+
+    <div class="bed-diagram">
+      <div class="fence-label">Fence (back / north side)</div>
+      <div class="fence-bar"></div>
+      <div class="beds-row">
+        <div class="bed-box">
+          <div class="bed-header">Bed 1</div>
+          <div class="bed-content">
+            <div class="bed-row-label">Back (fence)</div>
+            <div><span class="plant-tag tag-tomato">Better Boy Tomato</span></div>
+            <div class="bed-row-label">Front</div>
+            <div>
+              <span class="plant-tag tag-herb">Sweet Basil</span>
+              <span class="plant-tag tag-herb">Purple Basil</span>
+            </div>
+            <div class="bed-row-label">Trailing edge</div>
+            <div><span class="plant-tag tag-squash">Spaghetti Squash</span></div>
+          </div>
+        </div>
+        <div class="bed-box">
+          <div class="bed-header">Bed 2</div>
+          <div class="bed-content">
+            <div class="bed-row-label">Back (fence)</div>
+            <div><span class="plant-tag tag-tomato">Yellow Pear Tomato</span></div>
+            <div class="bed-row-label">Front</div>
+            <div><span class="plant-tag tag-lettuce">Red Romaine Lettuce</span></div>
+            <div class="bed-row-label">Trailing edge</div>
+            <div><span class="plant-tag tag-squash">Crookneck &times;2</span></div>
+          </div>
+        </div>
+        <div class="bed-box">
+          <div class="bed-header">Bed 3</div>
+          <div class="bed-content">
+            <div class="bed-row-label">Back (fence)</div>
+            <div>
+              <span class="plant-tag tag-pepper">Red Bell Pepper</span>
+              <span class="plant-tag tag-pepper-purple">Purple Bell</span>
+            </div>
+            <div class="bed-row-label">Front</div>
+            <div><span class="plant-tag tag-pepper-hot">Banana Pepper &times;4</span></div>
+            <div class="bed-row-label">Trailing edge</div>
+            <div><span class="plant-tag tag-squash">Straightneck &times;4</span></div>
+          </div>
+        </div>
+        <div class="bed-box">
+          <div class="bed-header">Bed 4</div>
+          <div class="bed-content">
+            <div class="bed-row-label">Back (fence)</div>
+            <div><span class="plant-tag tag-cucumber">Cucumber &times;2</span></div>
+            <div class="bed-row-label">Front</div>
+            <div>
+              <span class="plant-tag tag-eggplant">Eggplant Gretel</span>
+              <span class="plant-tag tag-pepper-hot">Banana &times;2</span>
+            </div>
+            <div class="bed-row-label">Trailing edge</div>
+            <div><span class="plant-tag tag-melon">Watermelon &times;2</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="vine-zone">
+        <span class="arrows">&darr; &darr; &darr; &darr;</span>
+        Squash &amp; watermelon vines trail into the open yard
+      </div>
+      <div class="yard-bar"></div>
+      <div class="yard-label">Open yard (sunny side)</div>
+    </div>
+
+    <!-- Bed detail cards -->
+    <div class="bed-details">
+      <div class="bed-card">
+        <div class="bed-card-header bed1">Bed 1 &mdash; Tomato + Basil + Spaghetti Squash</div>
+        <div class="bed-card-body">
+          <table>
+            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <tbody>
+              <tr><td>Back center</td><td>Better Boy Tomato (1) &mdash; caged against fence</td></tr>
+              <tr><td>Front-left</td><td>Sweet Basil (1)</td></tr>
+              <tr><td>Front-right</td><td>Purple Basil (1)</td></tr>
+              <tr><td>Front edge</td><td>Spaghetti Squash (1) &mdash; vine trails 6-8 ft</td></tr>
+            </tbody>
+          </table>
+          <div class="note">Basil repels aphids, whiteflies, and hornworm moths from the tomato. Better Boy will produce into October in 8a.</div>
+        </div>
+      </div>
+      <div class="bed-card">
+        <div class="bed-card-header bed2">Bed 2 &mdash; Cherry Tomato + Lettuce + Crookneck</div>
+        <div class="bed-card-body">
+          <table>
+            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <tbody>
+              <tr><td>Back center</td><td>Yellow Pear Cherry Tomato (1) &mdash; caged</td></tr>
+              <tr><td>Front</td><td>Red Romaine Lettuce (1)</td></tr>
+              <tr><td>Front edge</td><td>Crookneck Squash (2) &mdash; bush into yard</td></tr>
+            </tbody>
+          </table>
+          <div class="note">Lettuce benefits from tomato's afternoon shade. Will bolt by mid-June in 8a heat &mdash; harvest aggressively. Once pulled, crookneck fills the space.</div>
+        </div>
+      </div>
+      <div class="bed-card">
+        <div class="bed-card-header bed3">Bed 3 &mdash; Peppers + Straightneck Squash</div>
+        <div class="bed-card-body">
+          <table>
+            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <tbody>
+              <tr><td>Back-left</td><td>Red Bell Sweet Pepper (1)</td></tr>
+              <tr><td>Back-right</td><td>Purple Bell Sweet Pepper (1)</td></tr>
+              <tr><td>Mid-front</td><td>Hot Banana Pepper (4) &mdash; 12" spacing</td></tr>
+              <tr><td>Front edge</td><td>Straightneck Squash (4) &mdash; bush into yard</td></tr>
+            </tbody>
+          </table>
+          <div class="note">All peppers share identical water and feed needs. Bells produce through October in 8a. Banana peppers are prolific July through frost.</div>
+        </div>
+      </div>
+      <div class="bed-card">
+        <div class="bed-card-header bed4">Bed 4 &mdash; Cucumber + Eggplant + Watermelon</div>
+        <div class="bed-card-body">
+          <table>
+            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <tbody>
+              <tr><td>Back</td><td>Cucumber Burpless (2) &mdash; trellised up fence</td></tr>
+              <tr><td>Front-center</td><td>Eggplant Gretel (1)</td></tr>
+              <tr><td>Front corners</td><td>Hot Banana Pepper (2)</td></tr>
+              <tr><td>Front edge</td><td>Watermelon Sugar Baby (2) &mdash; vines 6-8 ft</td></tr>
+            </tbody>
+          </table>
+          <div class="note">Cucumbers climb the fence. Gretel loves 8a heat &mdash; fruit in 60-65 days. Banana pepper foliage deters flea beetles from eggplant. Place straw under developing melons.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POTS -->
+<section id="pots">
+  <div class="container">
+    <span class="section-label">Zone 2</span>
+    <h2>Pots</h2>
+    <p class="section-desc">Two railing pots (~10"&times;24" oval) for delicate herbs, plus one dedicated strawberry pot. Movable for sun/shade management.</p>
+    <div class="pots-grid">
+      <div class="pot-card">
+        <div class="pot-icon">&#127807;</div>
+        <div class="pot-info">
+          <h4>Railing Pot 1 &mdash; Chamomile</h4>
+          <p>Delicate, shallow-rooted. Place near beds &mdash; attracts hoverflies and parasitic wasps that patrol vegetables. Move to partial shade in peak July-August heat.</p>
+        </div>
+      </div>
+      <div class="pot-card">
+        <div class="pot-icon">&#127807;</div>
+        <div class="pot-info">
+          <h4>Railing Pot 2 &mdash; Sage</h4>
+          <p>Hates wet feet &mdash; pot drainage is ideal. Place near Bed 4 to deter flea beetles from eggplant. Perennial in 8a &mdash; overwinters in pot with minimal protection.</p>
+        </div>
+      </div>
+      <div class="pot-card strawberry">
+        <div class="pot-icon">&#127827;</div>
+        <div class="pot-info">
+          <h4>Strawberry Pot &mdash; Strawberries</h4>
+          <p>Full sun. Runners cascade over edges. Check moisture daily &mdash; pots dry fast in summer. Light fruit this year, heavy production next spring. Hardy in 8a with light crown mulch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRONT YARD -->
+<section id="frontyard">
+  <div class="container">
+    <span class="section-label">Zone 3</span>
+    <h2>Front Yard &mdash; Ornamentals &amp; Perennials</h2>
+    <p class="section-desc">No fruits or vegetables. These are landscape-scale perennials and ornamentals that will establish permanently and support pollinators.</p>
+    <div class="fy-zones">
+      <div class="fy-card">
+        <div class="fy-card-header sun">Full Sun</div>
+        <div class="fy-card-body">
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#f9a825"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Hella Sonnenblume Sunflower</div>
+              <div class="fy-plant-detail">6-8 ft tall. Plant 18" apart as backdrop row. Pollinator magnet, trap crop for stink bugs. Annual &mdash; reseed yearly.</div>
+            </div>
+            <span class="fy-qty">&times;4</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#2e7d32"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Rosemary</div>
+              <div class="fy-plant-detail">Fully hardy in 8a. Evergreen shrub, 3-4 ft at maturity. Well-drained soil, 3 ft apart. Deer-resistant, fragrant, low maintenance.</div>
+            </div>
+            <span class="fy-qty">&times;2</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#7b1fa2"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Mexican Sage</div>
+              <div class="fy-plant-detail">3-4 ft perennial. Velvety purple spikes Aug-Nov. Hummingbird magnet. Dies back in winter, returns spring. Cut to 6" in late February.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#f9a825"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Sweet Black-Eyed Susan</div>
+              <div class="fy-plant-detail">Native perennial, 2-3 ft. Golden blooms Jul-Oct. Attracts ladybugs, lacewings, parasitic wasps. Naturalizes over time.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#e53935"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Lobelia laxiflora Candycorn</div>
+              <div class="fy-plant-detail">2-3 ft. Tubular red-yellow flowers spring through fall. Hummingbird favorite. Semi-evergreen in 8a.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+        </div>
+      </div>
+      <div class="fy-card">
+        <div class="fy-card-header shade">Part Shade (North/East Side)</div>
+        <div class="fy-card-body">
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#8e24aa"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Heuchera Grande Amethyst</div>
+              <div class="fy-plant-detail">Evergreen in 8a. Deep purple foliage year-round. Morning sun / afternoon shade. 12-18" tall. Pair with Belarina.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#ab47bc"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Belarina Amethyst Ice</div>
+              <div class="fy-plant-detail">Double primrose, 8-12". Purple-white spring blooms. Needs coolest, most sheltered shade. Mulch heavily, keep moist. Heat-sensitive &mdash; protect from afternoon sun.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VINE MANAGEMENT -->
+<section id="vines">
+  <div class="container">
+    <span class="section-label">Technique</span>
+    <h2>Trailing Vine Management</h2>
+    <p class="section-desc">Squash and watermelon root in the beds but trail into the yard. Here&rsquo;s how to manage the vine zone.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>Prep the Landing Zone</h4>
+        <p>Mow the yard in front of beds short. Lay cardboard or landscape fabric. Cover with straw mulch to suppress grass and prevent fruit rot.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Direct the Vines Weekly</h4>
+        <p>Gently steer vines to avoid tangling. Keep pathways clear. Redirect any that head toward walkways or each other.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Protect Watermelon Fruit</h4>
+        <p>Once fruit is golf-ball sized, slide cardboard or a small board underneath to prevent bottom rot from wet grass contact.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Mowing Blackout</h4>
+        <p>The 6-8 ft zone in front of beds becomes vine territory from mid-June through harvest. Mow it short before planting, then mow around it all season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEST DEFENSE -->
+<section id="pests">
+  <div class="container">
+    <span class="section-label">Defense</span>
+    <h2>Pest Resistance Strategy</h2>
+    <p class="section-desc">Zone 8a&rsquo;s milder winters mean more pests survive overwinter. Pressure starts earlier and lasts longer. Your garden has built-in biological defenses.</p>
+
+    <h3>Threat Calendar</h3>
+    <div class="pest-table-wrap" style="margin-top:0.75rem;">
+      <table class="pest-table">
+        <thead>
+          <tr><th>When</th><th>Pest</th><th>Targets</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Early Jun</td>
+            <td>Squash Vine Borer <span class="threat-badge threat-high">High</span></td>
+            <td>All squash, watermelon</td>
+            <td>Wrap stems with aluminum foil at base. Inspect weekly for frass. Inject Bt at first sign.</td>
+          </tr>
+          <tr>
+            <td>Jun&ndash;Jul</td>
+            <td>Cucumber Beetle <span class="threat-badge threat-med">Med</span></td>
+            <td>Cucumbers, squash, melon</td>
+            <td>Row covers until flowering. Yellow sticky traps. Kaolin clay spray.</td>
+          </tr>
+          <tr>
+            <td>Jun&ndash;Aug</td>
+            <td>Tomato Hornworm <span class="threat-badge threat-med">Med</span></td>
+            <td>Tomatoes, peppers, eggplant</td>
+            <td>Basil deters moths. Hand-pick. Leave caterpillars with white cocoons (braconid wasp eggs).</td>
+          </tr>
+          <tr>
+            <td>Jun&ndash;Sep</td>
+            <td>Flea Beetle <span class="threat-badge threat-med">Med</span></td>
+            <td>Eggplant</td>
+            <td>Banana pepper companions help. Sage pot nearby. Row cover Gretel first 2-3 weeks if heavy.</td>
+          </tr>
+          <tr>
+            <td>Jul&ndash;Aug</td>
+            <td>Japanese Beetle <span class="threat-badge threat-med">Med</span></td>
+            <td>Many plants</td>
+            <td>Hand-pick into soapy water AM. No bag traps. Milky spore in lawn for grubs.</td>
+          </tr>
+          <tr>
+            <td>Jul&ndash;Oct</td>
+            <td>Stink Bugs <span class="threat-badge threat-med">Med</span></td>
+            <td>Tomatoes, peppers</td>
+            <td>Sunflowers as trap crop in front yard. Hand-pick into soapy water.</td>
+          </tr>
+          <tr>
+            <td>All season</td>
+            <td>Aphids <span class="threat-badge threat-low">Low</span></td>
+            <td>Peppers, lettuce, eggplant</td>
+            <td>Basil and sage repel. Chamomile and black-eyed susan attract predators. Blast with hose.</td>
+          </tr>
+          <tr>
+            <td>Aug&ndash;Sep</td>
+            <td>2nd Wave Vine Borer <span class="threat-badge threat-high">High</span></td>
+            <td>Late squash</td>
+            <td>Continue stem inspections through September.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:2rem;">Your Built-In Defense Network</h3>
+    <div class="defense-grid">
+      <div class="defense-card">
+        <h4>Sweet &amp; Purple Basil</h4>
+        <p>Repels aphids, whiteflies, and hornworm moths from tomatoes.</p>
+        <div class="location">Bed 1</div>
+      </div>
+      <div class="defense-card">
+        <h4>Chamomile</h4>
+        <p>Attracts parasitic wasps and hoverflies that prey on aphids and hornworms.</p>
+        <div class="location">Railing pot near beds</div>
+      </div>
+      <div class="defense-card">
+        <h4>Sage</h4>
+        <p>Deters flea beetles and cabbage moths from eggplant and brassicas.</p>
+        <div class="location">Railing pot near Bed 4</div>
+      </div>
+      <div class="defense-card">
+        <h4>Rosemary &times;2</h4>
+        <p>General pest deterrent. Repels cabbage moths and bean beetles.</p>
+        <div class="location">Front yard landscape</div>
+      </div>
+      <div class="defense-card">
+        <h4>Sunflowers &times;4</h4>
+        <p>Trap crop for stink bugs. Draws pollinators to nearby squash and melon.</p>
+        <div class="location">Front yard backdrop</div>
+      </div>
+      <div class="defense-card">
+        <h4>Black-Eyed Susan</h4>
+        <p>Attracts ladybugs, lacewings, and parasitic wasps &mdash; beneficial predators.</p>
+        <div class="location">Front yard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WATERING -->
+<section id="watering">
+  <div class="container">
+    <span class="section-label">Care</span>
+    <h2>Watering Guidelines</h2>
+    <p class="section-desc">Zone 8a summers are hot and humid. Consistent watering prevents blossom end rot, bitter cucumbers, and wilting herbs.</p>
+    <div class="water-table-wrap">
+      <table class="water-table">
+        <thead>
+          <tr><th>Plants</th><th>Need</th><th>Schedule</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tomatoes, peppers, eggplant</td>
+            <td><span class="water-level water-med">Moderate</span></td>
+            <td>1-2" per week. Deep water every 2-3 days. Mulch beds 2-3". Inconsistent watering causes blossom end rot.</td>
+          </tr>
+          <tr>
+            <td>Cucumbers</td>
+            <td><span class="water-level water-high">High</span></td>
+            <td>Water daily in peak summer. Mulch heavily. Never let dry out &mdash; drought causes bitter fruit.</td>
+          </tr>
+          <tr>
+            <td>Squash, watermelon</td>
+            <td><span class="water-level water-med">Moderate</span></td>
+            <td>Deep soak 2&times;/week at root crown. Water morning to keep foliage dry. Vines find supplemental moisture.</td>
+          </tr>
+          <tr>
+            <td>Lettuce</td>
+            <td><span class="water-level water-med">Moderate</span></td>
+            <td>Daily light watering. Once it bolts, pull it.</td>
+          </tr>
+          <tr>
+            <td>Basil</td>
+            <td><span class="water-level water-med">Moderate</span></td>
+            <td>Water when top inch of soil is dry. Don&rsquo;t let it wilt.</td>
+          </tr>
+          <tr>
+            <td>Chamomile &amp; sage (pots)</td>
+            <td><span class="water-level water-low">Low</span></td>
+            <td>Let soil dry slightly between waterings. Sage especially hates wet roots.</td>
+          </tr>
+          <tr>
+            <td>Strawberries (pot)</td>
+            <td><span class="water-level water-high">High</span></td>
+            <td>Check daily. May need water 2&times;/day in 90&deg;F+ heat. Pots dry fast.</td>
+          </tr>
+          <tr>
+            <td>Rosemary (front yard)</td>
+            <td><span class="water-level water-low">Low</span></td>
+            <td>Weekly first month, then only during extended drought. Hates wet feet.</td>
+          </tr>
+          <tr>
+            <td>Front yard perennials</td>
+            <td><span class="water-level water-med">Moderate</span></td>
+            <td>2-3&times;/week first summer to establish. Low-water after. Belarina needs consistent moisture permanently.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar">
+  <div class="container">
+    <span class="section-label">Schedule</span>
+    <h2>Monthly Task Calendar</h2>
+    <p class="section-desc">Key tasks for each month of the growing season and beyond.</p>
+    <div class="calendar-grid">
+      <div class="cal-card">
+        <div class="cal-month may">Late May (Now)</div>
+        <div class="cal-body"><ul>
+          <li>Plant everything</li>
+          <li>Mulch all beds 2-3 inches deep</li>
+          <li>Prep vine landing zone with cardboard and straw</li>
+          <li>Set up trellises on fence for cucumbers and tomatoes</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month jun">June</div>
+        <div class="cal-body"><ul>
+          <li>Harvest lettuce aggressively &mdash; pull when it bolts</li>
+          <li>Begin squash vine borer stem checks</li>
+          <li>Pinch tomato suckers to manage size</li>
+          <li>Train cucumber vines up fence trellis</li>
+          <li>Direct squash and melon vines weekly</li>
+          <li>Fertilize beds every 2-3 weeks</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month jul">July</div>
+        <div class="cal-body"><ul>
+          <li>Peak harvest: banana peppers, cucumbers, squash</li>
+          <li>First Gretel eggplant harvest</li>
+          <li>Japanese beetle watch &mdash; hand-pick mornings</li>
+          <li>Stink bug watch &mdash; sunflowers drawing them</li>
+          <li>Deep water consistently through heat</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month aug">August</div>
+        <div class="cal-body"><ul>
+          <li>Watermelon harvest (hollow thump = ripe)</li>
+          <li>Spaghetti squash harvest (hard skin, tan color)</li>
+          <li>Continue pepper and tomato harvest</li>
+          <li>Deadhead sunflowers for extended bloom</li>
+          <li>Second vine borer wave &mdash; inspect stems</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month sep">September</div>
+        <div class="cal-body"><ul>
+          <li>Late tomato and pepper harvest continues</li>
+          <li>Pull spent cucumber vines</li>
+          <li>Clean up finished squash vines</li>
+          <li>Cut chamomile flowers for drying if desired</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month oct">October</div>
+        <div class="cal-body"><ul>
+          <li>Final tomato and pepper harvest before frost</li>
+          <li>Leave perennials in place (rosemary, sage, heuchera, etc.)</li>
+          <li>Pull annual vegetable plants</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month nov">November</div>
+        <div class="cal-body"><ul>
+          <li>First frost ~Nov 15</li>
+          <li>Mulch strawberry pot crown lightly</li>
+          <li>Cut Mexican sage to 6" after frost browns it</li>
+          <li>Compost spent annual plants</li>
+          <li>Mulch perennial beds for winter</li>
+        </ul></div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-month feb">February</div>
+        <div class="cal-body"><ul>
+          <li>Cut Mexican sage to 6" if not done in fall</li>
+          <li>Prune rosemary to shape</li>
+          <li>Light trim on sage in pot</li>
+          <li>Plan next year&rsquo;s seed order</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL TALLY -->
+<section id="tally">
+  <div class="container">
+    <span class="section-label">Summary</span>
+    <h2>Full Plant Accounting</h2>
+    <p class="section-desc">All 24 items, 39 individual plants &mdash; every one placed.</p>
+    <div class="tally-wrap">
+      <table class="tally-table">
+        <thead>
+          <tr><th>Zone</th><th>Plants</th><th>Count</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bed 1</td><td>Better Boy Tomato (1), Sweet Basil (1), Purple Basil (1), Spaghetti Squash (1 trails)</td><td>4</td></tr>
+          <tr><td>Bed 2</td><td>Yellow Pear Cherry Tomato (1), Red Romaine Lettuce (1), Crookneck Squash (2 trail)</td><td>4</td></tr>
+          <tr><td>Bed 3</td><td>Red Bell Pepper (1), Purple Bell Pepper (1), Hot Banana Pepper (4), Straightneck Squash (4 trail)</td><td>10</td></tr>
+          <tr><td>Bed 4</td><td>Cucumber Burpless (2), Eggplant Gretel (1), Hot Banana Pepper (2), Watermelon Sugar Baby (2 trail)</td><td>7</td></tr>
+          <tr><td>Railing Pot 1</td><td>Chamomile (1)</td><td>1</td></tr>
+          <tr><td>Railing Pot 2</td><td>Sage (1)</td><td>1</td></tr>
+          <tr><td>Strawberry Pot</td><td>Strawberries (1)</td><td>1</td></tr>
+          <tr><td>Front Yard &mdash; Sun</td><td>Sunflower (4), Rosemary (2), Mexican Sage (1), Black-Eyed Susan (1), Lobelia (1)</td><td>9</td></tr>
+          <tr><td>Front Yard &mdash; Shade</td><td>Heuchera Grande Amethyst (1), Belarina Amethyst Ice (1)</td><td>2</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Total</td><td>39</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Durham Garden Plan &mdash; Zone 8a &mdash; Planted May 2026
+</footer>
+
+</body>
+</html>
