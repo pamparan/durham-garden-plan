@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front Yard &amp; Fruit Guide — Durham Garden Plan 2026</title>
+  <style>
+    :root {
+      --green-900: #1a3a1a;
+      --green-800: #2d5a27;
+      --green-700: #3a7d32;
+      --green-600: #4a9e3f;
+      --green-500: #5cb85c;
+      --green-100: #e8f5e9;
+      --green-50: #f1f8f1;
+      --earth-700: #5d4037;
+      --earth-600: #6d4c41;
+      --earth-500: #8d6e63;
+      --earth-400: #a1887f;
+      --earth-100: #efebe9;
+      --sun-500: #f9a825;
+      --sun-400: #fbc02d;
+      --sun-100: #fff9c4;
+      --tomato: #e53935;
+      --herb: #2e7d32;
+      --flower-purple: #8e24aa;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #eeeeee;
+      --gray-300: #e0e0e0;
+      --gray-600: #757575;
+      --gray-700: #616161;
+      --gray-800: #424242;
+      --gray-900: #212121;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--gray-50); color: var(--gray-900); line-height: 1.6; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green-800) 0%, var(--green-700) 50%, var(--earth-600) 100%);
+      color: white; padding: 3rem 1.5rem; text-align: center;
+    }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero .subtitle { font-size: 1.15rem; opacity: 0.9; }
+    .hero .zone-badge { display: inline-block; background: var(--sun-400); color: var(--gray-900); padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; margin-top: 1rem; }
+    .hero .meta { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; font-size: 0.95rem; opacity: 0.85; flex-wrap: wrap; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0; }
+    section + section { border-top: 1px solid var(--gray-200); }
+
+    .section-label { display: inline-block; background: var(--green-700); color: white; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 4px; margin-bottom: 0.75rem; }
+    h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--green-900); }
+    h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--earth-700); }
+    .section-desc { color: var(--gray-600); margin-bottom: 2rem; max-width: 700px; }
+    .note { font-size: 0.8rem; color: var(--gray-600); margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: var(--gray-100); border-radius: 6px; border-left: 3px solid var(--green-600); }
+
+    .toc { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; }
+    .toc-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.25rem; align-items: center; }
+    .toc a { color: var(--green-800); text-decoration: none; font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 6px; transition: background 0.2s; white-space: nowrap; }
+    .toc a:hover { background: var(--green-100); }
+    .toc a.page-link { background: var(--earth-100); color: var(--earth-700); }
+    .toc a.page-link:hover { background: var(--earth-400); color: white; }
+
+    .plant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .plant-card { background: var(--white); border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: hidden; }
+    .plant-card-header { padding: 0.7rem 1rem; font-weight: 700; font-size: 0.95rem; color: white; }
+    .plant-card-body { padding: 1rem; font-size: 0.88rem; color: var(--gray-800); line-height: 1.7; }
+    .plant-card-body table { width: 100%; border-collapse: collapse; margin-bottom: 0.75rem; }
+    .plant-card-body th { text-align: left; padding: 0.35rem 0.5rem; background: var(--gray-100); font-size: 0.8rem; color: var(--gray-600); border-bottom: 1px solid var(--gray-200); }
+    .plant-card-body td { padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--gray-100); font-size: 0.85rem; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 100px; margin-right: 0.25rem; margin-bottom: 0.25rem; }
+    .tag-sun { background: #fff9c4; color: #e65100; }
+    .tag-acid { background: #e8f5e9; color: #1b5e20; }
+    .tag-drain { background: #e3f2fd; color: #0d47a1; }
+    .tag-space { background: #fce4ec; color: #880e4f; }
+    .tag-poll { background: #f3e5f5; color: #4a148c; }
+    .tag-comp { background: #fff3e0; color: #bf360c; }
+
+    .companion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .companion-card { background: var(--white); border-radius: 10px; padding: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .companion-card h4 { margin: 0 0 0.4rem; color: var(--herb); }
+
+    .fy-zones { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+    .fy-card { background: var(--gray-50); border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-200); }
+    .fy-card-header { padding: 0.75rem 1rem; font-weight: 700; font-size: 0.9rem; }
+    .fy-card-header.sun { background: var(--sun-100); color: var(--earth-700); }
+    .fy-card-header.shade { background: #ede7f6; color: var(--flower-purple); }
+    .fy-card-body { padding: 0.75rem 1rem; }
+    .fy-plant { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--gray-200); }
+    .fy-plant:last-child { border-bottom: none; }
+    .fy-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .fy-plant-info { flex: 1; }
+    .fy-plant-name { font-weight: 600; font-size: 0.9rem; }
+    .fy-plant-detail { font-size: 0.8rem; color: var(--gray-600); }
+    .fy-qty { background: var(--gray-200); color: var(--gray-800); font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 999px; flex-shrink: 0; margin-top: 3px; }
+
+    .tally-wrap { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow-x: auto; }
+    .tally-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .tally-table thead th { background: var(--earth-600); color: white; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .tally-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--gray-100); }
+    .tally-table tfoot td { font-weight: 700; border-top: 2px solid var(--earth-600); background: var(--earth-100); }
+
+    footer { text-align: center; padding: 2rem; color: var(--gray-600); font-size: 0.85rem; border-top: 1px solid var(--gray-200); }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 1.75rem; }
+      .hero .meta { flex-direction: column; gap: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Front Yard &amp; Fruit Guide</h1>
+  <p class="subtitle">Trees, shrubs, blueberries, lavender &amp; perennials for the front and side yards</p>
+  <span class="zone-badge">USDA Zone 8a</span>
+  <div class="meta">
+    <span>Durham, NC</span>
+    <span>Planted May 2026</span>
+  </div>
+</div>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="index.html" class="page-link">&larr; Back Yard</a>
+    <a href="#trees">Fruit Trees</a>
+    <a href="#maples">Maples</a>
+    <a href="#blueberries">Blueberries</a>
+    <a href="#pomegranate">Pomegranate</a>
+    <a href="#lavender">Lavender</a>
+    <a href="#perennials">Perennials</a>
+    <a href="#companions">Companions</a>
+    <a href="#tally">Tally</a>
+  </div>
+</nav>
+
+<!-- FRUIT TREES -->
+<section id="trees">
+  <div class="container">
+    <span class="section-label">Fruit Trees</span>
+    <h2>Apple &amp; Pear Trees</h2>
+    <p class="section-desc">Three columnar apple trees and one multi-grafted pear tree. The columnar apples grow only 2 ft wide — perfect for tight spaces or as an edible hedge. Cross-pollinate each other for best yields.</p>
+    <div class="plant-grid">
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#c62828;">5-in-1 European Pear Tree (5-6 ft)</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>15-20 ft tall, 10 ft wide</td></tr>
+            <tr><td>Sun</td><td>Full sun (6-8 hrs)</td></tr>
+            <tr><td>Soil</td><td>Well-drained loam, pH 6.0-7.0</td></tr>
+            <tr><td>Spacing</td><td>10-12 ft from structures/other trees</td></tr>
+            <tr><td>Water</td><td>Weekly deep soak; 2x/week in extreme heat</td></tr>
+            <tr><td>Harvest</td><td>June-September (varies by graft)</td></tr>
+            <tr><td>Chill Hours</td><td>~600 hrs</td></tr>
+            <tr><td>Zone</td><td>5-8</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-drain">Well-Drained</span><span class="tag tag-space">10 ft spread</span>
+          <div class="note"><strong>Year 1:</strong> Remove all blossoms to direct energy to root establishment. <strong>Year 2:</strong> Allow 25% of fruit to develop. <strong>Year 3+:</strong> Thin fruit to 6" spacing. Prune annually to maintain central leader. Self-pollinating (5 grafts pollinate each other).</div>
+        </div>
+      </div>
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#f9a825; color:#5d4037;">Golden Treat&trade; Columnar Apple (4-5 ft)</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>8-10 ft tall, 2 ft wide</td></tr>
+            <tr><td>Sun / Soil</td><td>Full sun, well-drained loam pH 6.0-7.0</td></tr>
+            <tr><td>Spacing</td><td>2 ft apart (hedge) or standalone</td></tr>
+            <tr><td>Harvest</td><td>September &mdash; golden, sweet-tart</td></tr>
+            <tr><td>Chill Hours</td><td>800-1200 hrs</td></tr>
+            <tr><td>Zone</td><td>4-8</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-poll">Cross-pollinate w/ other apples</span>
+          <div class="note"><strong>Pollination:</strong> Plant near Tangy Green and Tasty Red &mdash; all three cross-pollinate each other. Minimal pruning. Resistant to rust and apple scab.</div>
+        </div>
+      </div>
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#2e7d32;">Tangy Green&trade; Columnar Apple (3-4 ft)</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>8-10 ft tall, 2 ft wide</td></tr>
+            <tr><td>Sun / Soil</td><td>Full sun, well-drained loam pH 6.0-7.0</td></tr>
+            <tr><td>Spacing</td><td>2 ft apart (hedge) or standalone</td></tr>
+            <tr><td>Harvest</td><td>Fall &mdash; lime green, crisp, tart</td></tr>
+            <tr><td>Zone</td><td>4-9</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-poll">Cross-pollinate w/ other apples</span>
+          <div class="note">Great for pies and baking. Plant as a trio with Golden Treat and Tasty Red for a full-season apple hedge (2 ft spacing).</div>
+        </div>
+      </div>
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#c62828;">Tasty Red&trade; Columnar Apple (3-4 ft)</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>8-10 ft tall, 2 ft wide</td></tr>
+            <tr><td>Sun / Soil</td><td>Full sun, well-drained loam pH 6.0-7.0</td></tr>
+            <tr><td>Spacing</td><td>2 ft apart (hedge) or standalone</td></tr>
+            <tr><td>Harvest</td><td>Fall &mdash; red, sweet, classic snacking apple</td></tr>
+            <tr><td>Zone</td><td>4-9</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-poll">Cross-pollinate w/ other apples</span>
+          <div class="note">The sweet variety of the trio. Expect full-sized fruit from year 1 if planted together. Thin fruit at marble size to one apple every 4-6 inches.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RED MAPLES -->
+<section id="maples">
+  <div class="container">
+    <span class="section-label">Shade Trees</span>
+    <h2>Red Maple Trees (&times;2)</h2>
+    <p class="section-desc">Native to NC. Fast-growing shade trees with spectacular fall color. Plan placement carefully &mdash; they get large.</p>
+    <div class="plant-grid" style="grid-template-columns: 1fr;">
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#c62828;">Red Maple &mdash; Acer rubrum (&times;2)</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>40-70 ft tall, 30-50 ft spread</td></tr>
+            <tr><td>Sun</td><td>Full sun to partial shade</td></tr>
+            <tr><td>Soil</td><td>Moist, slightly acidic, well-drained. Tolerates clay.</td></tr>
+            <tr><td>Spacing</td><td>30-40 ft apart; 20-30 ft from structures</td></tr>
+            <tr><td>Growth Rate</td><td>Fast &mdash; 1-2 ft/year</td></tr>
+            <tr><td>Zone</td><td>3-9 (native to NC)</td></tr></table>
+          <span class="tag tag-sun">Full Sun Best</span><span class="tag tag-space">30-50 ft spread</span><span class="tag tag-acid">Prefers Acidic Soil</span>
+          <div class="note"><strong>Important:</strong> Red maples develop dense mats of shallow surface roots that outcompete anything growing beneath them. Plan placement so the eventual canopy doesn&rsquo;t shade your fruit trees or garden beds. Keep 20-30 ft from patios, driveways, and sidewalks.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLUEBERRIES -->
+<section id="blueberries">
+  <div class="container">
+    <span class="section-label">Side Yard</span>
+    <h2>Blueberry Row</h2>
+    <p class="section-desc">Five blueberry bushes in a row on the side of the house in full sun. All require acidic soil (pH 4.5-5.5) &mdash; amend heavily with peat moss and pine bark.</p>
+    <div class="plant-grid">
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#1565c0;">Peach Sorbet&trade; Blueberry (&times;4) &mdash; 1 Gallon</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>1.5-2 ft tall, mounded</td></tr>
+            <tr><td>Sun</td><td>Full sun (6+ hrs)</td></tr>
+            <tr><td>Soil</td><td>Acidic, pH 4.5-5.5, well-drained</td></tr>
+            <tr><td>Spacing</td><td>2-3 ft apart</td></tr>
+            <tr><td>Harvest</td><td>Summer &mdash; sweet, tropical-flavored berries</td></tr>
+            <tr><td>Chill Hours</td><td>300 hrs or less</td></tr>
+            <tr><td>Zone</td><td>5-10</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-acid">pH 4.5-5.5</span><span class="tag tag-drain">Well-Drained</span>
+          <div class="note"><strong>Ornamental bonus:</strong> Peach, pink, orange, and emerald green foliage. Turns eggplant purple in winter. Self-pollinating but yields improve near other blueberries &mdash; your Pink Lemonade is the perfect cross-pollinator.</div>
+        </div>
+      </div>
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#e91e63;">Pink Lemonade Blueberry (&times;1) &mdash; 5 Gallon</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>4-5 ft tall, 4-5 ft wide</td></tr>
+            <tr><td>Sun</td><td>Full sun (6-8 hrs)</td></tr>
+            <tr><td>Soil</td><td>Acidic, pH 4.5-5.5, well-drained</td></tr>
+            <tr><td>Spacing</td><td>4-5 ft from other bushes</td></tr>
+            <tr><td>Harvest</td><td>Mid-late summer &mdash; pink berries, extra sweet</td></tr>
+            <tr><td>Zone</td><td>4-9 (Rabbiteye hybrid)</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-acid">pH 4.5-5.5</span><span class="tag tag-space">5 ft wide at maturity</span>
+          <div class="note"><strong>Pink berries!</strong> Twice as sweet as traditional blueberries. Plant in the center or end of the row so it has room to spread.</div>
+        </div>
+      </div>
+    </div>
+    <h3 style="margin-top:2rem;">Blueberry Row Soil Prep</h3>
+    <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); padding:1.25rem; margin-top:1rem;">
+      <p style="font-size:0.88rem; color:var(--gray-800); line-height:1.7; margin-bottom:0.75rem;">Durham&rsquo;s native soil is typically pH 5.5-6.5 &mdash; <strong>too alkaline for blueberries.</strong> You must acidify before planting:</p>
+      <ol style="font-size:0.88rem; color:var(--gray-800); line-height:1.8; padding-left:1.2rem;">
+        <li>Dig each hole 2x the width of the root ball</li>
+        <li>Mix excavated soil 50/50 with <strong>sphagnum peat moss</strong> or <strong>pine bark fines</strong></li>
+        <li>Add <strong>elemental sulfur</strong> (1 cup per hole) to lower pH</li>
+        <li>Mulch with <strong>2-3 inches of pine bark or pine needles</strong></li>
+        <li>Water deeply and keep consistently moist</li>
+      </ol>
+      <div class="note"><strong>Do NOT use mushroom compost for blueberries</strong> &mdash; it&rsquo;s alkaline (pH 7-8). Your Daddy Pete&rsquo;s pine bark mulch is perfect here.</div>
+    </div>
+    <h3 style="margin-top:1.5rem;">Suggested Row Layout (Side of House)</h3>
+    <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); padding:1rem; text-align:center; margin-top:1rem;">
+      <svg viewBox="0 0 600 120" style="max-width:600px; width:100%;" aria-label="Blueberry row layout">
+        <rect x="0" y="10" width="600" height="15" rx="3" fill="#efebe9" stroke="#8d6e63" stroke-width="1"/>
+        <text x="300" y="21" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="600">HOUSE WALL</text>
+        <text x="300" y="115" text-anchor="middle" font-size="8" fill="#2e7d32" font-weight="600">FULL SUN SIDE &mdash; 6+ hrs direct light</text>
+        <circle cx="80" cy="60" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+        <text x="80" y="57" text-anchor="middle" font-size="6" font-weight="700" fill="#1565c0">Peach</text>
+        <text x="80" y="65" text-anchor="middle" font-size="5.5" fill="#1565c0">Sorbet #1</text>
+        <circle cx="160" cy="60" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+        <text x="160" y="57" text-anchor="middle" font-size="6" font-weight="700" fill="#1565c0">Peach</text>
+        <text x="160" y="65" text-anchor="middle" font-size="5.5" fill="#1565c0">Sorbet #2</text>
+        <circle cx="300" cy="60" r="28" fill="#fce4ec" stroke="#e91e63" stroke-width="1.5"/>
+        <text x="300" y="57" text-anchor="middle" font-size="7" font-weight="700" fill="#c2185b">Pink</text>
+        <text x="300" y="66" text-anchor="middle" font-size="6" fill="#c2185b">Lemonade</text>
+        <circle cx="440" cy="60" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+        <text x="440" y="57" text-anchor="middle" font-size="6" font-weight="700" fill="#1565c0">Peach</text>
+        <text x="440" y="65" text-anchor="middle" font-size="5.5" fill="#1565c0">Sorbet #3</text>
+        <circle cx="520" cy="60" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+        <text x="520" y="57" text-anchor="middle" font-size="6" font-weight="700" fill="#1565c0">Peach</text>
+        <text x="520" y="65" text-anchor="middle" font-size="5.5" fill="#1565c0">Sorbet #4</text>
+        <text x="120" y="90" text-anchor="middle" font-size="7" fill="#757575">2-3 ft</text>
+        <text x="230" y="90" text-anchor="middle" font-size="7" fill="#757575">4-5 ft</text>
+        <text x="370" y="90" text-anchor="middle" font-size="7" fill="#757575">4-5 ft</text>
+        <text x="480" y="90" text-anchor="middle" font-size="7" fill="#757575">2-3 ft</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- POMEGRANATE -->
+<section id="pomegranate">
+  <div class="container">
+    <span class="section-label">Front or Back Yard</span>
+    <h2>Wonderful Pomegranate Shrub</h2>
+    <p class="section-desc">Reliable in Zone 8a. Full sun, heat, well-drained soil. Front or back yard.</p>
+    <div class="plant-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#c62828;">Wonderful Pomegranate &mdash; 3 Gallon</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>8-12 ft tall and wide</td></tr>
+            <tr><td>Sun</td><td>Full sun (6-8 hrs)</td></tr>
+            <tr><td>Soil</td><td>Well-drained, pH 5.5-7.0</td></tr>
+            <tr><td>Spacing</td><td>10-15 ft from other trees/structures</td></tr>
+            <tr><td>Harvest</td><td>September &mdash; sweet-tart arils</td></tr>
+            <tr><td>Zone</td><td>8a-10 (protect first 2 winters)</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-drain">Well-Drained</span><span class="tag tag-comp">Companions: Lavender, Rosemary</span>
+          <div class="note"><strong>First 2 winters:</strong> Mulch root zone heavily and wrap trunk if temps below 15&deg;F. After year 2, it toughens up. Self-pollinating but bees improve yields &mdash; plant near lavender or rosemary.</div>
+        </div>
+      </div>
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#5d4037;">Placement Guidance</div>
+        <div class="plant-card-body">
+          <h4 style="color:#c62828; margin-bottom:0.5rem;">Front Yard (recommended)</h4>
+          <ul style="padding-left:1.2rem; margin-bottom:1rem;">
+            <li>Pairs with lavender and rosemary (same sun/drainage needs)</li>
+            <li>Stunning ornamental &mdash; orange-red flowers, glossy leaves, showy fruit</li>
+            <li>Plant near a south-facing wall for extra heat and cold protection</li>
+          </ul>
+          <h4 style="color:#2e7d32; margin-bottom:0.5rem;">Back Yard</h4>
+          <ul style="padding-left:1.2rem;">
+            <li>Keep 10-15 ft from raised beds so it doesn&rsquo;t shade them</li>
+            <li>Avoid planting near peppers/tomatoes (nightshades share pests)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAVENDER -->
+<section id="lavender">
+  <div class="container">
+    <span class="section-label">Front Yard</span>
+    <h2>Lavender</h2>
+    <p class="section-desc">Two varieties &mdash; both love full sun, lean soil, and excellent drainage. The #1 cause of lavender death in Durham is wet feet, not cold.</p>
+    <div class="plant-grid">
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#7e57c2;">Phenomenal&trade; Lavender &mdash; 5 Gallon</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>24-30 in tall and wide</td></tr>
+            <tr><td>Sun</td><td>Full sun (6-8 hrs)</td></tr>
+            <tr><td>Soil</td><td>Well-drained, neutral to alkaline (pH 6.5-8.0)</td></tr>
+            <tr><td>Spacing</td><td>3 ft apart</td></tr>
+            <tr><td>Water</td><td>Low &mdash; drought-tolerant once established</td></tr>
+            <tr><td>Zone</td><td>5-9 (bred for heat/humidity)</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-drain">Excellent Drainage Critical</span>
+          <div class="note"><strong>Best lavender for the Southeast.</strong> Developed for hot, humid summers. Evergreen in 8a. <strong>Do NOT use organic mulch</strong> around lavender &mdash; use gravel or pebbles to prevent moisture retention at the crown.</div>
+        </div>
+      </div>
+      <div class="plant-card">
+        <div class="plant-card-header" style="background:#5c6bc0;">SuperBlue English Lavender &mdash; 1 Gallon</div>
+        <div class="plant-card-body">
+          <table><tr><th>Detail</th><th>Info</th></tr>
+            <tr><td>Mature Size</td><td>12-18 in tall and wide</td></tr>
+            <tr><td>Sun</td><td>Full sun (6-8 hrs)</td></tr>
+            <tr><td>Soil</td><td>Well-drained, neutral to alkaline</td></tr>
+            <tr><td>Spacing</td><td>2 ft apart</td></tr>
+            <tr><td>Zone</td><td>5-9</td></tr></table>
+          <span class="tag tag-sun">Full Sun</span><span class="tag tag-drain">Excellent Drainage Critical</span>
+          <div class="note">More compact &mdash; works as edging or border. Plant in the same area for a layered display (SuperBlue in front, Phenomenal behind). Amend with coarse sand or grit if your soil is clay-heavy.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERENNIALS -->
+<section id="perennials">
+  <div class="container">
+    <span class="section-label">Front Yard</span>
+    <h2>Perennials &amp; Ornamentals</h2>
+    <p class="section-desc">Landscape-scale perennials and ornamentals that will establish permanently and support pollinators.</p>
+    <div class="fy-zones">
+      <div class="fy-card">
+        <div class="fy-card-header sun">Full Sun</div>
+        <div class="fy-card-body">
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#f9a825"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Hella Sonnenblume Sunflower</div>
+              <div class="fy-plant-detail">6-8 ft tall. Plant 18" apart as backdrop row. Pollinator magnet, trap crop for stink bugs. Annual &mdash; reseed yearly.</div>
+            </div>
+            <span class="fy-qty">&times;4</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#2e7d32"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Rosemary</div>
+              <div class="fy-plant-detail">Fully hardy in 8a. Evergreen shrub, 3-4 ft at maturity. Well-drained soil, 3 ft apart. Deer-resistant, fragrant, low maintenance.</div>
+            </div>
+            <span class="fy-qty">&times;2</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#7b1fa2"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Mexican Sage</div>
+              <div class="fy-plant-detail">3-4 ft perennial. Velvety purple spikes Aug-Nov. Hummingbird magnet. Dies back in winter, returns spring. Cut to 6" in late February.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#f9a825"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Sweet Black-Eyed Susan</div>
+              <div class="fy-plant-detail">Native perennial, 2-3 ft. Golden blooms Jul-Oct. Attracts ladybugs, lacewings, parasitic wasps. Naturalizes over time.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#e53935"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Lobelia laxiflora Candycorn</div>
+              <div class="fy-plant-detail">2-3 ft. Tubular red-yellow flowers spring through fall. Hummingbird favorite. Semi-evergreen in 8a.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+        </div>
+      </div>
+      <div class="fy-card">
+        <div class="fy-card-header shade">Part Shade (North/East Side)</div>
+        <div class="fy-card-body">
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#8e24aa"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Heuchera Grande Amethyst</div>
+              <div class="fy-plant-detail">Evergreen in 8a. Deep purple foliage year-round. Morning sun / afternoon shade. 12-18" tall. Pair with Belarina.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#ab47bc"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Belarina Amethyst Ice</div>
+              <div class="fy-plant-detail">Double primrose, 8-12". Purple-white spring blooms. Needs coolest, most sheltered shade. Mulch heavily, keep moist. Heat-sensitive &mdash; protect from afternoon sun.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANION PLANTING -->
+<section id="companions">
+  <div class="container">
+    <span class="section-label">Strategy</span>
+    <h2>Companion Planting Guide</h2>
+    <p class="section-desc">Which plants support each other, and which to keep apart. Group plants with similar soil and water needs together.</p>
+    <div class="companion-grid">
+      <div class="companion-card" style="border-left: 4px solid #2e7d32;">
+        <h4>Mediterranean Group</h4>
+        <p style="font-size:0.85rem; color:var(--gray-700); margin-bottom:0.5rem;">Plant together &mdash; identical needs: full sun, lean well-drained soil, low water.</p>
+        <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--gray-700);">
+          <li><strong>Lavender</strong> (Phenomenal + SuperBlue)</li>
+          <li><strong>Rosemary</strong> (&times;2)</li>
+          <li><strong>Pomegranate</strong> (if front yard)</li>
+        </ul>
+        <div class="note">Lavender and rosemary attract pollinators that boost pomegranate fruit set. All three are drought-tolerant and hate wet feet. Use gravel mulch, not bark.</div>
+      </div>
+      <div class="companion-card" style="border-left: 4px solid #1565c0;">
+        <h4>Acid-Loving Group</h4>
+        <p style="font-size:0.85rem; color:var(--gray-700); margin-bottom:0.5rem;">Keep together &mdash; all need pH 4.5-5.5 acidic soil. Separate from the Mediterranean group.</p>
+        <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--gray-700);">
+          <li><strong>Peach Sorbet Blueberry</strong> (&times;4)</li>
+          <li><strong>Pink Lemonade Blueberry</strong> (&times;1)</li>
+          <li>Mulch with <strong>pine bark or pine needles</strong> only</li>
+        </ul>
+        <div class="note">Never use mushroom compost or alkaline amendments near blueberries.</div>
+      </div>
+      <div class="companion-card" style="border-left: 4px solid #f9a825;">
+        <h4>Fruit Tree Guild</h4>
+        <p style="font-size:0.85rem; color:var(--gray-700); margin-bottom:0.5rem;">Companions to plant around your pear and apple trees:</p>
+        <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--gray-700);">
+          <li><strong>Chives</strong> &mdash; repel aphids and Japanese beetles</li>
+          <li><strong>White clover</strong> (ground cover) &mdash; fixes nitrogen, living mulch</li>
+          <li><strong>Nasturtiums</strong> &mdash; trap crop that lures aphids away</li>
+          <li><strong>Comfrey</strong> &mdash; deep roots pull up nutrients; chop leaves as mulch</li>
+          <li><strong>Lavender/rosemary</strong> &mdash; attract pollinators during bloom</li>
+        </ul>
+      </div>
+      <div class="companion-card" style="border-left: 4px solid #c62828;">
+        <h4>Plants to Keep Apart</h4>
+        <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--gray-700);">
+          <li><strong>Walnut trees</strong> near anything &mdash; release juglone</li>
+          <li><strong>Pomegranate near nightshades</strong> (tomatoes, peppers) &mdash; share pests</li>
+          <li><strong>Lavender near moisture-loving plants</strong> &mdash; conflicting water needs</li>
+          <li><strong>Blueberries near alkaline-soil plants</strong> &mdash; conflicting pH</li>
+          <li><strong>Anything under mature red maples</strong> &mdash; shallow roots outcompete</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TALLY -->
+<section id="tally">
+  <div class="container">
+    <span class="section-label">Summary</span>
+    <h2>Front Yard Plant Tally</h2>
+    <div class="tally-wrap">
+      <table class="tally-table">
+        <thead>
+          <tr><th>Zone</th><th>Plant</th><th>Qty</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Front Yard</td><td>5-in-1 European Pear Tree</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Golden Treat Columnar Apple</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Tangy Green Columnar Apple</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Tasty Red Columnar Apple</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Red Maple</td><td>2</td></tr>
+          <tr><td>Front Yard</td><td>Wonderful Pomegranate</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Phenomenal Lavender</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>SuperBlue English Lavender</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Hella Sonnenblume Sunflower</td><td>4</td></tr>
+          <tr><td>Front Yard</td><td>Rosemary</td><td>2</td></tr>
+          <tr><td>Front Yard</td><td>Mexican Sage</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Sweet Black-Eyed Susan</td><td>1</td></tr>
+          <tr><td>Front Yard</td><td>Lobelia Candycorn</td><td>1</td></tr>
+          <tr><td>Front (shade)</td><td>Heuchera Grande Amethyst</td><td>1</td></tr>
+          <tr><td>Front (shade)</td><td>Belarina Amethyst Ice</td><td>1</td></tr>
+          <tr><td>Side Yard</td><td>Peach Sorbet Blueberry</td><td>4</td></tr>
+          <tr><td>Side Yard</td><td>Pink Lemonade Blueberry</td><td>1</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Front &amp; Side Yard Total</td><td>25</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Durham Front Yard &amp; Fruit Guide &mdash; Zone 8a &mdash; 2026</p>
+  <p style="margin-top:0.25rem;"><a href="index.html" style="color:var(--green-700);">&larr; Back Yard &amp; Raised Beds</a></p>
+</footer>
+
+</body>
+</html>
