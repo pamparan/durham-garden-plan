@@ -201,6 +201,32 @@
     .tag-flower { background: #fff9c4; color: #f57f17; }
     .tag-flower-purple { background: #e1bee7; color: #7b1fa2; }
     .tag-strawberry { background: #ffcdd2; color: #c62828; }
+    .tag-companion { background: #e8f5e9; color: #1b5e20; }
+
+    .strip-gap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 36px;
+      min-width: 36px;
+      background: repeating-linear-gradient(0deg, var(--earth-100) 0px, var(--earth-100) 6px, var(--earth-400) 6px, var(--earth-400) 7px);
+      border-radius: 4px;
+      padding: 0.5rem 2px;
+      flex-shrink: 0;
+    }
+    .strip-label {
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: var(--earth-600);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      white-space: nowrap;
+    }
 
     .vine-zone {
       text-align: center;
@@ -605,6 +631,8 @@
 <nav class="toc">
   <div class="toc-inner">
     <a href="#beds">Raised Beds</a>
+    <a href="#strips">Strips</a>
+    <a href="#supports">Supports</a>
     <a href="#pots">Pots</a>
     <a href="#frontyard">Front Yard</a>
     <a href="#vines">Vine Management</a>
@@ -620,136 +648,394 @@
   <div class="container">
     <span class="section-label">Zone 1</span>
     <h2>Raised Beds</h2>
-    <p class="section-desc">Four 48"&times;32" beds along the backyard fence. All fruits and vegetables live here. Squash and watermelon root in the beds and trail into the yard.</p>
+    <p class="section-desc">Four 48"&times;32" beds in a row along the backyard fence, long side (48") against the fence. All fruits and vegetables live here. Squash and watermelon root at the end beds and trail out sideways.</p>
 
-    <div class="bed-diagram">
-      <div class="fence-label">Fence (back / north side)</div>
-      <div class="fence-bar"></div>
-      <div class="beds-row">
-        <div class="bed-box">
-          <div class="bed-header">Bed 1</div>
-          <div class="bed-content">
-            <div class="bed-row-label">Back (fence)</div>
-            <div><span class="plant-tag tag-tomato">Better Boy Tomato</span></div>
-            <div class="bed-row-label">Front</div>
-            <div>
-              <span class="plant-tag tag-herb">Sweet Basil</span>
-              <span class="plant-tag tag-herb">Purple Basil</span>
-            </div>
-            <div class="bed-row-label">Trailing edge</div>
-            <div><span class="plant-tag tag-squash">Spaghetti Squash</span></div>
-          </div>
-        </div>
-        <div class="bed-box">
-          <div class="bed-header">Bed 2</div>
-          <div class="bed-content">
-            <div class="bed-row-label">Back (fence)</div>
-            <div><span class="plant-tag tag-tomato">Yellow Pear Tomato</span></div>
-            <div class="bed-row-label">Front</div>
-            <div><span class="plant-tag tag-lettuce">Red Romaine Lettuce</span></div>
-            <div class="bed-row-label">Trailing edge</div>
-            <div><span class="plant-tag tag-squash">Crookneck &times;2</span></div>
-          </div>
-        </div>
-        <div class="bed-box">
-          <div class="bed-header">Bed 3</div>
-          <div class="bed-content">
-            <div class="bed-row-label">Back (fence)</div>
-            <div>
-              <span class="plant-tag tag-pepper">Red Bell Pepper</span>
-              <span class="plant-tag tag-pepper-purple">Purple Bell</span>
-            </div>
-            <div class="bed-row-label">Front</div>
-            <div><span class="plant-tag tag-pepper-hot">Banana Pepper &times;4</span></div>
-            <div class="bed-row-label">Trailing edge</div>
-            <div><span class="plant-tag tag-squash">Straightneck &times;4</span></div>
-          </div>
-        </div>
-        <div class="bed-box">
-          <div class="bed-header">Bed 4</div>
-          <div class="bed-content">
-            <div class="bed-row-label">Back (fence)</div>
-            <div><span class="plant-tag tag-cucumber">Cucumber &times;2</span></div>
-            <div class="bed-row-label">Front</div>
-            <div>
-              <span class="plant-tag tag-eggplant">Eggplant Gretel</span>
-              <span class="plant-tag tag-pepper-hot">Banana &times;2</span>
-            </div>
-            <div class="bed-row-label">Trailing edge</div>
-            <div><span class="plant-tag tag-melon">Watermelon &times;2</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="vine-zone">
-        <span class="arrows">&darr; &darr; &darr; &darr;</span>
-        Squash &amp; watermelon vines trail into the open yard
-      </div>
-      <div class="yard-bar"></div>
-      <div class="yard-label">Open yard (sunny side)</div>
+    <div class="bed-diagram" style="padding:1rem 1rem 1.5rem;">
+      <svg viewBox="0 0 1000 390" preserveAspectRatio="xMidYMid meet" style="width:100%; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="aL" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M7,0 L0,3.5 L7,7" fill="none" stroke="#4a9e3f" stroke-width="1.2"/></marker>
+          <marker id="aR" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#4a9e3f" stroke-width="1.2"/></marker>
+        </defs>
+
+        <!-- FENCE BAR across top -->
+        <rect x="120" y="18" width="760" height="10" rx="4" fill="#8d6e63"/>
+        <text x="500" y="14" text-anchor="middle" font-size="12" font-weight="700" fill="#5d4037" letter-spacing="1">FENCE (back &mdash; 48" long side against fence)</text>
+
+        <!-- ==================== BED 1 ==================== -->
+        <!-- Bed box: each bed 170w x 128h, proportional to 48x32 ratio -->
+        <rect x="120" y="32" width="170" height="128" rx="5" fill="#efebe9" stroke="#6d4c41" stroke-width="2"/>
+        <text x="205" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#b71c1c">Bed 1 (left end)</text>
+
+        <!-- Better Boy: center back -->
+        <circle cx="205" cy="75" r="20" fill="#ffcdd2" stroke="#b71c1c" stroke-width="1.5"/>
+        <text x="205" y="73" text-anchor="middle" font-size="7.5" font-weight="700" fill="#b71c1c">Better Boy</text>
+        <text x="205" y="82" text-anchor="middle" font-size="6.5" fill="#b71c1c">Tomato</text>
+
+        <!-- Sweet Basil: front-center -->
+        <circle cx="205" cy="130" r="14" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+        <text x="205" y="128" text-anchor="middle" font-size="6.5" font-weight="700" fill="#2e7d32">Sweet</text>
+        <text x="205" y="136" text-anchor="middle" font-size="6" fill="#2e7d32">Basil</text>
+
+        <!-- Squash roots on left edge -->
+        <circle cx="127" cy="55" r="9" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+        <text x="127" y="58" text-anchor="middle" font-size="5.5" font-weight="700" fill="#e65100">Spg</text>
+        <circle cx="127" cy="90" r="9" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+        <text x="127" y="88" text-anchor="middle" font-size="5.5" font-weight="700" fill="#e65100">Crk</text>
+        <text x="127" y="96" text-anchor="middle" font-size="5" fill="#e65100">&times;2</text>
+        <circle cx="127" cy="125" r="9" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+        <text x="127" y="123" text-anchor="middle" font-size="5.5" font-weight="700" fill="#e65100">Str</text>
+        <text x="127" y="131" text-anchor="middle" font-size="5" fill="#e65100">&times;2</text>
+
+        <!-- Trail arrows left -->
+        <line x1="115" y1="55" x2="60" y2="55" stroke="#4a9e3f" stroke-width="1.5" marker-end="url(#aL)"/>
+        <line x1="115" y1="90" x2="60" y2="90" stroke="#4a9e3f" stroke-width="1.5" marker-end="url(#aL)"/>
+        <line x1="115" y1="125" x2="60" y2="125" stroke="#4a9e3f" stroke-width="1.5" marker-end="url(#aL)"/>
+        <text x="55" y="52" text-anchor="end" font-size="8" font-weight="600" fill="#e65100">Spaghetti</text>
+        <text x="55" y="61" text-anchor="end" font-size="7" fill="#4a9e3f">6-8 ft</text>
+        <text x="55" y="87" text-anchor="end" font-size="8" font-weight="600" fill="#e65100">Crookneck &times;2</text>
+        <text x="55" y="96" text-anchor="end" font-size="7" fill="#4a9e3f">2-3 ft</text>
+        <text x="55" y="122" text-anchor="end" font-size="8" font-weight="600" fill="#e65100">Straightneck &times;2</text>
+        <text x="55" y="131" text-anchor="end" font-size="7" fill="#4a9e3f">2-3 ft</text>
+        <text x="88" y="148" text-anchor="middle" font-size="7" fill="#2e7d32" font-weight="600">rooted in bed</text>
+
+        <!-- STRIP 1 -->
+        <rect x="293" y="32" width="14" height="128" rx="3" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="300" y="100" text-anchor="middle" font-size="7" fill="#2e7d32" font-weight="600" transform="rotate(-90,300,100)">Chives</text>
+
+        <!-- ==================== BED 2 ==================== -->
+        <rect x="310" y="32" width="170" height="128" rx="5" fill="#efebe9" stroke="#6d4c41" stroke-width="2"/>
+        <text x="395" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#43a047">Bed 2</text>
+
+        <!-- Yellow Pear: center back -->
+        <circle cx="395" cy="65" r="18" fill="#ffcdd2" stroke="#b71c1c" stroke-width="1.5"/>
+        <text x="395" y="63" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">Ylw Pear</text>
+        <text x="395" y="72" text-anchor="middle" font-size="6.5" fill="#b71c1c">Cherry Tom</text>
+
+        <!-- Lettuce: front-left -->
+        <circle cx="335" cy="105" r="12" fill="#dcedc8" stroke="#33691e" stroke-width="1.5"/>
+        <text x="335" y="103" text-anchor="middle" font-size="6" font-weight="700" fill="#33691e">Rom</text>
+        <text x="335" y="111" text-anchor="middle" font-size="5.5" fill="#33691e">Lett</text>
+        <!-- Purple Basil: front-center-left -->
+        <circle cx="370" cy="140" r="12" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+        <text x="370" y="138" text-anchor="middle" font-size="6" font-weight="700" fill="#2e7d32">Purp</text>
+        <text x="370" y="146" text-anchor="middle" font-size="5.5" fill="#2e7d32">Basil</text>
+        <!-- Gretel: front-center-right -->
+        <circle cx="420" cy="140" r="13" fill="#ce93d8" stroke="#4a148c" stroke-width="1.5"/>
+        <text x="420" y="138" text-anchor="middle" font-size="6" font-weight="700" fill="#4a148c">Gretel</text>
+        <text x="420" y="146" text-anchor="middle" font-size="5.5" fill="#4a148c">Eggplnt</text>
+        <!-- Banana x2: front edges -->
+        <circle cx="325" cy="140" r="10" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+        <text x="325" y="143" text-anchor="middle" font-size="5.5" font-weight="700" fill="#e65100">B1</text>
+        <circle cx="460" cy="140" r="10" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+        <text x="460" y="143" text-anchor="middle" font-size="5.5" font-weight="700" fill="#e65100">B2</text>
+
+        <!-- STRIP 2 -->
+        <rect x="483" y="32" width="14" height="128" rx="3" fill="#fff9c4" stroke="#fdd835" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="490" y="100" text-anchor="middle" font-size="7" fill="#f57f17" font-weight="600" transform="rotate(-90,490,100)">Alyssum</text>
+
+        <!-- ==================== BED 3 ==================== -->
+        <rect x="500" y="32" width="170" height="128" rx="5" fill="#efebe9" stroke="#6d4c41" stroke-width="2"/>
+        <text x="585" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#f57f17">Bed 3</text>
+
+        <!-- Red Bell: back-left -->
+        <circle cx="548" cy="75" r="17" fill="#fff9c4" stroke="#f57f17" stroke-width="1.5"/>
+        <text x="548" y="73" text-anchor="middle" font-size="6.5" font-weight="700" fill="#f57f17">Red</text>
+        <text x="548" y="81" text-anchor="middle" font-size="6" fill="#f57f17">Bell</text>
+
+        <!-- Purple Bell: back-right -->
+        <circle cx="622" cy="75" r="17" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1.5"/>
+        <text x="622" y="73" text-anchor="middle" font-size="6.5" font-weight="700" fill="#6a1b9a">Purp</text>
+        <text x="622" y="81" text-anchor="middle" font-size="6" fill="#6a1b9a">Bell</text>
+
+        <!-- Banana x2: front row -->
+        <circle cx="548" cy="133" r="11" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+        <text x="548" y="136" text-anchor="middle" font-size="6" font-weight="700" fill="#e65100">B3</text>
+        <circle cx="622" cy="133" r="11" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+        <text x="622" y="136" text-anchor="middle" font-size="6" font-weight="700" fill="#e65100">B4</text>
+
+        <!-- STRIP 3 -->
+        <rect x="673" y="32" width="14" height="128" rx="3" fill="#fff9c4" stroke="#fdd835" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="680" y="100" text-anchor="middle" font-size="7" fill="#f57f17" font-weight="600" transform="rotate(-90,680,100)">Marigolds</text>
+
+        <!-- ==================== BED 4 ==================== -->
+        <rect x="690" y="32" width="170" height="128" rx="5" fill="#efebe9" stroke="#6d4c41" stroke-width="2"/>
+        <text x="775" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#1b5e20">Bed 4 (right end)</text>
+
+        <!-- Cucumber #1 -->
+        <circle cx="740" cy="72" r="15" fill="#c8e6c9" stroke="#1b5e20" stroke-width="1.5"/>
+        <text x="740" y="70" text-anchor="middle" font-size="6.5" font-weight="700" fill="#1b5e20">Cuc</text>
+        <text x="740" y="78" text-anchor="middle" font-size="6" fill="#1b5e20">#1</text>
+        <!-- Cucumber #2 -->
+        <circle cx="810" cy="72" r="15" fill="#c8e6c9" stroke="#1b5e20" stroke-width="1.5"/>
+        <text x="810" y="70" text-anchor="middle" font-size="6.5" font-weight="700" fill="#1b5e20">Cuc</text>
+        <text x="810" y="78" text-anchor="middle" font-size="6" fill="#1b5e20">#2</text>
+        <text x="775" y="58" text-anchor="middle" font-size="6.5" fill="#1b5e20" font-style="italic">trellised &uarr; fence</text>
+
+        <!-- Banana #5: front-left -->
+        <circle cx="730" cy="133" r="11" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+        <text x="730" y="136" text-anchor="middle" font-size="6" font-weight="700" fill="#e65100">B5</text>
+        <!-- Banana #6: front-right -->
+        <circle cx="820" cy="133" r="11" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+        <text x="820" y="136" text-anchor="middle" font-size="6" font-weight="700" fill="#e65100">B6</text>
+
+        <!-- Vine roots on right edge -->
+        <circle cx="853" cy="60" r="9" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+        <text x="853" y="63" text-anchor="middle" font-size="5.5" font-weight="700" fill="#c62828">WM</text>
+        <circle cx="853" cy="105" r="9" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+        <text x="853" y="103" text-anchor="middle" font-size="5.5" font-weight="700" fill="#e65100">Str</text>
+        <text x="853" y="111" text-anchor="middle" font-size="5" fill="#e65100">&times;2</text>
+
+        <!-- Trail arrows right -->
+        <line x1="865" y1="60" x2="920" y2="60" stroke="#4a9e3f" stroke-width="1.5" marker-end="url(#aR)"/>
+        <line x1="865" y1="105" x2="920" y2="105" stroke="#4a9e3f" stroke-width="1.5" marker-end="url(#aR)"/>
+        <text x="928" y="57" font-size="8" font-weight="600" fill="#c62828">Watermelon</text>
+        <text x="928" y="66" font-size="7" fill="#4a9e3f">trails 6-8 ft</text>
+        <text x="928" y="102" font-size="8" font-weight="600" fill="#e65100">Straightneck &times;2</text>
+        <text x="928" y="111" font-size="7" fill="#4a9e3f">2-3 ft</text>
+        <text x="890" y="148" text-anchor="middle" font-size="7" fill="#2e7d32" font-weight="600">rooted in bed</text>
+
+        <!-- FRONT LABEL -->
+        <rect x="120" y="168" width="740" height="18" rx="4" fill="#e8f5e9"/>
+        <text x="490" y="181" text-anchor="middle" font-size="10" fill="#2e7d32" font-weight="600">FRONT (faces yard &mdash; walkway for access)</text>
+
+        <!-- LEGEND -->
+        <text x="120" y="210" font-size="10" font-weight="700" fill="#5d4037">Legend</text>
+        <circle cx="132" cy="225" r="7" fill="#ffcdd2" stroke="#b71c1c" stroke-width="1.2"/>
+        <text x="145" y="228" font-size="9" fill="#424242">Tomato</text>
+        <circle cx="220" cy="225" r="7" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.2"/>
+        <text x="233" y="228" font-size="9" fill="#424242">Herb</text>
+        <circle cx="290" cy="225" r="7" fill="#fff9c4" stroke="#f57f17" stroke-width="1.2"/>
+        <text x="303" y="228" font-size="9" fill="#424242">Sweet Pepper</text>
+        <circle cx="410" cy="225" r="7" fill="#ffe0b2" stroke="#e65100" stroke-width="1.2"/>
+        <text x="423" y="228" font-size="9" fill="#424242">Hot Pepper</text>
+        <circle cx="530" cy="225" r="7" fill="#c8e6c9" stroke="#1b5e20" stroke-width="1.2"/>
+        <text x="543" y="228" font-size="9" fill="#424242">Cucumber</text>
+        <circle cx="630" cy="225" r="7" fill="#ce93d8" stroke="#4a148c" stroke-width="1.2"/>
+        <text x="643" y="228" font-size="9" fill="#424242">Eggplant</text>
+        <circle cx="730" cy="225" r="7" fill="#dcedc8" stroke="#33691e" stroke-width="1.2"/>
+        <text x="743" y="228" font-size="9" fill="#424242">Lettuce</text>
+
+        <circle cx="132" cy="248" r="7" fill="#fff3e0" stroke="#e65100" stroke-width="1.2"/>
+        <text x="145" y="251" font-size="9" fill="#424242">Squash (trails)</text>
+        <circle cx="280" cy="248" r="7" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+        <text x="293" y="251" font-size="9" fill="#424242">Watermelon (trails)</text>
+        <rect x="440" y="242" width="12" height="12" rx="2" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1" stroke-dasharray="2,1"/>
+        <text x="458" y="251" font-size="9" fill="#424242">Between-bed strip (companion)</text>
+        <line x1="660" y1="248" x2="690" y2="248" stroke="#4a9e3f" stroke-width="1.5" marker-end="url(#aR)"/>
+        <text x="698" y="251" font-size="9" fill="#424242">Vine trailing direction</text>
+
+        <!-- Scale note -->
+        <text x="500" y="280" text-anchor="middle" font-size="9" fill="#8d6e63" font-style="italic">Beds drawn to scale: each is 48" wide (along fence) &times; 32" deep. Circles approximate mature plant footprint.</text>
+      </svg>
     </div>
 
-    <!-- Bed detail cards -->
+    <!-- Bed detail cards with specific placement -->
+    <h3 style="margin-top:2rem;">Specific Placement Guide</h3>
+    <p style="color:var(--gray-600); margin-bottom:1.25rem; font-size:0.9rem;">Exact positions measured from the back-left corner of each bed. &ldquo;Back&rdquo; = fence side, &ldquo;Front&rdquo; = yard side.</p>
+
     <div class="bed-details">
       <div class="bed-card">
-        <div class="bed-card-header bed1">Bed 1 &mdash; Tomato + Basil + Spaghetti Squash</div>
+        <div class="bed-card-header bed1">Bed 1 (left end) &mdash; Tomato + Basil + Squash Roots</div>
         <div class="bed-card-body">
           <table>
-            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <thead><tr><th>Plant</th><th>Position (from back-left corner)</th><th>Spacing</th></tr></thead>
             <tbody>
-              <tr><td>Back center</td><td>Better Boy Tomato (1) &mdash; caged against fence</td></tr>
-              <tr><td>Front-left</td><td>Sweet Basil (1)</td></tr>
-              <tr><td>Front-right</td><td>Purple Basil (1)</td></tr>
-              <tr><td>Front edge</td><td>Spaghetti Squash (1) &mdash; vine trails 6-8 ft</td></tr>
+              <tr><td>Better Boy Tomato</td><td>24" from left, 8" from fence (center-back)</td><td>18-24" cage footprint</td></tr>
+              <tr><td>Sweet Basil</td><td>24" from left, 22" from fence (center-front)</td><td>14" from tomato, directly below</td></tr>
+              <tr><td>Spaghetti Squash</td><td>Left edge, 6" from fence (back corner)</td><td>Root at edge, vine trails left 6-8 ft</td></tr>
+              <tr><td>Crookneck &times;2</td><td>Left edge, 14" &amp; 22" from fence</td><td>Roots at edge, bush left 2-3 ft</td></tr>
+              <tr><td>Straightneck &times;2</td><td>Left edge, 26" from fence (front corner area)</td><td>Roots at edge, bush left 2-3 ft</td></tr>
             </tbody>
           </table>
-          <div class="note">Basil repels aphids, whiteflies, and hornworm moths from the tomato. Better Boy will produce into October in 8a.</div>
+          <div class="note">Tomato centered with basil directly below for maximum pest deterrence. Squash roots stagger along the entire left 32" edge &mdash; spaghetti squash nearest the fence (longest viner gets most room), bush types toward the front.</div>
         </div>
       </div>
       <div class="bed-card">
-        <div class="bed-card-header bed2">Bed 2 &mdash; Cherry Tomato + Lettuce + Crookneck</div>
+        <div class="bed-card-header bed2">Bed 2 &mdash; Cherry Tomato + Living Mulch Guild</div>
         <div class="bed-card-body">
           <table>
-            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <thead><tr><th>Plant</th><th>Position (from back-left corner)</th><th>Spacing</th></tr></thead>
             <tbody>
-              <tr><td>Back center</td><td>Yellow Pear Cherry Tomato (1) &mdash; caged</td></tr>
-              <tr><td>Front</td><td>Red Romaine Lettuce (1)</td></tr>
-              <tr><td>Front edge</td><td>Crookneck Squash (2) &mdash; bush into yard</td></tr>
+              <tr><td>Yellow Pear Cherry Tomato</td><td>24" from left, 6" from fence (center-back)</td><td>18-24" cage footprint</td></tr>
+              <tr><td>Red Romaine Lettuce</td><td>6" from left, 16" from fence (left-center)</td><td>Shaded by tomato cage</td></tr>
+              <tr><td>Purple Basil</td><td>14" from left, 26" from fence (front-center-left)</td><td>12" from tomato</td></tr>
+              <tr><td>Eggplant Gretel</td><td>28" from left, 26" from fence (front-center-right)</td><td>12" from basil</td></tr>
+              <tr><td>Banana Pepper #1</td><td>4" from left, 26" from fence (front-left edge)</td><td>10" from lettuce</td></tr>
+              <tr><td>Banana Pepper #2</td><td>42" from left, 26" from fence (front-right edge)</td><td>Flanks eggplant</td></tr>
             </tbody>
           </table>
-          <div class="note">Lettuce benefits from tomato's afternoon shade. Will bolt by mid-June in 8a heat &mdash; harvest aggressively. Once pulled, crookneck fills the space.</div>
+          <div class="note">Dense &ldquo;living mulch&rdquo; layout keeps the soil shaded and cool in Zone 8a heat. Tomato cage rises above everything. Lettuce gets afternoon shade from the tomato. Banana peppers flank the edges, and eggplant&rsquo;s silver-green foliage fills the remaining front space with purple basil bridging the gap.</div>
         </div>
       </div>
       <div class="bed-card">
-        <div class="bed-card-header bed3">Bed 3 &mdash; Peppers + Straightneck Squash</div>
+        <div class="bed-card-header bed3">Bed 3 &mdash; Peppers</div>
         <div class="bed-card-body">
           <table>
-            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <thead><tr><th>Plant</th><th>Position (from back-left corner)</th><th>Spacing</th></tr></thead>
             <tbody>
-              <tr><td>Back-left</td><td>Red Bell Sweet Pepper (1)</td></tr>
-              <tr><td>Back-right</td><td>Purple Bell Sweet Pepper (1)</td></tr>
-              <tr><td>Mid-front</td><td>Hot Banana Pepper (4) &mdash; 12" spacing</td></tr>
-              <tr><td>Front edge</td><td>Straightneck Squash (4) &mdash; bush into yard</td></tr>
+              <tr><td>Red Bell Sweet Pepper</td><td>12" from left, 8" from fence</td><td>24" from other bell</td></tr>
+              <tr><td>Purple Bell Sweet Pepper</td><td>36" from left, 8" from fence</td><td>24" apart, against fence</td></tr>
+              <tr><td>Banana Pepper #3</td><td>12" from left, 22" from fence</td><td rowspan="2">24" spacing, below their respective bells</td></tr>
+              <tr><td>Banana Pepper #4</td><td>36" from left, 22" from fence</td></tr>
             </tbody>
           </table>
-          <div class="note">All peppers share identical water and feed needs. Bells produce through October in 8a. Banana peppers are prolific July through frost.</div>
+          <div class="note">Clean grid layout. Each bell pepper is backed by a banana pepper directly in front of it. With only 4 plants, airflow is excellent and this becomes the easiest bed to access. No trailing plants.</div>
         </div>
       </div>
       <div class="bed-card">
-        <div class="bed-card-header bed4">Bed 4 &mdash; Cucumber + Eggplant + Watermelon</div>
+        <div class="bed-card-header bed4">Bed 4 (right end) &mdash; Cucumber + Pepper + Vine Roots</div>
         <div class="bed-card-body">
           <table>
-            <thead><tr><th>Position</th><th>Plant</th></tr></thead>
+            <thead><tr><th>Plant</th><th>Position (from back-left corner)</th><th>Spacing</th></tr></thead>
             <tbody>
-              <tr><td>Back</td><td>Cucumber Burpless (2) &mdash; trellised up fence</td></tr>
-              <tr><td>Front-center</td><td>Eggplant Gretel (1)</td></tr>
-              <tr><td>Front corners</td><td>Hot Banana Pepper (2)</td></tr>
-              <tr><td>Front edge</td><td>Watermelon Sugar Baby (2) &mdash; vines 6-8 ft</td></tr>
+              <tr><td>Cucumber #1</td><td>15" from left, 6" from fence</td><td rowspan="2">18" apart, trellised up fence</td></tr>
+              <tr><td>Cucumber #2</td><td>33" from left, 6" from fence</td></tr>
+              <tr><td>Banana Pepper #5</td><td>10" from left, 22" from fence (front-left)</td><td>18" apart across front row</td></tr>
+              <tr><td>Banana Pepper #6</td><td>38" from left, 22" from fence (front-right)</td><td>Keeps pests off cucumbers</td></tr>
+              <tr><td>Watermelon Sugar Baby</td><td>Right edge, 10" from fence</td><td>Root at edge, vine trails right 6-8 ft</td></tr>
+              <tr><td>Straightneck &times;2</td><td>Right edge, 26" from fence</td><td>Roots at edge, bush right 2-3 ft</td></tr>
             </tbody>
           </table>
-          <div class="note">Cucumbers climb the fence. Gretel loves 8a heat &mdash; fruit in 60-65 days. Banana pepper foliage deters flea beetles from eggplant. Place straw under developing melons.</div>
+          <div class="note">Cucumbers climb the fence trellis, freeing the floor. Banana peppers spread across the front row. Watermelon and straightneck roots stagger down the right 32" edge, trailing away from the beds. Place straw under developing melons.</div>
         </div>
       </div>
     </div>
+
+    <!-- Between-Bed Strips -->
+    <h3 id="strips" style="margin-top:2.5rem;">Between-Bed Strips (6.5" &times; 32" &times; 3)</h3>
+    <p style="color:var(--gray-600); margin-bottom:1.25rem; font-size:0.9rem;">The narrow gaps between beds are planted with companion species that deter pests and attract beneficial insects right where they&rsquo;re needed most.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem;">
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:var(--herb); color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.9rem;">Strip 1 &mdash; Between Bed 1 &amp; Bed 2</div>
+        <div style="padding:1rem;">
+          <div style="font-weight:600; font-size:1rem; margin-bottom:0.35rem;">Chives</div>
+          <ul style="font-size:0.85rem; color:var(--gray-600); padding-left:1.1rem; margin:0;">
+            <li>Plant a single row down the 32&rdquo; strip</li>
+            <li>Allium scent repels aphids from both tomato beds</li>
+            <li>Perennial in 8a &mdash; plant once, harvest for years</li>
+            <li>Purple flowers in spring attract pollinators</li>
+            <li>Edible &mdash; snip tops for cooking anytime</li>
+          </ul>
+        </div>
+      </div>
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:var(--herb); color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.9rem;">Strip 2 &mdash; Between Bed 2 &amp; Bed 3</div>
+        <div style="padding:1rem;">
+          <div style="font-weight:600; font-size:1rem; margin-bottom:0.35rem;">Sweet Alyssum</div>
+          <ul style="font-size:0.85rem; color:var(--gray-600); padding-left:1.1rem; margin:0;">
+            <li>Only 4-6&rdquo; tall, spreads to fill the strip perfectly</li>
+            <li>Attracts parasitic wasps and hoverflies that eat aphids</li>
+            <li>Living mulch &mdash; suppresses weeds between beds</li>
+            <li>Tiny white flowers bloom all season</li>
+            <li>Reseeds itself &mdash; comes back next year</li>
+          </ul>
+        </div>
+      </div>
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:var(--herb); color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.9rem;">Strip 3 &mdash; Between Bed 3 &amp; Bed 4</div>
+        <div style="padding:1rem;">
+          <div style="font-weight:600; font-size:1rem; margin-bottom:0.35rem;">French Marigolds (dwarf)</div>
+          <ul style="font-size:0.85rem; color:var(--gray-600); padding-left:1.1rem; margin:0;">
+            <li>Use compact varieties like &lsquo;Bonanza&rsquo; &mdash; 8-10&rdquo; tall, fits the width</li>
+            <li>Repels nematodes, whiteflies, and aphids</li>
+            <li>Placed between peppers and eggplant &mdash; maximum pest defense</li>
+            <li>Attracts hoverflies that prey on garden pests</li>
+            <li>Bright orange/yellow blooms all season</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Climbing Support Diagram -->
+    <h3 id="supports" style="margin-top:2.5rem;">Climbing &amp; Structural Support</h3>
+    <p style="color:var(--gray-600); margin-bottom:1.25rem; font-size:0.9rem;">Three plants need vertical support against the fence. Here&rsquo;s what each needs.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.25rem;">
+
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:var(--tomato); color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.9rem;">Bed 1 &mdash; Better Boy Tomato</div>
+        <div style="padding:1rem;">
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div style="flex-shrink:0; width:80px; height:120px; position:relative; background:linear-gradient(to top, var(--earth-100) 0%, var(--earth-100) 30%, transparent 30%); border-radius:6px; border:1px solid var(--gray-200);">
+              <div style="position:absolute; bottom:0; left:0; right:0; height:30%; background:var(--earth-100); border-radius:0 0 5px 5px;"></div>
+              <div style="position:absolute; bottom:30%; left:50%; transform:translateX(-50%); width:2px; height:60%; background:var(--gray-600);"></div>
+              <div style="position:absolute; bottom:55%; left:25%; width:50%; height:40%; border:2px solid var(--gray-400); border-radius:2px; background:transparent;"></div>
+              <div style="position:absolute; top:2px; left:50%; transform:translateX(-50%); width:30px; height:20px; background:var(--green-500); border-radius:50% 50% 30% 30%; opacity:0.7;"></div>
+              <div style="position:absolute; top:2px; right:0; font-size:0.5rem; color:var(--gray-600); writing-mode:vertical-rl;">FENCE</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.35rem;">Tomato Cage or Stakes</div>
+              <ul style="font-size:0.82rem; color:var(--gray-600); padding-left:1.1rem; margin:0;">
+                <li>Use a sturdy cage (at least 5 ft tall) or stake with ties</li>
+                <li>Place cage at planting time to avoid root damage later</li>
+                <li>Can also tie main stem to fence posts with soft twine</li>
+                <li>Indeterminate &mdash; grows 6-8 ft in Zone 8a&rsquo;s long season</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:var(--pepper-green); color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.9rem;">Bed 2 &mdash; Yellow Pear Cherry Tomato</div>
+        <div style="padding:1rem;">
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div style="flex-shrink:0; width:80px; height:120px; position:relative; background:linear-gradient(to top, var(--earth-100) 0%, var(--earth-100) 30%, transparent 30%); border-radius:6px; border:1px solid var(--gray-200);">
+              <div style="position:absolute; bottom:0; left:0; right:0; height:30%; background:var(--earth-100); border-radius:0 0 5px 5px;"></div>
+              <div style="position:absolute; bottom:30%; left:50%; transform:translateX(-50%); width:2px; height:60%; background:var(--gray-600);"></div>
+              <div style="position:absolute; bottom:55%; left:25%; width:50%; height:40%; border:2px solid var(--gray-400); border-radius:2px; background:transparent;"></div>
+              <div style="position:absolute; top:0; left:35%; width:12px; height:12px; background:var(--sun-400); border-radius:50%;"></div>
+              <div style="position:absolute; top:0; left:55%; width:10px; height:10px; background:var(--sun-300); border-radius:50%;"></div>
+              <div style="position:absolute; top:10px; left:45%; width:8px; height:8px; background:var(--sun-400); border-radius:50%;"></div>
+              <div style="position:absolute; top:2px; right:0; font-size:0.5rem; color:var(--gray-600); writing-mode:vertical-rl;">FENCE</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.35rem;">Tall Cage or Trellis</div>
+              <ul style="font-size:0.82rem; color:var(--gray-600); padding-left:1.1rem; margin:0;">
+                <li>Needs the tallest support &mdash; Yellow Pear is extremely vigorous</li>
+                <li>Use a 6 ft cage or trellis panel leaned against the fence</li>
+                <li>Prune aggressively &mdash; remove suckers weekly or it will engulf the bed</li>
+                <li>Heavy fruit clusters may need individual support ties</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:var(--cucumber); color:var(--gray-900); padding:0.6rem 1rem; font-weight:700; font-size:0.9rem;">Bed 4 &mdash; Cucumber Burpless &times;2</div>
+        <div style="padding:1rem;">
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div style="flex-shrink:0; width:80px; height:120px; position:relative; background:linear-gradient(to top, var(--earth-100) 0%, var(--earth-100) 30%, transparent 30%); border-radius:6px; border:1px solid var(--gray-200);">
+              <div style="position:absolute; bottom:0; left:0; right:0; height:30%; background:var(--earth-100); border-radius:0 0 5px 5px;"></div>
+              <div style="position:absolute; bottom:30%; right:0; width:2px; height:65%; background:var(--earth-500);"></div>
+              <div style="position:absolute; bottom:30%; right:0; width:40px; height:65%; border-right:2px solid var(--earth-500); background:repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(0,0,0,0.06) 4px, rgba(0,0,0,0.06) 5px);"></div>
+              <div style="position:absolute; top:10px; right:8px; width:14px; height:6px; background:var(--cucumber); border-radius:3px;"></div>
+              <div style="position:absolute; top:25px; right:14px; width:12px; height:5px; background:var(--cucumber); border-radius:3px;"></div>
+              <div style="position:absolute; top:2px; right:0; font-size:0.5rem; color:var(--gray-600); writing-mode:vertical-rl;">FENCE</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.35rem;">Fence Trellis or Netting</div>
+              <ul style="font-size:0.82rem; color:var(--gray-600); padding-left:1.1rem; margin:0;">
+                <li>Attach wire mesh, cattle panel, or trellis netting directly to the fence</li>
+                <li>Cucumbers climb with tendrils &mdash; they&rsquo;ll grab the mesh naturally</li>
+                <li>Train vines upward in the first weeks; they&rsquo;ll self-climb after</li>
+                <li>Vertical growing keeps fruit clean, straight, and easy to spot</li>
+                <li>Space the 2 plants 18-24&rdquo; apart along the fence</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.25rem; background:var(--gray-100); border-radius:8px; padding:0.75rem 1rem; border-left:3px solid var(--earth-600);">
+      <div style="font-weight:600; font-size:0.88rem; margin-bottom:0.25rem; color:var(--earth-700);">No support needed</div>
+      <div style="font-size:0.82rem; color:var(--gray-600);">Peppers, eggplant, basil, lettuce, and all squash/watermelon are self-supporting or ground-trailing. Pepper stems may benefit from a short stake (12-18&rdquo;) if heavy with fruit in late season, but it&rsquo;s optional.</div>
+    </div>
+
   </div>
 </section>
 
@@ -757,30 +1043,218 @@
 <section id="pots">
   <div class="container">
     <span class="section-label">Zone 2</span>
-    <h2>Pots</h2>
-    <p class="section-desc">Two railing pots (~10"&times;24" oval) for delicate herbs, plus one dedicated strawberry pot. Movable for sun/shade management.</p>
-    <div class="pots-grid">
-      <div class="pot-card">
-        <div class="pot-icon">&#127807;</div>
-        <div class="pot-info">
-          <h4>Railing Pot 1 &mdash; Chamomile</h4>
-          <p>Delicate, shallow-rooted. Place near beds &mdash; attracts hoverflies and parasitic wasps that patrol vegetables. Move to partial shade in peak July-August heat.</p>
+    <h2>Deck Railing Pots &mdash; Kitchen Herb Garden</h2>
+    <p class="section-desc">Three herb railing pots and two strawberry railing pots (~10"&times;24" each, rounded rectangle) on the deck, separate from the garden beds. Twelve culinary herbs chosen for daily kitchen use and Zone 8a heat tolerance, plus 6 strawberry crowns across 2 pots.</p>
+
+    <!-- Pot diagrams -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:2rem; margin-bottom:2rem;">
+
+      <!-- POT 1 DIAGRAM -->
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:#558b2f; color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.95rem;">Pot 1 &mdash; Everyday Essentials</div>
+        <div style="padding:1rem; text-align:center;">
+          <svg viewBox="0 0 320 160" style="max-width:320px; width:100%;" aria-label="Railing Pot 1 layout">
+            <!-- Rounded-rectangle pot outline -->
+            <rect x="20" y="30" width="280" height="100" rx="50" ry="50" fill="#f5f0e6" stroke="#8d6e63" stroke-width="2.5"/>
+            <text x="160" y="20" text-anchor="middle" font-size="9" fill="#8d6e63" font-style="italic">~10" &times; 24" rounded rectangle &mdash; top-down view</text>
+
+            <!-- Thyme: left end -->
+            <circle cx="75" cy="80" r="20" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+            <text x="75" y="78" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1b5e20">Thyme</text>
+
+            <!-- Chamomile: center-left -->
+            <circle cx="140" cy="65" r="20" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+            <text x="140" y="62" text-anchor="middle" font-size="7" font-weight="700" fill="#e65100">Chamo-</text>
+            <text x="140" y="71" text-anchor="middle" font-size="7" font-weight="700" fill="#e65100">mile</text>
+
+            <!-- Parsley: center-right -->
+            <circle cx="200" cy="95" r="22" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1.5"/>
+            <text x="200" y="93" text-anchor="middle" font-size="7" font-weight="700" fill="#1b5e20">Parsley</text>
+            <text x="200" y="102" text-anchor="middle" font-size="6" fill="#1b5e20">(flat-leaf)</text>
+
+            <!-- Chives: right end -->
+            <circle cx="265" cy="80" r="20" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+            <text x="265" y="78" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1b5e20">Chives</text>
+
+            <!-- Labels -->
+            <text x="160" y="148" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="600">FRONT (railing side)</text>
+          </svg>
+          <div style="text-align:left; margin-top:0.75rem; font-size:0.85rem; color:var(--gray-600); line-height:1.5;">
+            <strong>Layout logic:</strong> Thyme and chives anchor the rounded ends (both upright, narrow footprint). Chamomile sits center-back (tallest, airy). Parsley fills center-front (bushy, tolerates the slight shade from chamomile behind it).
+          </div>
         </div>
       </div>
-      <div class="pot-card">
-        <div class="pot-icon">&#127807;</div>
-        <div class="pot-info">
-          <h4>Railing Pot 2 &mdash; Sage</h4>
-          <p>Hates wet feet &mdash; pot drainage is ideal. Place near Bed 4 to deter flea beetles from eggplant. Perennial in 8a &mdash; overwinters in pot with minimal protection.</p>
+
+      <!-- POT 2 DIAGRAM -->
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:#558b2f; color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.95rem;">Pot 2 &mdash; Fresh Flavor &amp; Pickles</div>
+        <div style="padding:1rem; text-align:center;">
+          <svg viewBox="0 0 320 160" style="max-width:320px; width:100%;" aria-label="Railing Pot 2 layout">
+            <!-- Rounded-rectangle pot outline -->
+            <rect x="20" y="30" width="280" height="100" rx="50" ry="50" fill="#f5f0e6" stroke="#8d6e63" stroke-width="2.5"/>
+            <text x="160" y="20" text-anchor="middle" font-size="9" fill="#8d6e63" font-style="italic">~10" &times; 24" rounded rectangle &mdash; top-down view</text>
+
+            <!-- Tarragon: left end -->
+            <circle cx="75" cy="80" r="20" fill="#dcedc8" stroke="#558b2f" stroke-width="1.5"/>
+            <text x="75" y="76" text-anchor="middle" font-size="6.5" font-weight="700" fill="#33691e">Tarra-</text>
+            <text x="75" y="85" text-anchor="middle" font-size="6.5" font-weight="700" fill="#33691e">gon</text>
+
+            <!-- Dill: center-left (tallest) -->
+            <circle cx="140" cy="65" r="20" fill="#e8f5e9" stroke="#388e3c" stroke-width="1.5"/>
+            <text x="140" y="68" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1b5e20">Dill</text>
+
+            <!-- Cilantro: center-right -->
+            <circle cx="200" cy="95" r="22" fill="#b9f6ca" stroke="#00c853" stroke-width="1.5"/>
+            <text x="200" y="93" text-anchor="middle" font-size="7" font-weight="700" fill="#1b5e20">Cilantro</text>
+            <text x="200" y="102" text-anchor="middle" font-size="5.5" fill="#1b5e20">resow 3 wks</text>
+
+            <!-- Oregano: right end -->
+            <circle cx="265" cy="80" r="20" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+            <text x="265" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#1b5e20">Oregano</text>
+
+            <!-- Labels -->
+            <text x="160" y="148" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="600">FRONT (railing side)</text>
+          </svg>
+          <div style="text-align:left; margin-top:0.75rem; font-size:0.85rem; color:var(--gray-600); line-height:1.5;">
+            <strong>Layout logic:</strong> Tarragon and oregano anchor the rounded ends (both spread sideways to fill). Dill sits center-back (tallest, feathery &mdash; won&rsquo;t block sun). Cilantro fills center-front (harvest often, resow every 3 weeks since it bolts fast in 8a heat).
+          </div>
         </div>
       </div>
-      <div class="pot-card strawberry">
-        <div class="pot-icon">&#127827;</div>
-        <div class="pot-info">
-          <h4>Strawberry Pot &mdash; Strawberries</h4>
-          <p>Full sun. Runners cascade over edges. Check moisture daily &mdash; pots dry fast in summer. Light fruit this year, heavy production next spring. Hardy in 8a with light crown mulch.</p>
+      <!-- POT 3 DIAGRAM -->
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:#558b2f; color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.95rem;">Pot 3 &mdash; Backups &amp; Bold Flavors</div>
+        <div style="padding:1rem; text-align:center;">
+          <svg viewBox="0 0 320 160" style="max-width:320px; width:100%;" aria-label="Railing Pot 3 layout">
+            <!-- Rounded-rectangle pot outline -->
+            <rect x="20" y="30" width="280" height="100" rx="50" ry="50" fill="#f5f0e6" stroke="#8d6e63" stroke-width="2.5"/>
+            <text x="160" y="20" text-anchor="middle" font-size="9" fill="#8d6e63" font-style="italic">~10" &times; 24" rounded rectangle &mdash; top-down view</text>
+
+            <!-- Lemongrass: left end (tall) -->
+            <circle cx="75" cy="80" r="20" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+            <text x="75" y="76" text-anchor="middle" font-size="6" font-weight="700" fill="#e65100">Lemon-</text>
+            <text x="75" y="85" text-anchor="middle" font-size="6" font-weight="700" fill="#e65100">grass</text>
+
+            <!-- Cilantro #2: center-left -->
+            <circle cx="140" cy="65" r="20" fill="#b9f6ca" stroke="#00c853" stroke-width="1.5"/>
+            <text x="140" y="62" text-anchor="middle" font-size="6.5" font-weight="700" fill="#1b5e20">Cilantro</text>
+            <text x="140" y="71" text-anchor="middle" font-size="5.5" fill="#1b5e20">#2</text>
+
+            <!-- Curly Parsley: center-right -->
+            <circle cx="200" cy="95" r="20" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1.5"/>
+            <text x="200" y="93" text-anchor="middle" font-size="6.5" font-weight="700" fill="#1b5e20">Parsley</text>
+            <text x="200" y="102" text-anchor="middle" font-size="5.5" fill="#1b5e20">(curly)</text>
+
+            <!-- Marjoram: right end -->
+            <circle cx="265" cy="80" r="20" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+            <text x="265" y="76" text-anchor="middle" font-size="6.5" font-weight="700" fill="#33691e">Marjo-</text>
+            <text x="265" y="85" text-anchor="middle" font-size="6.5" font-weight="700" fill="#33691e">ram</text>
+
+            <!-- Labels -->
+            <text x="160" y="148" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="600">FRONT (railing side)</text>
+          </svg>
+          <div style="text-align:left; margin-top:0.75rem; font-size:0.85rem; color:var(--gray-600); line-height:1.5;">
+            <strong>Layout logic:</strong> Lemongrass anchors the left end (tallest, doubles as mosquito deterrent). Cilantro #2 staggers with Pot 2&rsquo;s cilantro so you always have fresh leaves. Curly parsley backs up your flat-leaf. Marjoram fills the right end.
+          </div>
         </div>
       </div>
+    </div>
+
+    <!-- Herb details -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-bottom:2rem;">
+      <div style="background:var(--white); border-radius:10px; padding:1rem; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <h4 style="margin:0 0 0.4rem; color:#558b2f;">Pot 1 &mdash; Everyday Essentials</h4>
+        <ul style="margin:0; padding-left:1.2rem; font-size:0.88rem; line-height:1.7; color:var(--gray-700);">
+          <li><strong>Chamomile</strong> &mdash; attracts beneficial insects, calming tea. Move to partial shade in peak July heat.</li>
+          <li><strong>Thyme</strong> &mdash; roasts, soups, mushrooms, pan sauces. Drought-tough, barely needs watering.</li>
+          <li><strong>Parsley (flat-leaf)</strong> &mdash; the most-used herb in any kitchen. Eggs, pasta, grains, chimichurri, everything.</li>
+          <li><strong>Chives</strong> &mdash; snip and sprinkle on eggs, potatoes, sour cream, salads. Nearly impossible to kill.</li>
+        </ul>
+      </div>
+      <div style="background:var(--white); border-radius:10px; padding:1rem; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <h4 style="margin:0 0 0.4rem; color:#558b2f;">Pot 2 &mdash; Fresh Flavor &amp; Pickles</h4>
+        <ul style="margin:0; padding-left:1.2rem; font-size:0.88rem; line-height:1.7; color:var(--gray-700);">
+          <li><strong>Dill</strong> &mdash; pickle your cucumbers, tzatziki, fish, potato salad. Resow seeds when it bolts.</li>
+          <li><strong>Oregano</strong> &mdash; pizza, pasta sauce, roasted veggies, marinades. Spreads to fill its space; dries beautifully.</li>
+          <li><strong>Cilantro</strong> &mdash; tacos, salsa, rice, curries, guac. Bolts fast in heat &mdash; resow every 3 weeks.</li>
+          <li><strong>French Tarragon</strong> &mdash; chicken, eggs, vinaigrettes, b&eacute;arnaise. Must be bought as a plant (not seeds). Perennial in 8a.</li>
+        </ul>
+      </div>
+      <div style="background:var(--white); border-radius:10px; padding:1rem; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <h4 style="margin:0 0 0.4rem; color:#558b2f;">Pot 3 &mdash; Backups &amp; Bold Flavors</h4>
+        <ul style="margin:0; padding-left:1.2rem; font-size:0.88rem; line-height:1.7; color:var(--gray-700);">
+          <li><strong>Lemongrass</strong> &mdash; Thai/Vietnamese curries and soups. Natural mosquito deterrent on the deck. Buy live stalks from H Mart.</li>
+          <li><strong>Cilantro #2</strong> &mdash; stagger with Pot 2&rsquo;s cilantro so one is always ready. Sow 2 weeks offset.</li>
+          <li><strong>Parsley (curly)</strong> &mdash; different texture from flat-leaf. Great for garnish, tabbouleh, green sauces.</li>
+          <li><strong>Marjoram</strong> &mdash; sweeter, more delicate than oregano. Pizza, roasted veggies, tomato sauce, soups.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Strawberry railing pots -->
+    <h3 style="margin-top:1.5rem;">Strawberry Railing Pots</h3>
+    <p style="color:var(--gray-600); margin-bottom:1.25rem; font-size:0.9rem;">Two railing pots (~10"&times;24") dedicated to strawberries. The shallow profile works well &mdash; strawberries have shallow root systems and runners cascade over the edges.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:2rem; margin-bottom:2rem;">
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:#c62828; color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.95rem;">&#127827; Strawberry Pot A</div>
+        <div style="padding:1rem; text-align:center;">
+          <svg viewBox="0 0 320 160" style="max-width:320px; width:100%;" aria-label="Strawberry Pot A layout">
+            <rect x="20" y="30" width="280" height="100" rx="50" ry="50" fill="#ffebee" stroke="#c62828" stroke-width="2.5"/>
+            <text x="160" y="20" text-anchor="middle" font-size="9" fill="#8d6e63" font-style="italic">~10" &times; 24" rounded rectangle &mdash; top-down view</text>
+
+            <!-- Strawberry plants: 3 evenly spaced -->
+            <circle cx="95" cy="80" r="22" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1.5"/>
+            <text x="95" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">&#127827;</text>
+            <text x="95" y="88" text-anchor="middle" font-size="6" font-weight="700" fill="#b71c1c">8" apart</text>
+
+            <circle cx="165" cy="80" r="22" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1.5"/>
+            <text x="165" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">&#127827;</text>
+            <text x="165" y="88" text-anchor="middle" font-size="6" font-weight="700" fill="#b71c1c">8" apart</text>
+
+            <circle cx="235" cy="80" r="22" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1.5"/>
+            <text x="235" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">&#127827;</text>
+            <text x="235" y="88" text-anchor="middle" font-size="6" font-weight="700" fill="#b71c1c">8" apart</text>
+
+            <text x="160" y="148" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="600">3 crowns &mdash; runners cascade over edges</text>
+          </svg>
+        </div>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+        <div style="background:#c62828; color:white; padding:0.6rem 1rem; font-weight:700; font-size:0.95rem;">&#127827; Strawberry Pot B</div>
+        <div style="padding:1rem; text-align:center;">
+          <svg viewBox="0 0 320 160" style="max-width:320px; width:100%;" aria-label="Strawberry Pot B layout">
+            <rect x="20" y="30" width="280" height="100" rx="50" ry="50" fill="#ffebee" stroke="#c62828" stroke-width="2.5"/>
+            <text x="160" y="20" text-anchor="middle" font-size="9" fill="#8d6e63" font-style="italic">~10" &times; 24" rounded rectangle &mdash; top-down view</text>
+
+            <circle cx="95" cy="80" r="22" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1.5"/>
+            <text x="95" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">&#127827;</text>
+            <text x="95" y="88" text-anchor="middle" font-size="6" font-weight="700" fill="#b71c1c">8" apart</text>
+
+            <circle cx="165" cy="80" r="22" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1.5"/>
+            <text x="165" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">&#127827;</text>
+            <text x="165" y="88" text-anchor="middle" font-size="6" font-weight="700" fill="#b71c1c">8" apart</text>
+
+            <circle cx="235" cy="80" r="22" fill="#ef9a9a" stroke="#b71c1c" stroke-width="1.5"/>
+            <text x="235" y="78" text-anchor="middle" font-size="7" font-weight="700" fill="#b71c1c">&#127827;</text>
+            <text x="235" y="88" text-anchor="middle" font-size="6" font-weight="700" fill="#b71c1c">8" apart</text>
+
+            <text x="160" y="148" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="600">3 crowns &mdash; runners cascade over edges</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white); border-radius:10px; padding:1rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); margin-bottom:1rem;">
+      <h4 style="margin:0 0 0.4rem; color:#c62828;">Strawberry Railing Pot Care</h4>
+      <ul style="margin:0; padding-left:1.2rem; font-size:0.88rem; line-height:1.7; color:var(--gray-700);">
+        <li><strong>Spacing:</strong> 3 crowns per pot, ~8" apart. Runners will cascade over the edges naturally.</li>
+        <li><strong>Sun:</strong> Full sun (6+ hours). Move to afternoon shade only if leaves scorch in peak July/August.</li>
+        <li><strong>Water:</strong> Daily in summer &mdash; shallow pots dry fast. Twice daily in extreme heat. Keep soil moist but not waterlogged.</li>
+        <li><strong>Feed:</strong> Liquid fertilizer every 2 weeks during fruiting (balanced 10-10-10 or strawberry-specific).</li>
+        <li><strong>First year:</strong> Light fruit this season. Pinch early flowers to strengthen roots &mdash; heavy production next spring.</li>
+        <li><strong>Winter:</strong> Hardy in 8a. Mulch crowns lightly or move pots against the house wall for insulation.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -810,6 +1284,14 @@
               <div class="fy-plant-detail">Fully hardy in 8a. Evergreen shrub, 3-4 ft at maturity. Well-drained soil, 3 ft apart. Deer-resistant, fragrant, low maintenance.</div>
             </div>
             <span class="fy-qty">&times;2</span>
+          </div>
+          <div class="fy-plant">
+            <div class="fy-dot" style="background:#558b2f"></div>
+            <div class="fy-plant-info">
+              <div class="fy-plant-name">Sage (Common)</div>
+              <div class="fy-plant-detail">Perennial in 8a, 1-2 ft. Loves well-drained soil and full sun &mdash; same conditions as rosemary. Plant near rosemary. Deters flea beetles, cabbage moths. Huge leaves, strong flavor; one plant is plenty.</div>
+            </div>
+            <span class="fy-qty">&times;1</span>
           </div>
           <div class="fy-plant">
             <div class="fy-dot" style="background:#7b1fa2"></div>
@@ -867,23 +1349,23 @@
   <div class="container">
     <span class="section-label">Technique</span>
     <h2>Trailing Vine Management</h2>
-    <p class="section-desc">Squash and watermelon root in the beds but trail into the yard. Here&rsquo;s how to manage the vine zone.</p>
+    <p class="section-desc">Squash and watermelon root at the side edges of the end beds (Bed 1 left, Bed 4 right) and trail outward along the fence line, keeping the front of all beds clear for access.</p>
     <div class="tips-grid">
       <div class="tip-card">
-        <h4>Prep the Landing Zone</h4>
-        <p>Mow the yard in front of beds short. Lay cardboard or landscape fabric. Cover with straw mulch to suppress grass and prevent fruit rot.</p>
+        <h4>Prep the Side Zones</h4>
+        <p>Mow the yard areas to the left of Bed 1 and right of Bed 4 short. Lay cardboard or landscape fabric in a 6-8 ft zone extending outward. Cover with straw mulch.</p>
       </div>
       <div class="tip-card">
         <h4>Direct the Vines Weekly</h4>
-        <p>Gently steer vines to avoid tangling. Keep pathways clear. Redirect any that head toward walkways or each other.</p>
+        <p>Steer vines away from the beds and outward along the fence line. Keep the front of all beds clear as a walkway for harvesting and watering.</p>
       </div>
       <div class="tip-card">
         <h4>Protect Watermelon Fruit</h4>
         <p>Once fruit is golf-ball sized, slide cardboard or a small board underneath to prevent bottom rot from wet grass contact.</p>
       </div>
       <div class="tip-card">
-        <h4>Mowing Blackout</h4>
-        <p>The 6-8 ft zone in front of beds becomes vine territory from mid-June through harvest. Mow it short before planting, then mow around it all season.</p>
+        <h4>Mowing Blackout Zones</h4>
+        <p>Two areas become vine territory: the yard to the left of Bed 1 and the right of Bed 4 (6-8 ft out). The front of the beds stays accessible all season.</p>
       </div>
     </div>
   </div>
@@ -925,7 +1407,7 @@
             <td>Jun&ndash;Sep</td>
             <td>Flea Beetle <span class="threat-badge threat-med">Med</span></td>
             <td>Eggplant</td>
-            <td>Banana pepper companions help. Sage pot nearby. Row cover Gretel first 2-3 weeks if heavy.</td>
+            <td>Banana pepper companions in Bed 2 help. Row cover Gretel first 2-3 weeks if heavy.</td>
           </tr>
           <tr>
             <td>Jul&ndash;Aug</td>
@@ -970,7 +1452,22 @@
       <div class="defense-card">
         <h4>Sage</h4>
         <p>Deters flea beetles and cabbage moths from eggplant and brassicas.</p>
-        <div class="location">Railing pot near Bed 4</div>
+        <div class="location">Front yard &mdash; planted in ground near rosemary</div>
+      </div>
+      <div class="defense-card">
+        <h4>Chives</h4>
+        <p>Allium scent repels aphids from both tomato beds on either side.</p>
+        <div class="location">Strip between Bed 1 &amp; 2</div>
+      </div>
+      <div class="defense-card">
+        <h4>Sweet Alyssum</h4>
+        <p>Attracts parasitic wasps and hoverflies. Living mulch suppresses weeds.</p>
+        <div class="location">Strip between Bed 2 &amp; 3</div>
+      </div>
+      <div class="defense-card">
+        <h4>French Marigolds</h4>
+        <p>Repels nematodes, whiteflies, and aphids. Attracts hoverflies.</p>
+        <div class="location">Strip between Bed 3 &amp; 4</div>
       </div>
       <div class="defense-card">
         <h4>Rosemary &times;2</h4>
@@ -1066,7 +1563,7 @@
         <div class="cal-body"><ul>
           <li>Plant everything</li>
           <li>Mulch all beds 2-3 inches deep</li>
-          <li>Prep vine landing zone with cardboard and straw</li>
+          <li>Prep vine zones on left of Bed 1 and right of Bed 4 with cardboard and straw</li>
           <li>Set up trellises on fence for cucumbers and tomatoes</li>
         </ul></div>
       </div>
@@ -1146,25 +1643,30 @@
   <div class="container">
     <span class="section-label">Summary</span>
     <h2>Full Plant Accounting</h2>
-    <p class="section-desc">All 24 items, 39 individual plants &mdash; every one placed.</p>
+    <p class="section-desc">All original items plus 10 new deck herbs, 5 additional strawberry crowns, 3 companion species in between-bed strips, and sage moved to the front yard.</p>
     <div class="tally-wrap">
       <table class="tally-table">
         <thead>
           <tr><th>Zone</th><th>Plants</th><th>Count</th></tr>
         </thead>
         <tbody>
-          <tr><td>Bed 1</td><td>Better Boy Tomato (1), Sweet Basil (1), Purple Basil (1), Spaghetti Squash (1 trails)</td><td>4</td></tr>
-          <tr><td>Bed 2</td><td>Yellow Pear Cherry Tomato (1), Red Romaine Lettuce (1), Crookneck Squash (2 trail)</td><td>4</td></tr>
-          <tr><td>Bed 3</td><td>Red Bell Pepper (1), Purple Bell Pepper (1), Hot Banana Pepper (4), Straightneck Squash (4 trail)</td><td>10</td></tr>
-          <tr><td>Bed 4</td><td>Cucumber Burpless (2), Eggplant Gretel (1), Hot Banana Pepper (2), Watermelon Sugar Baby (2 trail)</td><td>7</td></tr>
-          <tr><td>Railing Pot 1</td><td>Chamomile (1)</td><td>1</td></tr>
-          <tr><td>Railing Pot 2</td><td>Sage (1)</td><td>1</td></tr>
-          <tr><td>Strawberry Pot</td><td>Strawberries (1)</td><td>1</td></tr>
-          <tr><td>Front Yard &mdash; Sun</td><td>Sunflower (4), Rosemary (2), Mexican Sage (1), Black-Eyed Susan (1), Lobelia (1)</td><td>9</td></tr>
+          <tr><td>Bed 1 (left end)</td><td>Better Boy Tomato (1), Sweet Basil (1), Spaghetti Squash (1 trails left), Crookneck Squash (2 trail left), Straightneck Squash (2 trail left)</td><td>7</td></tr>
+          <tr><td>Bed 2</td><td>Yellow Pear Cherry Tomato (1), Red Romaine Lettuce (1), Purple Basil (1), Eggplant Gretel (1), Hot Banana Pepper (2)</td><td>6</td></tr>
+          <tr><td>Bed 3</td><td>Red Bell Pepper (1), Purple Bell Pepper (1), Hot Banana Pepper (2)</td><td>4</td></tr>
+          <tr><td>Bed 4 (right end)</td><td>Cucumber Burpless (2), Hot Banana Pepper (2), Watermelon Sugar Baby (1 trail right), Straightneck Squash (2 trail right)</td><td>7</td></tr>
+          <tr><td>Strip 1 (Bed 1-2)</td><td>Chives</td><td>&mdash;</td></tr>
+          <tr><td>Strip 2 (Bed 2-3)</td><td>Sweet Alyssum</td><td>&mdash;</td></tr>
+          <tr><td>Strip 3 (Bed 3-4)</td><td>French Marigolds (dwarf)</td><td>&mdash;</td></tr>
+          <tr><td>Herb Pot 1</td><td>Chamomile (1), Thyme (1), Parsley&mdash;flat-leaf (1), Chives (1)</td><td>4</td></tr>
+          <tr><td>Herb Pot 2</td><td>Dill (1), Oregano (1), Cilantro (1), French Tarragon (1)</td><td>4</td></tr>
+          <tr><td>Herb Pot 3</td><td>Lemongrass (1), Cilantro #2 (1), Parsley&mdash;curly (1), Marjoram (1)</td><td>4</td></tr>
+          <tr><td>Strawberry Pot A</td><td>Strawberry crowns (3)</td><td>3</td></tr>
+          <tr><td>Strawberry Pot B</td><td>Strawberry crowns (3)</td><td>3</td></tr>
+          <tr><td>Front Yard &mdash; Sun</td><td>Sunflower (4), Rosemary (2), Sage (1), Mexican Sage (1), Black-Eyed Susan (1), Lobelia (1)</td><td>10</td></tr>
           <tr><td>Front Yard &mdash; Shade</td><td>Heuchera Grande Amethyst (1), Belarina Amethyst Ice (1)</td><td>2</td></tr>
         </tbody>
         <tfoot>
-          <tr><td colspan="2">Total</td><td>39</td></tr>
+          <tr><td colspan="2">Total (original + 10 new deck herbs + 5 extra strawberry crowns + 3 strip companions)</td><td>54 + 3</td></tr>
         </tfoot>
       </table>
     </div>
