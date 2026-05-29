@@ -104,9 +104,11 @@
 
     footer { text-align: center; padding: 2rem; color: var(--gray-600); font-size: 0.85rem; border-top: 1px solid var(--gray-200); }
 
+    .maple-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     @media (max-width: 700px) {
       .hero h1 { font-size: 1.75rem; }
       .hero .meta { flex-direction: column; gap: 0.25rem; }
+      .maple-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -210,7 +212,7 @@
     <h2>Red Maple Trees (&times;2) &mdash; Living With Mature Maples</h2>
     <p class="section-desc">Your maples are already large and well-established. This section covers how to plant around them, use their shade productively, and keep them healthy.</p>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+    <div class="maple-grid">
 
       <!-- PLANTING AROUND ESTABLISHED MAPLES -->
       <div class="plant-card">
