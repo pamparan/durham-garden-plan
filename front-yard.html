@@ -148,231 +148,213 @@
 
 
     <div style="overflow-x:auto; margin:1.5rem 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 680" style="width:100%; max-width:420px; display:block; margin:0 auto; font-family:'Segoe UI',system-ui,sans-serif;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700" style="width:100%; max-width:400px; display:block; margin:0 auto; font-family:'Segoe UI',system-ui,sans-serif;">
         <defs>
-          <pattern id="grass" patternUnits="userSpaceOnUse" width="24" height="24">
-            <rect width="24" height="24" fill="#e8f5e9"/>
-            <line x1="6" y1="22" x2="6" y2="17" stroke="#c8e6c9" stroke-width="0.6"/>
-            <line x1="18" y1="22" x2="17" y2="16" stroke="#c8e6c9" stroke-width="0.6"/>
+          <pattern id="grass" patternUnits="userSpaceOnUse" width="20" height="20">
+            <rect width="20" height="20" fill="#e8f5e9"/>
+            <line x1="5" y1="18" x2="5" y2="14" stroke="#c8e6c9" stroke-width="0.5"/>
+            <line x1="15" y1="18" x2="14" y2="13" stroke="#c8e6c9" stroke-width="0.5"/>
           </pattern>
-          <pattern id="concrete" patternUnits="userSpaceOnUse" width="8" height="8">
-            <rect width="8" height="8" fill="#d6d0c9"/>
-            <rect x="0" y="0" width="4" height="4" fill="#d0cac2" opacity="0.5"/>
+          <pattern id="conc" patternUnits="userSpaceOnUse" width="6" height="6">
+            <rect width="6" height="6" fill="#d4cec6"/>
+            <rect x="0" y="0" width="3" height="3" fill="#cec8c0" opacity="0.4"/>
           </pattern>
           <radialGradient id="mg" cx="50%" cy="40%"><stop offset="0%" stop-color="#66bb6a"/><stop offset="100%" stop-color="#2e7d32"/></radialGradient>
           <radialGradient id="pg" cx="50%" cy="40%"><stop offset="0%" stop-color="#a5d6a7"/><stop offset="100%" stop-color="#558b2f"/></radialGradient>
         </defs>
 
-        <rect width="420" height="680" fill="#f5f5f5" rx="6"/>
+        <rect width="400" height="700" fill="#f5f5f5" rx="5"/>
 
         <!-- ===== ROAD ===== -->
-        <rect x="0" y="0" width="420" height="34" fill="#616161" rx="6"/>
-        <rect x="0" y="26" width="420" height="8" fill="#616161"/>
-        <line x1="40" y1="17" x2="380" y2="17" stroke="#fff" stroke-width="1.3" stroke-dasharray="12,8"/>
-        <text x="210" y="12" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" letter-spacing="3">S ROXBORO STREET</text>
-        <text x="22" y="30" fill="#bbb" font-size="5.5">&larr; S</text>
-        <text x="398" y="30" text-anchor="end" fill="#bbb" font-size="5.5">N &rarr;</text>
+        <rect x="0" y="0" width="400" height="32" fill="#616161" rx="5"/>
+        <rect x="0" y="24" width="400" height="8" fill="#616161"/>
+        <line x1="30" y1="16" x2="370" y2="16" stroke="#fff" stroke-width="1.2" stroke-dasharray="12,8"/>
+        <text x="200" y="11" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" letter-spacing="2">S ROXBORO STREET</text>
+        <text x="18" y="28" fill="#bbb" font-size="5">&larr; S</text>
+        <text x="382" y="28" text-anchor="end" fill="#bbb" font-size="5">N &rarr;</text>
+        <rect x="30" y="32" width="340" height="4" fill="#e0e0e0"/>
 
-        <!-- Curb/sidewalk -->
-        <rect x="40" y="34" width="340" height="5" fill="#e0e0e0"/>
+        <!-- ===== LOT ===== -->
+        <rect x="30" y="36" width="340" height="570" fill="url(#grass)" stroke="#8d6e63" stroke-width="1.2" stroke-dasharray="6,3" rx="2"/>
 
-        <!-- ===== LOT (roughly rectangular, slight taper) ===== -->
-        <polygon points="40,39 380,39 370,600 50,600"
-                 fill="url(#grass)" stroke="#8d6e63" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <!-- ===== DRIVEWAY — right side, straight from road alongside house ===== -->
+        <!-- Wide concrete pad: enters from road on right, runs straight back past house -->
+        <rect x="235" y="36" width="130" height="340" fill="url(#conc)" stroke="#c0b8ae" stroke-width="0.5" rx="2"/>
+        <text x="300" y="180" text-anchor="middle" fill="#b0a090" font-size="8" font-weight="600" transform="rotate(-90,300,180)">DRIVEWAY</text>
 
-        <!-- ===== DRIVEWAY ===== -->
-        <!-- From photos: enters from road on RIGHT side, curves LEFT across front of house -->
-        <!-- Wide concrete pad — road apron on right, sweeps to parking pad in front of house -->
-        <path d="M 220,39 L 380,39 L 375,60 L 370,100 L 360,145 L 350,175 L 330,195 L 155,195 L 155,175 L 165,155 L 190,120 L 210,80 L 215,55 Z"
-              fill="url(#concrete)" stroke="#c0b8ae" stroke-width="0.8"/>
-        <!-- Parking pad label -->
-        <text x="265" y="160" text-anchor="middle" fill="#a09080" font-size="7" font-weight="600">DRIVEWAY / PARKING</text>
+        <!-- ===== MAILBOX (road edge, left side) ===== -->
+        <rect x="52" y="33" width="3" height="8" fill="#424242"/>
+        <rect x="47" y="32" width="12" height="5" rx="1" fill="#424242"/>
 
-        <!-- ===== MAILBOX (at road, left side) ===== -->
-        <rect x="62" y="36" width="3" height="9" fill="#424242"/>
-        <rect x="57" y="34" width="12" height="5" rx="1" fill="#424242"/>
+        <!-- ===== FRONT YARD — left side, between road and house ===== -->
+        <!-- This is the grass area with maples, visible in listing photo on the LEFT -->
+        <text x="130" y="52" text-anchor="middle" fill="#388e3c" font-size="8" font-weight="600">FRONT YARD</text>
 
-        <!-- ===== FRONT YARD — triangular grass area on LEFT ===== -->
-        <!-- Bounded by: road (top), south lot line (left), driveway curve (right) -->
-        <text x="105" y="56" text-anchor="middle" fill="#388e3c" font-size="7.5" font-weight="600">FRONT YARD</text>
+        <!-- MAPLE 1 (bigger tree, left side of yard) -->
+        <circle cx="105" cy="100" r="42" fill="#c8e6c9" opacity="0.18" stroke="#388e3c" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <circle cx="105" cy="100" r="14" fill="url(#mg)" opacity="0.85"/>
+        <text x="105" y="98" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">MAPLE</text>
+        <text x="105" y="107" text-anchor="middle" fill="#fff" font-size="5">1</text>
 
-        <!-- MAPLE 1 (the big tree on the left, visible in listing photo) -->
-        <circle cx="115" cy="105" r="44" fill="#c8e6c9" opacity="0.18" stroke="#388e3c" stroke-width="0.8" stroke-dasharray="4,3"/>
-        <circle cx="115" cy="105" r="14" fill="url(#mg)" opacity="0.85"/>
-        <text x="115" y="103" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">MAPLE</text>
-        <text x="115" y="111" text-anchor="middle" fill="#fff" font-size="5">1</text>
+        <!-- MAPLE 2 (near porch area) -->
+        <circle cx="170" cy="135" r="42" fill="#c8e6c9" opacity="0.18" stroke="#388e3c" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <circle cx="170" cy="135" r="14" fill="url(#mg)" opacity="0.85"/>
+        <text x="170" y="133" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">MAPLE</text>
+        <text x="170" y="142" text-anchor="middle" fill="#fff" font-size="5">2</text>
 
-        <!-- MAPLE 2 (closer to porch, visible in winter street view) -->
-        <circle cx="175" cy="148" r="44" fill="#c8e6c9" opacity="0.18" stroke="#388e3c" stroke-width="1" stroke-dasharray="4,3"/>
-        <circle cx="175" cy="148" r="14" fill="url(#mg)" opacity="0.85"/>
-        <text x="175" y="146" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">MAPLE</text>
-        <text x="175" y="154" text-anchor="middle" fill="#fff" font-size="5">2</text>
+        <!-- Canopy label -->
+        <text x="65" y="70" fill="#388e3c" font-size="6" font-style="italic">~30 ft canopy</text>
 
         <!-- Shade plants under maples -->
-        <circle cx="90" cy="118" r="4" fill="#8e24aa" opacity="0.85"/>
-        <text x="78" y="117" text-anchor="end" fill="#4a148c" font-size="5.5" font-weight="600">Heuchera</text>
-        <circle cx="148" cy="132" r="4" fill="#ab47bc" opacity="0.85"/>
-        <text x="148" y="143" text-anchor="middle" fill="#4a148c" font-size="5.5" font-weight="600">Belarina</text>
+        <circle cx="80" cy="115" r="4" fill="#8e24aa" opacity="0.85"/>
+        <text x="68" y="114" text-anchor="end" fill="#4a148c" font-size="5" font-weight="600">Heuchera</text>
+        <circle cx="140" cy="122" r="4" fill="#ab47bc" opacity="0.85"/>
+        <text x="140" y="133" text-anchor="middle" fill="#4a148c" font-size="5" font-weight="600">Belarina</text>
 
-        <!-- SUNFLOWERS (open sun, left/south, near road, outside canopy) -->
-        <circle cx="68" cy="65" r="5.5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.8"/>
-        <circle cx="82" cy="72" r="5.5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.8"/>
-        <circle cx="96" cy="65" r="5.5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.8"/>
-        <circle cx="82" cy="58" r="5.5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.8"/>
-        <text x="82" y="50" text-anchor="middle" fill="#e65100" font-size="5.5" font-weight="600">Sunflowers &times;4</text>
+        <!-- SUNFLOWERS (open sun, far left near road) -->
+        <circle cx="58" cy="62" r="5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.7"/>
+        <circle cx="72" cy="69" r="5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.7"/>
+        <circle cx="86" cy="62" r="5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.7"/>
+        <circle cx="72" cy="55" r="5" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="0.7"/>
+        <text x="72" y="47" text-anchor="middle" fill="#e65100" font-size="5.5" font-weight="600">Sunflowers &times;4</text>
 
-        <!-- LOBELIA (canopy edge) -->
-        <circle cx="78" cy="95" r="3.5" fill="#e53935" opacity="0.8"/>
-        <text x="66" y="93" text-anchor="end" fill="#c62828" font-size="5">Lobelia</text>
+        <!-- LOBELIA -->
+        <circle cx="65" cy="90" r="3.5" fill="#e53935" opacity="0.8"/>
+        <text x="53" y="89" text-anchor="end" fill="#c62828" font-size="5">Lobelia</text>
 
-        <!-- BLACK-EYED SUSAN (full sun, left side) -->
-        <circle cx="62" cy="130" r="4" fill="#fbc02d" opacity="0.8" stroke="#f57f17" stroke-width="0.8"/>
-        <text x="55" y="139" text-anchor="end" fill="#e65100" font-size="5">B.E. Susan</text>
+        <!-- BLACK-EYED SUSAN -->
+        <circle cx="55" cy="135" r="4" fill="#fbc02d" opacity="0.8" stroke="#f57f17" stroke-width="0.7"/>
+        <text x="48" y="144" text-anchor="end" fill="#e65100" font-size="5">B.E. Susan</text>
 
-        <!-- MEXICAN SAGE (full sun, left side) -->
-        <rect x="55" y="145" width="32" height="8" rx="4" fill="#6a1b9a" opacity="0.6"/>
-        <text x="71" y="151" text-anchor="middle" fill="#fff" font-size="4.5" font-weight="600">Mex. Sage</text>
+        <!-- MEXICAN SAGE -->
+        <rect x="43" y="148" width="30" height="8" rx="4" fill="#6a1b9a" opacity="0.6"/>
+        <text x="58" y="154" text-anchor="middle" fill="#fff" font-size="4.5" font-weight="600">Mex. Sage</text>
 
         <!-- ===== HOUSE ===== -->
-        <!-- From photos: ~25 ft wide, ~32 ft deep, front porch facing road -->
-        <!-- Porch is covered, spans most of the front, steps on RIGHT toward driveway -->
-        <rect x="120" y="210" width="160" height="140" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="1.5" rx="3"/>
-        <text x="200" y="288" text-anchor="middle" fill="#9e9e9e" font-size="12" font-weight="700" transform="rotate(-90,200,288)">HOUSE</text>
+        <!-- Set back 26 ft from road. Positioned left-center, driveway on right. -->
+        <rect x="80" y="195" width="150" height="155" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="1.5" rx="3"/>
+        <text x="155" y="280" text-anchor="middle" fill="#9e9e9e" font-size="12" font-weight="700" transform="rotate(-90,155,280)">HOUSE</text>
 
-        <!-- FRONT PORCH (covered, spans most of front, from listing photo) -->
-        <rect x="130" y="195" width="100" height="18" fill="#d7ccc8" stroke="#bcaaa4" stroke-width="0.8" rx="2"/>
-        <text x="180" y="207" text-anchor="middle" fill="#5d4037" font-size="6" font-weight="600">FRONT PORCH</text>
-        <!-- Porch steps (right side toward driveway, visible in photos) -->
-        <rect x="218" y="195" width="16" height="18" fill="#c8beb4" stroke="#b0a498" stroke-width="0.5" rx="1"/>
-        <text x="226" y="207" text-anchor="middle" fill="#795548" font-size="4">steps</text>
-        <!-- Front door (teal/green, visible in listing photo) -->
-        <rect x="172" y="208" width="16" height="4" fill="#26a69a" rx="1"/>
-        <!-- Lattice under porch -->
-        <line x1="130" y1="212" x2="230" y2="212" stroke="#e0d8d0" stroke-width="0.5" stroke-dasharray="2,1"/>
+        <!-- FRONT PORCH (facing road) -->
+        <rect x="88" y="178" width="100" height="19" fill="#d7ccc8" stroke="#bcaaa4" stroke-width="0.8" rx="2"/>
+        <text x="138" y="190" text-anchor="middle" fill="#5d4037" font-size="6" font-weight="600">FRONT PORCH</text>
+        <!-- Steps (right side toward driveway) -->
+        <rect x="178" y="178" width="14" height="19" fill="#c8beb4" stroke="#b0a498" stroke-width="0.4" rx="1"/>
+        <text x="185" y="190" text-anchor="middle" fill="#795548" font-size="3.5">steps</text>
+        <!-- Front door -->
+        <rect x="130" y="193" width="16" height="4" fill="#26a69a" rx="1"/>
 
-        <!-- ===== LEFT (SOUTH) SIDE OF HOUSE ===== -->
-        <!-- Apple row, blueberries run along this side -->
-        <text x="108" y="260" text-anchor="end" fill="#aaa" font-size="6" transform="rotate(-90,108,260)">~8 ft to lot line</text>
+        <!-- ===== LEFT (SOUTH) SIDE OF HOUSE — ~8 ft gap ===== -->
+        <text x="68" y="265" text-anchor="end" fill="#bbb" font-size="5.5" transform="rotate(-90,68,265)">~8 ft</text>
 
-        <!-- APPLE ROW (south side of house, between house and lot line) -->
-        <circle cx="105" cy="235" r="5.5" fill="#c62828" opacity="0.85"/>
-        <text x="93" y="233" text-anchor="end" fill="#c62828" font-size="5">Tasty Red</text>
-        <circle cx="105" cy="255" r="5.5" fill="#2e7d32" opacity="0.85"/>
-        <text x="93" y="253" text-anchor="end" fill="#2e7d32" font-size="5">Tangy Grn</text>
-        <circle cx="105" cy="275" r="5.5" fill="#f9a825" opacity="0.85"/>
-        <text x="93" y="273" text-anchor="end" fill="#e65100" font-size="5">Golden Trt</text>
+        <!-- APPLE ROW -->
+        <circle cx="65" cy="220" r="5" fill="#c62828" opacity="0.85"/>
+        <text x="52" y="218" text-anchor="end" fill="#c62828" font-size="5">Tasty Red</text>
+        <circle cx="65" cy="240" r="5" fill="#2e7d32" opacity="0.85"/>
+        <text x="52" y="238" text-anchor="end" fill="#2e7d32" font-size="5">Tangy Grn</text>
+        <circle cx="65" cy="260" r="5" fill="#f9a825" opacity="0.85"/>
+        <text x="52" y="258" text-anchor="end" fill="#e65100" font-size="5">Golden Trt</text>
 
-        <!-- Spacing labels -->
-        <line x1="113" y1="239" x2="113" y2="251" stroke="#ccc" stroke-width="0.4"/>
-        <text x="117" y="247" fill="#ccc" font-size="4">2ft</text>
-        <line x1="113" y1="259" x2="113" y2="271" stroke="#ccc" stroke-width="0.4"/>
-        <text x="117" y="267" fill="#ccc" font-size="4">2ft</text>
+        <line x1="73" y1="224" x2="73" y2="236" stroke="#ccc" stroke-width="0.3"/>
+        <text x="77" y="232" fill="#ccc" font-size="4">2ft</text>
+        <line x1="73" y1="244" x2="73" y2="256" stroke="#ccc" stroke-width="0.3"/>
+        <text x="77" y="252" fill="#ccc" font-size="4">2ft</text>
 
-        <!-- Apple guild zone -->
-        <circle cx="105" cy="255" r="32" fill="none" stroke="#a5d6a7" stroke-width="0.6" stroke-dasharray="3,2"/>
+        <!-- Apple guild -->
+        <circle cx="65" cy="240" r="30" fill="none" stroke="#a5d6a7" stroke-width="0.6" stroke-dasharray="3,2"/>
 
-        <!-- Rosemary at ends of apple row -->
-        <rect x="92" y="218" width="26" height="8" rx="4" fill="#2e7d32" opacity="0.7"/>
-        <text x="105" y="224" text-anchor="middle" fill="#fff" font-size="4.5" font-weight="600">Rosemary</text>
-        <rect x="92" y="288" width="26" height="8" rx="4" fill="#2e7d32" opacity="0.7"/>
-        <text x="105" y="294" text-anchor="middle" fill="#fff" font-size="4.5" font-weight="600">Rosemary</text>
+        <!-- Rosemary ends -->
+        <rect x="52" y="203" width="26" height="8" rx="4" fill="#2e7d32" opacity="0.7"/>
+        <text x="65" y="209" text-anchor="middle" fill="#fff" font-size="4.5" font-weight="600">Rosemary</text>
+        <rect x="52" y="272" width="26" height="8" rx="4" fill="#2e7d32" opacity="0.7"/>
+        <text x="65" y="278" text-anchor="middle" fill="#fff" font-size="4.5" font-weight="600">Rosemary</text>
 
-        <!-- Lavender near apple row -->
-        <rect x="114" y="248" width="5" height="9" rx="2" fill="#7b1fa2" opacity="0.7"/>
-        <rect x="114" y="262" width="5" height="9" rx="2" fill="#5c6bc0" opacity="0.7"/>
+        <!-- Lavender -->
+        <rect x="74" y="233" width="5" height="8" rx="2" fill="#7b1fa2" opacity="0.7"/>
+        <rect x="74" y="247" width="5" height="8" rx="2" fill="#5c6bc0" opacity="0.7"/>
 
-        <!-- BLUEBERRY ROW (south side of house, toward back) -->
-        <rect x="95" y="303" width="20" height="45" fill="#e3f2fd" rx="3" opacity="0.4" stroke="#90caf9" stroke-width="0.4" stroke-dasharray="3,2"/>
-        <circle cx="105" cy="310" r="4" fill="#7986cb" opacity="0.75"/><text x="105" y="312" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PS</text>
-        <circle cx="105" cy="320" r="4" fill="#7986cb" opacity="0.75"/><text x="105" y="322" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PS</text>
-        <circle cx="105" cy="330" r="4" fill="#ec407a" opacity="0.75"/><text x="105" y="332" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PL</text>
-        <circle cx="105" cy="339" r="4" fill="#7986cb" opacity="0.75"/><text x="105" y="341" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PS</text>
-        <circle cx="105" cy="345" r="3" fill="#7986cb" opacity="0.75"/>
-        <text x="85" y="330" text-anchor="end" fill="#1565c0" font-size="5" font-weight="600" transform="rotate(-90,85,330)">BLUEBERRIES</text>
+        <!-- BLUEBERRIES (south side, toward back of house) -->
+        <rect x="55" y="285" width="18" height="55" fill="#e3f2fd" rx="3" opacity="0.4" stroke="#90caf9" stroke-width="0.4" stroke-dasharray="3,2"/>
+        <circle cx="64" cy="293" r="4" fill="#7986cb" opacity="0.75"/><text x="64" y="295" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PS</text>
+        <circle cx="64" cy="304" r="4" fill="#7986cb" opacity="0.75"/><text x="64" y="306" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PS</text>
+        <circle cx="64" cy="315" r="4" fill="#ec407a" opacity="0.75"/><text x="64" y="317" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PL</text>
+        <circle cx="64" cy="325" r="4" fill="#7986cb" opacity="0.75"/><text x="64" y="327" text-anchor="middle" fill="#fff" font-size="3.5" font-weight="700">PS</text>
+        <circle cx="64" y="335" r="3" fill="#7986cb" opacity="0.75"/>
+        <text x="45" y="315" text-anchor="end" fill="#1565c0" font-size="5" font-weight="600" transform="rotate(-90,45,315)">BLUEBERRIES</text>
 
         <!-- ===== BACK OF HOUSE ===== -->
-        <!-- Back porch (from listing: adjacent to laundry/mud room) -->
-        <rect x="135" y="350" width="50" height="12" fill="#d7ccc8" stroke="#bcaaa4" stroke-width="0.8" rx="1"/>
-        <text x="160" y="359" text-anchor="middle" fill="#5d4037" font-size="5" font-weight="600">BACK PORCH</text>
+        <!-- Back porch -->
+        <rect x="100" y="350" width="50" height="12" fill="#d7ccc8" stroke="#bcaaa4" stroke-width="0.7" rx="1"/>
+        <text x="125" y="359" text-anchor="middle" fill="#5d4037" font-size="5" font-weight="600">BACK PORCH</text>
 
-        <!-- DECK (elevated, off back of house — from aerial, slightly left of center) -->
-        <rect x="205" y="338" width="50" height="38" fill="#bcaaa4" stroke="#8d6e63" stroke-width="1.2" rx="2"/>
-        <line x1="205" y1="345" x2="255" y2="345" stroke="#a1887f" stroke-width="0.4"/>
-        <line x1="205" y1="352" x2="255" y2="352" stroke="#a1887f" stroke-width="0.4"/>
-        <line x1="205" y1="359" x2="255" y2="359" stroke="#a1887f" stroke-width="0.4"/>
-        <line x1="205" y1="366" x2="255" y2="366" stroke="#a1887f" stroke-width="0.4"/>
-        <text x="230" y="358" text-anchor="middle" fill="#5d4037" font-size="6.5" font-weight="600">DECK</text>
-        <!-- Steps down from deck -->
-        <rect x="220" y="376" width="16" height="5" fill="#a1887f" rx="1"/>
+        <!-- Deck (off back of house) -->
+        <rect x="165" y="340" width="48" height="38" fill="#bcaaa4" stroke="#8d6e63" stroke-width="1.2" rx="2"/>
+        <line x1="165" y1="347" x2="213" y2="347" stroke="#a1887f" stroke-width="0.3"/>
+        <line x1="165" y1="354" x2="213" y2="354" stroke="#a1887f" stroke-width="0.3"/>
+        <line x1="165" y1="361" x2="213" y2="361" stroke="#a1887f" stroke-width="0.3"/>
+        <line x1="165" y1="368" x2="213" y2="368" stroke="#a1887f" stroke-width="0.3"/>
+        <text x="189" y="360" text-anchor="middle" fill="#5d4037" font-size="6" font-weight="600">DECK</text>
 
         <!-- ===== FENCED BACKYARD ===== -->
-        <rect x="55" y="380" width="310" height="210" fill="none" stroke="#8d6e63" stroke-width="1.2" stroke-dasharray="4,3" rx="3"/>
-        <text x="210" y="394" text-anchor="middle" fill="#8d6e63" font-size="6.5" font-style="italic">fenced backyard</text>
+        <rect x="35" y="382" width="330" height="200" fill="none" stroke="#8d6e63" stroke-width="1.2" stroke-dasharray="4,3" rx="2"/>
+        <text x="200" y="396" text-anchor="middle" fill="#8d6e63" font-size="6.5" font-style="italic">fenced backyard</text>
 
-        <!-- FIRE PIT (stone circle, visible in aerial — center of backyard) -->
-        <circle cx="180" cy="445" r="16" fill="none" stroke="#795548" stroke-width="1.5"/>
-        <circle cx="180" cy="445" r="10" fill="#efebe9" stroke="#a1887f" stroke-width="0.8"/>
-        <text x="180" y="443" text-anchor="middle" fill="#795548" font-size="5" font-weight="600">FIRE</text>
-        <text x="180" y="450" text-anchor="middle" fill="#795548" font-size="5" font-weight="600">PIT</text>
+        <!-- FIRE PIT -->
+        <circle cx="140" cy="445" r="15" fill="none" stroke="#795548" stroke-width="1.3"/>
+        <circle cx="140" cy="445" r="9" fill="#efebe9" stroke="#a1887f" stroke-width="0.7"/>
+        <text x="140" y="443" text-anchor="middle" fill="#795548" font-size="4.5" font-weight="600">FIRE</text>
+        <text x="140" y="450" text-anchor="middle" fill="#795548" font-size="4.5" font-weight="600">PIT</text>
 
-        <!-- PEAR TREE (~12 ft behind house) -->
-        <circle cx="280" cy="440" r="20" fill="url(#pg)" opacity="0.7"/>
-        <circle cx="280" cy="440" r="20" fill="none" stroke="#558b2f" stroke-width="1" stroke-dasharray="4,3"/>
-        <text x="280" y="438" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">PEAR</text>
-        <text x="280" y="447" text-anchor="middle" fill="#fff" font-size="5">5-in-1</text>
-        <circle cx="280" cy="440" r="32" fill="none" stroke="#a5d6a7" stroke-width="0.5" stroke-dasharray="3,2"/>
-        <text x="280" y="478" text-anchor="middle" fill="#388e3c" font-size="5" font-style="italic">pear guild</text>
+        <!-- PEAR TREE -->
+        <circle cx="260" cy="440" r="18" fill="url(#pg)" opacity="0.7"/>
+        <circle cx="260" cy="440" r="18" fill="none" stroke="#558b2f" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="260" y="438" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">PEAR</text>
+        <text x="260" y="446" text-anchor="middle" fill="#fff" font-size="5">5-in-1</text>
+        <circle cx="260" cy="440" r="30" fill="none" stroke="#a5d6a7" stroke-width="0.5" stroke-dasharray="3,2"/>
 
-        <!-- SHED (back of yard, visible in aerial) -->
-        <rect x="310" y="505" width="30" height="22" fill="#bcaaa4" stroke="#8d6e63" stroke-width="1" rx="2"/>
-        <rect x="319" y="505" width="12" height="3" fill="#795548"/>
-        <text x="325" y="520" text-anchor="middle" fill="#5d4037" font-size="5" font-weight="600">SHED</text>
+        <!-- SHED -->
+        <rect x="300" y="510" width="28" height="20" fill="#bcaaa4" stroke="#8d6e63" stroke-width="0.8" rx="2"/>
+        <rect x="308" y="510" width="12" height="3" fill="#795548"/>
+        <text x="314" y="524" text-anchor="middle" fill="#5d4037" font-size="5" font-weight="600">SHED</text>
 
-        <!-- Backyard note -->
-        <text x="210" y="555" text-anchor="middle" fill="#aaa" font-size="6">(raised beds &rarr; Back Yard page)</text>
+        <text x="200" y="555" text-anchor="middle" fill="#aaa" font-size="5.5">(raised beds &rarr; Back Yard page)</text>
 
         <!-- ===== COMPASS ===== -->
-        <g transform="translate(385,68)">
-          <circle r="14" fill="#fff" opacity="0.9" stroke="#e0e0e0" stroke-width="0.7"/>
-          <polygon points="0,-10 -2.5,-4 2.5,-4" fill="#c62828"/>
-          <text x="0" y="-1" text-anchor="middle" fill="#c62828" font-size="5.5" font-weight="700">N</text>
-          <polygon points="10,0 4,-2 4,2" fill="#c62828" opacity="0.3"/>
-          <text x="6" y="2" text-anchor="middle" fill="#bbb" font-size="4">E</text>
+        <g transform="translate(370,55)">
+          <circle r="12" fill="#fff" opacity="0.9" stroke="#e0e0e0" stroke-width="0.6"/>
+          <polygon points="0,-9 -2,-3.5 2,-3.5" fill="#c62828"/>
+          <text x="0" y="0" text-anchor="middle" fill="#c62828" font-size="5" font-weight="700">N</text>
         </g>
 
         <!-- ===== LEGEND ===== -->
-        <rect x="8" y="566" width="404" height="106" fill="#fff" rx="5" opacity="0.95" stroke="#e0e0e0" stroke-width="0.8"/>
-
-        <text x="22" y="581" fill="#333" font-size="7" font-weight="700">Trees &amp; Shrubs</text>
-        <circle cx="25" cy="593" r="4" fill="url(#mg)"/><text x="35" y="596" fill="#333" font-size="6.5">Red Maple</text>
-        <circle cx="115" cy="593" r="4" fill="#c62828"/><text x="125" y="596" fill="#333" font-size="6.5">Apple</text>
-        <circle cx="180" cy="593" r="4" fill="url(#pg)"/><text x="190" y="596" fill="#333" font-size="6.5">Pear</text>
-        <circle cx="240" cy="593" r="4" fill="#7986cb"/><text x="250" y="596" fill="#333" font-size="6.5">Blueberry</text>
-        <rect x="300" y="589" width="8" height="7" rx="3" fill="#2e7d32"/><text x="314" y="596" fill="#333" font-size="6.5">Rosemary</text>
-        <rect x="372" y="589" width="8" height="7" rx="3" fill="#7b1fa2"/><text x="386" y="596" fill="#333" font-size="6.5">Lav.</text>
-
-        <text x="22" y="612" fill="#333" font-size="7" font-weight="700">Flowers</text>
-        <circle cx="25" cy="622" r="4" fill="#f9a825" stroke="#f57f17" stroke-width="0.4"/><text x="35" y="625" fill="#333" font-size="6.5">Sunflower</text>
-        <circle cx="115" cy="622" r="4" fill="#e53935"/><text x="125" y="625" fill="#333" font-size="6.5">Lobelia</text>
-        <circle cx="180" cy="622" r="4" fill="#fbc02d" stroke="#f57f17" stroke-width="0.4"/><text x="190" y="625" fill="#333" font-size="6.5">B.E.Susan</text>
-        <rect x="258" y="618" width="8" height="7" rx="3" fill="#6a1b9a"/><text x="272" y="625" fill="#333" font-size="6.5">Mex. Sage</text>
-        <circle cx="340" cy="622" r="4" fill="#8e24aa"/><text x="350" y="625" fill="#333" font-size="6.5">Heuchera</text>
-
-        <text x="22" y="641" fill="#333" font-size="7" font-weight="700">Structures</text>
-        <rect x="80" y="636" width="8" height="6" rx="1" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="0.3"/><text x="94" y="642" fill="#333" font-size="6.5">House</text>
-        <rect x="132" y="636" width="8" height="6" rx="1" fill="#d7ccc8"/><text x="146" y="642" fill="#333" font-size="6.5">Porch</text>
-        <rect x="182" y="636" width="8" height="6" rx="1" fill="#bcaaa4" stroke="#8d6e63" stroke-width="0.3"/><text x="196" y="642" fill="#333" font-size="6.5">Deck</text>
-        <rect x="230" y="637" width="12" height="4" fill="url(#concrete)"/><text x="248" y="642" fill="#333" font-size="6.5">Driveway</text>
-        <line x1="292" y1="639" x2="308" y2="639" stroke="#8d6e63" stroke-width="0.8" stroke-dasharray="4,2"/>
-        <text x="314" y="642" fill="#333" font-size="6.5">Lot/Fence</text>
-
-        <!-- Source -->
-        <text x="210" y="665" text-anchor="middle" fill="#ccc" font-size="5.5">GIS Parcel 117232 &bull; View from road &bull; Left = south &bull; Right = north</text>
+        <rect x="8" y="590" width="384" height="102" fill="#fff" rx="5" opacity="0.95" stroke="#e0e0e0" stroke-width="0.7"/>
+        <circle cx="22" cy="606" r="4" fill="url(#mg)"/><text x="32" y="609" fill="#333" font-size="6">Maple</text>
+        <circle cx="85" cy="606" r="4" fill="#c62828"/><text x="95" y="609" fill="#333" font-size="6">Apple</text>
+        <circle cx="145" cy="606" r="4" fill="url(#pg)"/><text x="155" y="609" fill="#333" font-size="6">Pear</text>
+        <circle cx="200" cy="606" r="4" fill="#7986cb"/><text x="210" y="609" fill="#333" font-size="6">Blueberry</text>
+        <rect x="262" y="602" width="8" height="7" rx="3" fill="#2e7d32"/><text x="276" y="609" fill="#333" font-size="6">Rosemary</text>
+        <rect x="330" y="602" width="8" height="7" rx="3" fill="#7b1fa2"/><text x="344" y="609" fill="#333" font-size="6">Lavender</text>
+        <circle cx="22" cy="624" r="4" fill="#f9a825" stroke="#f57f17" stroke-width="0.3"/><text x="32" y="627" fill="#333" font-size="6">Sunflower</text>
+        <circle cx="95" cy="624" r="4" fill="#e53935"/><text x="105" y="627" fill="#333" font-size="6">Lobelia</text>
+        <circle cx="160" cy="624" r="4" fill="#fbc02d" stroke="#f57f17" stroke-width="0.3"/><text x="170" y="627" fill="#333" font-size="6">B.E. Susan</text>
+        <rect x="232" y="620" width="8" height="7" rx="3" fill="#6a1b9a"/><text x="246" y="627" fill="#333" font-size="6">Mex. Sage</text>
+        <circle cx="310" cy="624" r="4" fill="#8e24aa"/><text x="320" y="627" fill="#333" font-size="6">Heuchera</text>
+        <circle cx="370" cy="624" r="4" fill="#ab47bc"/><text x="380" y="627" fill="#333" font-size="6">Bel.</text>
+        <rect x="16" y="636" width="8" height="6" rx="1" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="0.3"/><text x="30" y="642" fill="#333" font-size="6">House</text>
+        <rect x="66" y="636" width="8" height="6" rx="1" fill="#d7ccc8"/><text x="80" y="642" fill="#333" font-size="6">Porch</text>
+        <rect x="116" y="636" width="8" height="6" rx="1" fill="#bcaaa4" stroke="#8d6e63" stroke-width="0.3"/><text x="130" y="642" fill="#333" font-size="6">Deck</text>
+        <rect x="166" y="637" width="12" height="4" fill="url(#conc)"/><text x="184" y="642" fill="#333" font-size="6">Driveway</text>
+        <line x1="225" y1="639" x2="240" y2="639" stroke="#8d6e63" stroke-width="0.8" stroke-dasharray="4,2"/>
+        <text x="246" y="642" fill="#333" font-size="6">Lot line</text>
+        <line x1="285" y1="639" x2="300" y2="639" stroke="#388e3c" stroke-width="0.6" stroke-dasharray="4,3"/>
+        <text x="306" y="642" fill="#333" font-size="6">Canopy</text>
+        <text x="200" y="660" text-anchor="middle" fill="#ccc" font-size="5">View from road &bull; Left = south &bull; Right = north</text>
 
       </svg>
     </div>
 
-    <div class="note"><strong>Key layout from photos:</strong> Driveway sweeps from the road on the right (north) side and curves across to a wide parking pad in front of the house. The plantable front yard is the triangular grass area on the left (south) between the driveway and the lot line &mdash; this is where the maples, sunflowers, and perennials go. Apple row, blueberries, and rosemary run along the south (left) side of the house in the ~8 ft gap. Fenced backyard behind with fire pit, pear tree, and shed.</div>
+    <div class="note"><strong>Layout:</strong> Driveway enters from the road on the right (north) and runs straight alongside the right side of the house. The front yard grass area with the maples is on the left (south) side. Apple row, blueberries, and rosemary are planted in the ~8 ft gap between the south side of the house and the lot line. Fenced backyard behind with fire pit, pear tree, and shed.</div>
+
 
 
 
