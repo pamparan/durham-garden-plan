@@ -127,6 +127,7 @@
 <nav class="toc">
   <div class="toc-inner">
     <a href="index.html" class="page-link">&larr; Back Yard</a>
+    <a href="#layout">Layout</a>
     <a href="#trees">Apples</a>
     <a href="#pear">Pear</a>
     <a href="#maples">Maples</a>
@@ -137,6 +138,206 @@
     <a href="#tally">Tally</a>
   </div>
 </nav>
+
+<!-- YARD LAYOUT DIAGRAM -->
+<section id="layout">
+  <div class="container">
+    <span class="section-label">Overview</span>
+    <h2>Front Yard Layout</h2>
+    <p class="section-desc">Planting reference map showing tree placement, companion zones, and sun/shade areas. Not perfectly to scale &mdash; use spacing notes from each section for exact distances.</p>
+
+    <div style="overflow-x:auto; margin:1.5rem 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 720" style="width:100%; max-width:800px; display:block; margin:0 auto; font-family:'Segoe UI',system-ui,sans-serif;">
+        <defs>
+          <pattern id="grass" patternUnits="userSpaceOnUse" width="20" height="20">
+            <rect width="20" height="20" fill="#e8f5e9"/>
+            <line x1="5" y1="18" x2="5" y2="12" stroke="#c8e6c9" stroke-width="1"/>
+            <line x1="15" y1="18" x2="14" y2="11" stroke="#c8e6c9" stroke-width="1"/>
+          </pattern>
+          <pattern id="driveway-pat" patternUnits="userSpaceOnUse" width="16" height="16">
+            <rect width="16" height="16" fill="#bdbdbd"/>
+            <rect x="0" y="0" width="8" height="8" fill="#b0b0b0"/>
+            <rect x="8" y="8" width="8" height="8" fill="#b0b0b0"/>
+          </pattern>
+          <radialGradient id="maple-grad" cx="50%" cy="40%">
+            <stop offset="0%" stop-color="#66bb6a"/>
+            <stop offset="100%" stop-color="#2e7d32"/>
+          </radialGradient>
+          <radialGradient id="pear-grad" cx="50%" cy="40%">
+            <stop offset="0%" stop-color="#a5d6a7"/>
+            <stop offset="100%" stop-color="#558b2f"/>
+          </radialGradient>
+        </defs>
+
+        <!-- YARD BACKGROUND -->
+        <rect x="0" y="0" width="800" height="720" fill="url(#grass)" rx="8"/>
+
+        <!-- ROAD -->
+        <rect x="0" y="0" width="800" height="50" fill="#616161" rx="8"/>
+        <rect x="0" y="40" width="800" height="10" fill="#616161"/>
+        <line x1="100" y1="25" x2="700" y2="25" stroke="#fff" stroke-width="2" stroke-dasharray="20,15"/>
+        <text x="400" y="30" text-anchor="middle" fill="#fff" font-size="13" font-weight="600" letter-spacing="3">ROAD</text>
+
+        <!-- DRIVEWAY -->
+        <rect x="620" y="50" width="110" height="180" fill="url(#driveway-pat)" />
+        <text x="675" y="140" text-anchor="middle" fill="#555" font-size="11" font-weight="600" transform="rotate(-90,675,140)">DRIVEWAY</text>
+
+        <!-- DIRT AREA -->
+        <rect x="50" y="50" width="100" height="60" fill="#d7ccc8" rx="4"/>
+        <text x="100" y="85" text-anchor="middle" fill="#5d4037" font-size="11" font-weight="600">DIRT</text>
+
+        <!-- HOUSE -->
+        <rect x="10" y="200" width="140" height="320" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="2" rx="4"/>
+        <rect x="70" y="200" width="50" height="8" fill="#8d6e63"/>
+        <text x="80" y="360" text-anchor="middle" fill="#616161" font-size="16" font-weight="700" transform="rotate(-90,80,360)">HOUSE</text>
+
+        <!-- SIDE YARD BLUEBERRY ROW (along house) -->
+        <rect x="10" y="530" width="140" height="100" fill="#e3f2fd" rx="6" stroke="#90caf9" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="80" y="547" text-anchor="middle" fill="#1565c0" font-size="10" font-weight="700">SIDE YARD &mdash; BLUEBERRIES</text>
+        <circle cx="35" cy="575" r="12" fill="#7986cb" opacity="0.7"/><text x="35" y="579" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">PS</text>
+        <circle cx="65" cy="575" r="12" fill="#7986cb" opacity="0.7"/><text x="65" y="579" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">PS</text>
+        <circle cx="95" cy="575" r="12" fill="#7986cb" opacity="0.7"/><text x="95" y="579" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">PS</text>
+        <circle cx="125" cy="575" r="12" fill="#7986cb" opacity="0.7"/><text x="125" y="579" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">PS</text>
+        <circle cx="80" cy="610" r="12" fill="#ec407a" opacity="0.7"/><text x="80" y="614" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">PL</text>
+        <text x="80" y="625" text-anchor="middle" fill="#1565c0" font-size="8">PS=Peach Sorbet &bull; PL=Pink Lemonade</text>
+
+        <!-- MAPLE SHADE ZONE (dashed circle) -->
+        <circle cx="560" cy="280" r="130" fill="#c8e6c9" opacity="0.25" stroke="#388e3c" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="560" y="175" text-anchor="middle" fill="#388e3c" font-size="9" font-style="italic">shade canopy zone</text>
+
+        <!-- MAPLE 1 -->
+        <circle cx="530" cy="240" r="55" fill="url(#maple-grad)" opacity="0.8"/>
+        <text x="530" y="236" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">MAPLE</text>
+        <text x="530" y="252" text-anchor="middle" fill="#fff" font-size="10">(established)</text>
+
+        <!-- MAPLE 2 -->
+        <circle cx="590" cy="330" r="55" fill="url(#maple-grad)" opacity="0.8"/>
+        <text x="590" y="326" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">MAPLE</text>
+        <text x="590" y="342" text-anchor="middle" fill="#fff" font-size="10">(established)</text>
+
+        <!-- SHADE PLANTS UNDER MAPLES -->
+        <circle cx="490" cy="300" r="8" fill="#8e24aa" opacity="0.8"/><text x="490" y="316" text-anchor="middle" fill="#4a148c" font-size="8">Heuchera</text>
+        <circle cx="620" cy="260" r="8" fill="#ab47bc" opacity="0.8"/><text x="620" y="276" text-anchor="middle" fill="#4a148c" font-size="8">Belarina</text>
+
+        <!-- COLUMNAR APPLE ROW (near house) -->
+        <rect x="175" y="240" width="85" height="190" fill="#fff9c4" rx="8" opacity="0.35" stroke="#f9a825" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="217" y="258" text-anchor="middle" fill="#e65100" font-size="9" font-weight="700">APPLE ROW</text>
+
+        <!-- Apple 1 -->
+        <circle cx="217" cy="285" r="15" fill="#c62828" opacity="0.85"/>
+        <text x="217" y="289" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">TR</text>
+        <text x="250" y="289" text-anchor="start" fill="#c62828" font-size="8">Tasty Red</text>
+
+        <!-- Apple 2 -->
+        <circle cx="217" cy="340" r="15" fill="#2e7d32" opacity="0.85"/>
+        <text x="217" y="344" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">TG</text>
+        <text x="250" y="344" text-anchor="start" fill="#2e7d32" font-size="8">Tangy Green</text>
+
+        <!-- Apple 3 -->
+        <circle cx="217" cy="395" r="15" fill="#f9a825" opacity="0.85"/>
+        <text x="217" y="399" text-anchor="middle" fill="#5d4037" font-size="10" font-weight="700">GT</text>
+        <text x="250" y="399" text-anchor="start" fill="#e65100" font-size="8">Golden Treat</text>
+
+        <!-- Apple guild ring -->
+        <circle cx="217" cy="340" r="90" fill="none" stroke="#a5d6a7" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="315" y="345" text-anchor="start" fill="#388e3c" font-size="8" font-style="italic">guild zone</text>
+
+        <!-- Rosemary at ends of apple row -->
+        <rect x="193" y="190" width="48" height="18" rx="9" fill="#2e7d32" opacity="0.7"/>
+        <text x="217" y="203" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">Rosemary</text>
+
+        <rect x="193" y="435" width="48" height="18" rx="9" fill="#2e7d32" opacity="0.7"/>
+        <text x="217" y="448" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">Rosemary</text>
+
+        <!-- Lavender near apple row -->
+        <rect x="290" y="305" width="65" height="16" rx="8" fill="#7b1fa2" opacity="0.65"/>
+        <text x="322" y="317" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">SuperBlue Lav.</text>
+
+        <rect x="290" y="370" width="75" height="16" rx="8" fill="#7b1fa2" opacity="0.65"/>
+        <text x="327" y="382" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">Phenomenal Lav.</text>
+
+        <!-- PEAR TREE (bottom center) -->
+        <circle cx="370" cy="560" r="50" fill="url(#pear-grad)" opacity="0.7"/>
+        <circle cx="370" cy="560" r="50" fill="none" stroke="#558b2f" stroke-width="1.5" stroke-dasharray="5,4"/>
+        <text x="370" y="555" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">PEAR</text>
+        <text x="370" y="572" text-anchor="middle" fill="#fff" font-size="10">5-in-1</text>
+
+        <!-- Pear guild ring -->
+        <circle cx="370" cy="560" r="75" fill="none" stroke="#a5d6a7" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="370" y="648" text-anchor="middle" fill="#388e3c" font-size="8" font-style="italic">pear guild zone</text>
+
+        <!-- SUNFLOWERS (backdrop row - full sun, away from maples) -->
+        <circle cx="200" cy="130" r="12" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="1.5"/>
+        <circle cx="265" cy="130" r="12" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="1.5"/>
+        <circle cx="330" cy="130" r="12" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="1.5"/>
+        <circle cx="395" cy="130" r="12" fill="#f9a825" opacity="0.8" stroke="#f57f17" stroke-width="1.5"/>
+        <text x="298" y="110" text-anchor="middle" fill="#e65100" font-size="10" font-weight="600">Sunflowers &times;4</text>
+
+        <!-- LOBELIA (full sun, between apples and maples) -->
+        <circle cx="400" cy="230" r="10" fill="#e53935" opacity="0.8"/>
+        <text x="400" y="252" text-anchor="middle" fill="#c62828" font-size="8">Lobelia</text>
+
+        <!-- BLACK-EYED SUSAN -->
+        <circle cx="430" cy="450" r="10" fill="#fbc02d" opacity="0.8" stroke="#f57f17" stroke-width="1.5"/>
+        <text x="430" y="470" text-anchor="middle" fill="#e65100" font-size="8">Black-Eyed Susan</text>
+
+        <!-- MEXICAN SAGE -->
+        <rect x="440" y="395" width="70" height="16" rx="8" fill="#6a1b9a" opacity="0.65"/>
+        <text x="475" y="407" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">Mexican Sage</text>
+
+        <!-- COMPASS -->
+        <g transform="translate(740,670)">
+          <circle r="22" fill="#fff" opacity="0.8" stroke="#bdbdbd" stroke-width="1"/>
+          <text x="0" y="-8" text-anchor="middle" fill="#c62828" font-size="11" font-weight="700">N</text>
+          <line x1="0" y1="-5" x2="0" y2="5" stroke="#616161" stroke-width="1.5"/>
+          <polygon points="0,-17 -4,-8 4,-8" fill="#c62828"/>
+          <polygon points="0,17 -4,8 4,8" fill="#bdbdbd"/>
+          <text x="0" y="17" text-anchor="middle" fill="#9e9e9e" font-size="7">S</text>
+        </g>
+
+        <!-- LEGEND -->
+        <rect x="540" y="460" width="240" height="230" fill="#fff" rx="8" opacity="0.92" stroke="#e0e0e0" stroke-width="1"/>
+        <text x="560" y="482" fill="#333" font-size="12" font-weight="700">LEGEND</text>
+
+        <circle cx="560" cy="502" r="6" fill="url(#maple-grad)"/><text x="575" y="506" fill="#333" font-size="9">Red Maple (established)</text>
+        <circle cx="560" cy="522" r="6" fill="#c62828"/><text x="575" y="526" fill="#333" font-size="9">Columnar Apple (TR / TG / GT)</text>
+        <circle cx="560" cy="542" r="6" fill="url(#pear-grad)"/><text x="575" y="546" fill="#333" font-size="9">5-in-1 European Pear</text>
+        <circle cx="560" cy="562" r="6" fill="#7986cb"/><text x="575" y="566" fill="#333" font-size="9">Blueberry (PS / PL)</text>
+        <rect x="554" y="576" width="12" height="12" rx="6" fill="#2e7d32"/><text x="575" y="586" fill="#333" font-size="9">Rosemary</text>
+        <rect x="554" y="596" width="12" height="12" rx="6" fill="#7b1fa2"/><text x="575" y="606" fill="#333" font-size="9">Lavender</text>
+        <circle cx="560" cy="622" r="6" fill="#f9a825" stroke="#f57f17" stroke-width="1"/><text x="575" y="626" fill="#333" font-size="9">Sunflower</text>
+        <circle cx="560" cy="642" r="6" fill="#e53935"/><text x="575" y="646" fill="#333" font-size="9">Lobelia Candycorn</text>
+        <circle cx="560" cy="662" r="6" fill="#fbc02d" stroke="#f57f17" stroke-width="1"/><text x="575" y="666" fill="#333" font-size="9">Black-Eyed Susan</text>
+        <rect x="554" y="676" width="12" height="12" rx="6" fill="#6a1b9a"/><text x="575" y="686" fill="#333" font-size="9">Mexican Sage</text>
+
+        <!-- Shade plants in legend -->
+        <circle cx="700" cy="502" r="6" fill="#8e24aa"/><text x="715" y="506" fill="#333" font-size="9">Heuchera</text>
+        <circle cx="700" cy="522" r="6" fill="#ab47bc"/><text x="715" y="526" fill="#333" font-size="9">Belarina</text>
+
+        <!-- Dashed line labels -->
+        <line x1="700" y1="540" x2="725" y2="540" stroke="#a5d6a7" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="733" y="544" fill="#333" font-size="9">Guild zone</text>
+        <line x1="700" y1="558" x2="725" y2="558" stroke="#388e3c" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="733" y="562" fill="#333" font-size="9">Shade canopy</text>
+
+        <!-- SPACING NOTES -->
+        <!-- Apple spacing -->
+        <line x1="240" y1="285" x2="240" y2="340" stroke="#999" stroke-width="0.75"/>
+        <text x="255" y="316" fill="#777" font-size="7">2 ft</text>
+        <line x1="240" y1="340" x2="240" y2="395" stroke="#999" stroke-width="0.75"/>
+        <text x="255" y="371" fill="#777" font-size="7">2 ft</text>
+
+        <!-- Pear to apple distance note -->
+        <line x1="230" y1="440" x2="350" y2="530" stroke="#888" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <text x="270" y="495" fill="#777" font-size="8" transform="rotate(-30,270,495)">10-12 ft min</text>
+
+      </svg>
+    </div>
+
+    <div class="note"><strong>Key spacing rules:</strong> Columnar apples are 2 ft apart in a row. Pear tree stays 10-12 ft from the apple row and from structures. Rosemary and lavender are 3-4 ft from the apple trunks (separate watering). Shade plants (Heuchera, Belarina) go under or near the maple canopy. Sunflowers go in the sunniest open area as a backdrop row. Blueberries line the side of the house in full sun.</div>
+
+  </div>
+</section>
 
 <!-- FRUIT TREES -->
 <section id="trees">
