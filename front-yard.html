@@ -127,7 +127,6 @@
 <nav class="toc">
   <div class="toc-inner">
     <a href="index.html" class="page-link">&larr; Back Yard</a>
-    <a href="#layout">Layout</a>
     <a href="#trees">Apples</a>
     <a href="#pear">Pear</a>
     <a href="#maples">Maples</a>
@@ -141,94 +140,7 @@
 
 
 
-<!-- YARD LAYOUT DIAGRAM -->
-<section id="layout">
-  <div class="container">
-    <span class="section-label">Overview</span>
-    <h2>Front Yard Layout</h2>
-    <p class="section-desc">Property layout based on your sketch and Durham County GIS data. Lot narrows from the road toward the back. Scale is approximate.</p>
 
-    <div style="overflow-x:auto; margin:1.5rem 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700" style="width:100%; max-width:420px; display:block; margin:0 auto; font-family:'Segoe UI',system-ui,sans-serif;">
-
-        <rect width="400" height="700" fill="#fff"/>
-
-        <!-- Road label -->
-        <text x="140" y="28" fill="#555" font-size="12" font-style="italic">S Roxboro street</text>
-
-        <!-- Road -->
-        <line x1="0" y1="50" x2="400" y2="50" stroke="#888" stroke-width="1"/>
-
-        <!-- Curb -->
-        <line x1="38" y1="58" x2="362" y2="58" stroke="#bbb" stroke-width="0.4"/>
-
-        <!-- Lot boundary — traced from sketch, wedge shape, left side bows out -->
-        <polygon points="48,58 355,58 352,120 346,185 338,250 328,320 314,390 296,455 276,515 258,565 245,605 238,640 177,640 165,605 148,560 128,510 108,455 90,395 75,330 62,265 52,200 44,140 38,100 48,58"
-                 fill="none" stroke="#555" stroke-width="2.2" stroke-dasharray="12,7"/>
-
-        <!-- Side fences at house level connecting lot boundary to house -->
-        <line x1="54" y1="210" x2="96" y2="210" stroke="#555" stroke-width="2.2" stroke-dasharray="12,7"/>
-        <line x1="291" y1="210" x2="343" y2="210" stroke="#555" stroke-width="2.2" stroke-dasharray="12,7"/>
-
-        <!-- Driveway — two thin entry lines from road curving to stairs area -->
-        <line x1="128" y1="58" x2="106" y2="170" stroke="#999" stroke-width="0.7"/>
-        <line x1="168" y1="58" x2="146" y2="170" stroke="#999" stroke-width="0.7"/>
-
-        <!-- Driveway label -->
-        <text x="65" y="148" fill="#777" font-size="10">driveway</text>
-
-        <!-- Maple trees — two dark filled circles, center-right of front yard -->
-        <circle cx="215" cy="115" r="24" fill="#8a8580"/>
-        <circle cx="278" cy="115" r="24" fill="#8a8580"/>
-
-        <!-- dirt box -->
-        <rect x="102" y="168" width="26" height="14" fill="#e5e0da" stroke="#ccc" stroke-width="0.5"/>
-        <text x="115" y="178" text-anchor="middle" fill="#777" font-size="7">dirt</text>
-
-        <!-- Stairs box -->
-        <rect x="128" y="168" width="32" height="14" fill="#ddd" stroke="#ccc" stroke-width="0.5"/>
-        <text x="144" y="178" text-anchor="middle" fill="#777" font-size="7">Stairs</text>
-
-        <!-- Front Porch -->
-        <rect x="100" y="184" width="188" height="24" fill="#c5cdd5" stroke="#b0bac2" stroke-width="0.7"/>
-        <text x="194" y="200" text-anchor="middle" fill="#6a7580" font-size="10" font-weight="600">Front Porch</text>
-
-        <!-- Line between porch and house -->
-        <line x1="96" y1="208" x2="291" y2="208" stroke="#b0bac2" stroke-width="0.5"/>
-
-        <!-- House -->
-        <rect x="96" y="208" width="195" height="170" fill="#c5cdd5" stroke="#b0bac2" stroke-width="0.7"/>
-        <text x="194" y="302" text-anchor="middle" fill="#96a0a8" font-size="18" font-weight="600">House</text>
-
-        <!-- Back deck -->
-        <rect x="130" y="380" width="118" height="30" fill="#d8d4cf" stroke="#c0bab4" stroke-width="0.7"/>
-        <text x="189" y="399" text-anchor="middle" fill="#888" font-size="9" font-weight="600">Back deck</text>
-
-        <!-- Fire pit -->
-        <circle cx="195" cy="478" r="23" fill="#8a8580"/>
-        <text x="195" y="476" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">Fire</text>
-        <text x="195" y="487" text-anchor="middle" fill="#fff" font-size="8" font-weight="600">pit</text>
-
-        <!-- Garden beds label (rotated) -->
-        <text x="133" y="568" text-anchor="middle" fill="#777" font-size="7" font-weight="600" transform="rotate(-90,133,568)">Garden beds</text>
-
-        <!-- Garden beds — 4 outlined rectangles in a row along left fence -->
-        <rect x="145" y="545" width="18" height="16" fill="none" stroke="#888" stroke-width="0.8"/>
-        <rect x="165" y="545" width="18" height="16" fill="none" stroke="#888" stroke-width="0.8"/>
-        <rect x="185" y="545" width="18" height="16" fill="none" stroke="#888" stroke-width="0.8"/>
-        <rect x="205" y="545" width="18" height="16" fill="none" stroke="#888" stroke-width="0.8"/>
-
-        <!-- Shed -->
-        <rect x="195" y="600" width="55" height="25" fill="#a09088" stroke="#908078" stroke-width="0.7" rx="1"/>
-        <text x="222" y="617" text-anchor="middle" fill="#4a3a32" font-size="9" font-weight="600">Shed</text>
-
-      </svg>
-    </div>
-
-    <div class="note"><strong>Layout:</strong> Traced from satellite view. Driveway enters from the road on the left. Maples are center-right in the front yard. The lot is a wedge shape narrowing from the road toward the back. Side fences connect the house to the lot boundary. Garden beds along the left fence in the backyard.</div>
-
-  </div>
-</section>
 
 
 <!-- FRUIT TREES -->
