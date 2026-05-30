@@ -107,6 +107,24 @@
       font-style: italic;
       line-height: 1.4;
     }
+    .pest-gallery {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .pest-gallery-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .pest-gallery-item .pest-img {
+      width: 100%;
+      height: 130px;
+    }
+    .pest-gallery-item .pest-caption {
+      font-size: 0.65rem;
+    }
     .pest-id h4 { color: #b71c1c; margin: 0 0 0.35rem; font-size: 0.95rem; }
     .pest-id ul { font-size: 0.85rem; color: var(--gray-700); padding-left: 1.1rem; line-height: 1.7; margin: 0; }
 
@@ -140,6 +158,8 @@
       .hero h1 { font-size: 1.75rem; }
       .pest-layout { grid-template-columns: 1fr; }
       .pest-img { width: 100%; height: 220px; }
+      .pest-gallery { flex-direction: column; }
+      .pest-gallery-item .pest-img { height: 180px; }
       .pest-details { grid-template-columns: 1fr; }
       .toc-inner { gap: 0; }
       .toc a { padding: 0.35rem 0.5rem; font-size: 0.75rem; }
@@ -551,10 +571,16 @@
           <div class="pest-figure">
             <img class="pest-img" src="images/aphids.jpg" alt="Aphids — clusters of small green insects on plant stem">
             <span class="pest-caption">Aphid colony &mdash; tiny green clusters on stems</span>
-            <img class="pest-img" src="images/aphids-closeup.jpg" alt="Single green aphid close-up showing pear-shaped body and cornicles">
-            <span class="pest-caption">Close-up &mdash; pear-shaped body, two tail pipes (cornicles)</span>
-            <img class="pest-img" src="images/aphids-with-ants.jpg" alt="Aphids on rose bud with attending ants">
-            <span class="pest-caption">Aphids with ants &mdash; ants farming aphids is a key sign</span>
+            <div class="pest-gallery">
+              <div class="pest-gallery-item">
+                <img class="pest-img" src="images/aphids-closeup.jpg" alt="Single green aphid close-up showing pear-shaped body and cornicles">
+                <span class="pest-caption">Close-up &mdash; pear-shaped body with cornicles</span>
+              </div>
+              <div class="pest-gallery-item">
+                <img class="pest-img" src="images/aphids-with-ants.jpg" alt="Aphids on rose bud with attending ants">
+                <span class="pest-caption">Aphids with ants &mdash; a key sign</span>
+              </div>
+            </div>
           </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
@@ -810,10 +836,16 @@
           <div class="pest-figure">
             <img class="pest-img" src="images/spider-mites.jpg" alt="Spider mites — tiny red mites with fine webbing on leaves">
             <span class="pest-caption">Spider mites &mdash; tiny specks with fine silk webbing</span>
-            <img class="pest-img" src="images/spider-mites-closeup.jpg" alt="Red spider mite close-up showing oval body and eight legs">
-            <span class="pest-caption">Close-up &mdash; oval body, eight legs, red/orange color</span>
-            <img class="pest-img" src="images/spider-mites-damage.jpg" alt="Spider mite damage on gardenia leaves showing stippling and webbing">
-            <span class="pest-caption">Leaf damage &mdash; stippling, yellowing, and visible webbing</span>
+            <div class="pest-gallery">
+              <div class="pest-gallery-item">
+                <img class="pest-img" src="images/spider-mites-closeup.jpg" alt="Red spider mite close-up showing oval body and eight legs">
+                <span class="pest-caption">Close-up &mdash; oval body, eight legs</span>
+              </div>
+              <div class="pest-gallery-item">
+                <img class="pest-img" src="images/spider-mites-damage.jpg" alt="Spider mite damage on gardenia leaves showing stippling and webbing">
+                <span class="pest-caption">Leaf damage &mdash; stippling and webbing</span>
+              </div>
+            </div>
           </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
