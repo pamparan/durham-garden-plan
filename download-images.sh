@@ -1,12 +1,14 @@
 #!/bin/bash
 # Downloads all pest identification images from Wikimedia Commons
 # Run: bash download-images.sh
+# Safe to re-run -- skips images that already downloaded successfully
 
 set -e
 mkdir -p images
 
 python3 << 'PYEOF'
 import urllib.request
+import urllib.error
 import json
 import os
 import sys
@@ -32,8 +34,14 @@ IMAGES = {
 API = "https://commons.wikimedia.org/w/api.php"
 UA = "DurhamGardenPlan/1.0 (garden pest guide; contact: github.com/pamparan)"
 
+def is_valid_image(path):
+    if not os.path.exists(path) or os.path.getsize(path) < 5000:
+        return False
+    with open(path, "rb") as f:
+        header = f.read(3)
+    return header[:2] == b'\xff\xd8' or header[:3] == b'\x89PN'
+
 def get_thumb_url(filename, width=500):
-    """Use the MediaWiki API to get the correct thumbnail URL."""
     params = {
         "action": "query",
         "titles": f"File:{filename}",
@@ -64,27 +72,50 @@ def download(url, dest):
     return len(data)
 
 ok = 0
+skip = 0
 fail = 0
 for i, (local_name, commons_name) in enumerate(IMAGES.items(), 1):
     dest = os.path.join("images", local_name)
     sys.stdout.write(f"  {i:2d}/14 {local_name:40s} ")
     sys.stdout.flush()
-    if i > 1:
-        time.sleep(1)
-    try:
-        thumb_url = get_thumb_url(commons_name)
-        if not thumb_url:
-            print("SKIP (file not found on Commons)")
-            fail += 1
-            continue
-        size = download(thumb_url, dest)
-        print(f"OK ({size:,d} bytes)")
+
+    if is_valid_image(dest):
+        sz = os.path.getsize(dest)
+        print(f"EXISTS ({sz:,d} bytes)")
         ok += 1
-    except Exception as e:
-        print(f"FAIL ({e})")
-        fail += 1
+        continue
+
+    time.sleep(2)
+
+    for attempt in range(3):
+        try:
+            thumb_url = get_thumb_url(commons_name)
+            if not thumb_url:
+                print("NOT FOUND on Commons")
+                fail += 1
+                break
+            size = download(thumb_url, dest)
+            print(f"OK ({size:,d} bytes)")
+            ok += 1
+            break
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 2:
+                wait = 5 * (attempt + 1)
+                sys.stdout.write(f"(rate limited, waiting {wait}s) ")
+                sys.stdout.flush()
+                time.sleep(wait)
+            else:
+                print(f"FAIL (HTTP {e.code})")
+                fail += 1
+                break
+        except Exception as e:
+            print(f"FAIL ({e})")
+            fail += 1
+            break
 
 print(f"\nDone: {ok} succeeded, {fail} failed")
 if fail == 0:
-    print("Now run: git add images/ && git commit -m 'Add pest images' && git push")
+    print("All images ready! Run: git add images/ && git commit -m 'Add pest images' && git push")
+else:
+    print("Some failed. Run the script again to retry -- it skips images that already downloaded.")
 PYEOF
