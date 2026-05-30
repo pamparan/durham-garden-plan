@@ -10,6 +10,7 @@ import urllib.request
 import json
 import os
 import sys
+import time
 
 IMAGES = {
     "svb.jpg": "Melittia cucurbitae P1440822a.jpg",
@@ -28,8 +29,8 @@ IMAGES = {
     "fire-blight.jpg": "Apple tree with fire blight.jpg",
 }
 
-API = "https://en.wikipedia.org/w/api.php"
-UA = "DurhamGardenPlan/1.0 (pest guide image downloader)"
+API = "https://commons.wikimedia.org/w/api.php"
+UA = "DurhamGardenPlan/1.0 (garden pest guide; contact: github.com/pamparan)"
 
 def get_thumb_url(filename, width=500):
     """Use the MediaWiki API to get the correct thumbnail URL."""
@@ -68,6 +69,8 @@ for i, (local_name, commons_name) in enumerate(IMAGES.items(), 1):
     dest = os.path.join("images", local_name)
     sys.stdout.write(f"  {i:2d}/14 {local_name:40s} ")
     sys.stdout.flush()
+    if i > 1:
+        time.sleep(1)
     try:
         thumb_url = get_thumb_url(commons_name)
         if not thumb_url:
