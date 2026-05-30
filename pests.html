@@ -83,17 +83,29 @@
 
     .pest-layout {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 280px 1fr;
       gap: 1.5rem;
       margin-bottom: 1rem;
     }
+    .pest-figure {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
     .pest-img {
-      width: 200px;
-      height: 150px;
+      width: 280px;
+      height: 210px;
       border-radius: 8px;
       object-fit: cover;
       border: 1px solid var(--gray-200);
       background: var(--gray-100);
+    }
+    .pest-caption {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      text-align: center;
+      font-style: italic;
+      line-height: 1.4;
     }
     .pest-id h4 { color: #b71c1c; margin: 0 0 0.35rem; font-size: 0.95rem; }
     .pest-id ul { font-size: 0.85rem; color: var(--gray-700); padding-left: 1.1rem; line-height: 1.7; margin: 0; }
@@ -127,7 +139,7 @@
     @media (max-width: 700px) {
       .hero h1 { font-size: 1.75rem; }
       .pest-layout { grid-template-columns: 1fr; }
-      .pest-img { width: 100%; height: 180px; }
+      .pest-img { width: 100%; height: 220px; }
       .pest-details { grid-template-columns: 1fr; }
       .toc-inner { gap: 0; }
       .toc a { padding: 0.35rem 0.5rem; font-size: 0.75rem; }
@@ -153,6 +165,7 @@
     <a href="#svb">Vine Borer</a>
     <a href="#hornworm">Hornworm</a>
     <a href="#cucumber-beetle">Cuc. Beetle</a>
+    <a href="#squash-beetle">Squash Beetle</a>
     <a href="#flea-beetle">Flea Beetle</a>
     <a href="#aphids">Aphids</a>
     <a href="#japanese-beetle">Jap. Beetle</a>
@@ -181,6 +194,7 @@
           <tr onclick="location.href='#svb'" style="cursor:pointer"><td><strong>Squash Vine Borer</strong></td><td><span class="threat-badge threat-high">High</span></td><td>Jun &amp; Aug-Sep</td><td>All squash, watermelon</td><td>Sawdust-like frass at stem base</td></tr>
           <tr onclick="location.href='#hornworm'" style="cursor:pointer"><td><strong>Tomato Hornworm</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Aug</td><td>Tomatoes, peppers, eggplant</td><td>Large dark droppings, stripped leaves</td></tr>
           <tr onclick="location.href='#cucumber-beetle'" style="cursor:pointer"><td><strong>Cucumber Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Jul</td><td>Cucumbers, squash, melon</td><td>Small yellow-green beetles on flowers</td></tr>
+          <tr onclick="location.href='#squash-beetle'" style="cursor:pointer"><td><strong>Squash Lady Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Sep</td><td>All squash, cucumbers, watermelon</td><td>Lacy skeletonized leaves, yellow spotted &ldquo;ladybug&rdquo;</td></tr>
           <tr onclick="location.href='#flea-beetle'" style="cursor:pointer"><td><strong>Flea Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Sep</td><td>Eggplant (primary), peppers</td><td>Tiny &ldquo;shot holes&rdquo; in leaves</td></tr>
           <tr onclick="location.href='#aphids'" style="cursor:pointer"><td><strong>Aphids</strong></td><td><span class="threat-badge threat-low">Low</span></td><td>All season</td><td>Peppers, lettuce, eggplant, fruit trees</td><td>Sticky honeydew, curling leaves</td></tr>
           <tr onclick="location.href='#japanese-beetle'" style="cursor:pointer"><td><strong>Japanese Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jul-Aug</td><td>Many plants, fruit trees, roses</td><td>Skeletonized leaves (veins left behind)</td></tr>
@@ -207,7 +221,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Melittia_cucurbitae_-_Squash_Vine_Borer_Moth_-_%2814530001918%29.jpg/320px-Melittia_cucurbitae_-_Squash_Vine_Borer_Moth_-_%2814530001918%29.jpg" alt="Squash vine borer moth — orange and black wasp-like day-flying moth">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Melittia_cucurbitae_P1440822a.jpg/480px-Melittia_cucurbitae_P1440822a.jpg" alt="Squash vine borer moth — orange and black wasp-like day-flying moth">
+            <span class="pest-caption">Adult squash vine borer moth &mdash; orange body, metallic green wings, wasp-like</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Melittia cucurbitae</em> &mdash; the #1 killer of squash in Zone 8a</p>
@@ -270,7 +287,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tobacco_hornworm.jpg/320px-Tobacco_hornworm.jpg" alt="Tomato hornworm — large green caterpillar with white diagonal stripes and red horn">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tobacco_hornworm.jpg/480px-Tobacco_hornworm.jpg" alt="Tomato hornworm — large green caterpillar with white diagonal stripes and red horn">
+            <span class="pest-caption">Tomato hornworm &mdash; 3&ndash;4&Prime; green caterpillar with white stripes</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Manduca quinquemaculata</em> &mdash; impressive but destructive</p>
@@ -332,7 +352,12 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Striped_cucumber_beetle.jpg/320px-Striped_cucumber_beetle.jpg" alt="Striped cucumber beetle — small yellow beetle with black stripes on a leaf">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Striped_cucumber_beetle.jpg/480px-Striped_cucumber_beetle.jpg" alt="Striped cucumber beetle — small yellow beetle with black stripes on a leaf">
+            <span class="pest-caption">Striped cucumber beetle &mdash; yellow with 3 black stripes</span>
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Spotted_Cucumber_Beetle_%28Diabrotica_undecimpunctata%29.jpg/480px-Spotted_Cucumber_Beetle_%28Diabrotica_undecimpunctata%29.jpg" alt="Spotted cucumber beetle — yellow-green beetle with 12 black spots">
+            <span class="pest-caption">Spotted cucumber beetle &mdash; yellow-green with 12 black spots</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Acalymma vittatum</em> (striped) / <em>Diabrotica undecimpunctata</em> (spotted)</p>
@@ -383,6 +408,77 @@
   </div>
 </section>
 
+<!-- SQUASH LADY BEETLE -->
+<section id="squash-beetle">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#e8a735;">
+        Squash Lady Beetle <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Squash_beetle_%28Epilachna_borealis%29_%2823270398320%29.jpg/480px-Squash_beetle_%28Epilachna_borealis%29_%2823270398320%29.jpg" alt="Squash lady beetle — yellow-orange dome-shaped beetle with seven black spots on each wing cover, on a squash leaf">
+            <span class="pest-caption">Squash lady beetle &mdash; yellow with 7 black spots per wing, ladybug-shaped</span>
+          </div>
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Epilachna borealis</em> &mdash; the plant-eating ladybug</p>
+            <ul>
+              <li><strong>Size:</strong> About 3/8&Prime; (7&ndash;10 mm) &mdash; larger than most lady beetles. Dome-shaped body.</li>
+              <li><strong>Color:</strong> Yellow to orange with <strong>seven large black spots</strong> on each wing cover (14 total) and four smaller spots on the thorax. Easily mistaken for a beneficial ladybug.</li>
+              <li><strong>Larvae:</strong> Yellow, slug-like grubs covered in six rows of dark, branching spines. Found on leaf undersides.</li>
+              <li><strong>Eggs:</strong> Bright yellow clusters of 40&ndash;75 eggs on leaf undersides &mdash; look similar to beneficial ladybug eggs but are on cucurbit leaves.</li>
+              <li><strong>Feeding pattern:</strong> Adults and larvae scrape leaf tissue between veins, leaving a distinctive &ldquo;lacy&rdquo; or skeletonized look. Before feeding, they trench a semicircle around their target area.</li>
+              <li><strong>Late-season:</strong> Adults also chew on squash and pumpkin rind later in the season.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jun-Sep</span>
+        <span class="tag tag-plant">Crookneck Squash</span>
+        <span class="tag tag-plant">Spaghetti Squash</span>
+        <span class="tag tag-plant">Straightneck Squash</span>
+        <span class="tag tag-plant">Cucumbers</span>
+        <span class="tag tag-plant">Watermelon</span>
+
+        <div class="pest-detail-grid">
+          <div class="pest-detail-card">
+            <h4>Plants at Risk</h4>
+            <ul>
+              <li><strong>Primary targets:</strong> All your squash varieties (crookneck, spaghetti, straightneck) are the main draw &mdash; this beetle is named for its squash obsession.</li>
+              <li><strong>Secondary:</strong> Cucumbers and watermelon are also cucurbits and will be fed on.</li>
+              <li><strong>Late season:</strong> When foliage gets tough, adults move to feeding on fruit rinds, leaving scarred patches on squash.</li>
+              <li><strong>Not at risk:</strong> Tomatoes, peppers, eggplant, herbs, and fruit trees are not cucurbits and are safe.</li>
+            </ul>
+          </div>
+
+          <div class="pest-detail-card">
+            <h4>Natural Treatment</h4>
+            <ul>
+              <li><strong>Hand-pick adults:</strong> They&rsquo;re slow-moving and easy to grab &mdash; drop into soapy water. Check mornings when they&rsquo;re sluggish.</li>
+              <li><strong>Crush egg clusters:</strong> Check undersides of squash leaves regularly. Yellow egg masses are easy to spot &mdash; wipe them off with your thumb.</li>
+              <li><strong>Neem oil spray:</strong> Effective against larvae. Spray undersides of leaves where larvae feed. Apply early morning or evening.</li>
+              <li><strong>Spinosad:</strong> Organic insecticide that works well on larvae. Apply when you first see the spiny yellow grubs.</li>
+              <li><strong>Row covers:</strong> Cover squash plants until flowering begins to block egg-laying adults entirely.</li>
+            </ul>
+          </div>
+
+          <div class="pest-detail-card">
+            <h4>Prevention</h4>
+            <ul>
+              <li><strong>Don&rsquo;t confuse with beneficials:</strong> Helpful lady beetles are usually red/orange with fewer spots and are found on aphid-infested plants, not squash. The squash beetle is always on cucurbit leaves.</li>
+              <li><strong>Trap crop:</strong> Plant a sacrificial Blue Hubbard squash nearby &mdash; squash beetles prefer it and will congregate there for easy removal.</li>
+              <li><strong>Clean up debris:</strong> Adults overwinter under leaf litter and bark near the garden. Clear old cucurbit vines and mulch edges in fall.</li>
+              <li><strong>Rotate beds:</strong> Don&rsquo;t plant squash in the same bed next year. Even in small gardens, moving cucurbits to a different bed disrupts the beetle&rsquo;s return to familiar territory.</li>
+              <li><strong>Companion planting:</strong> Radishes and nasturtiums near squash can help deter. Your dill (herb pots) attracts parasitic wasps that prey on the larvae.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FLEA BEETLE -->
 <section id="flea-beetle">
   <div class="container">
@@ -392,7 +488,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flea_beetle.jpg/320px-Flea_beetle.jpg" alt="Flea beetle — tiny dark beetle on a leaf with small round holes">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flea_beetle.jpg/480px-Flea_beetle.jpg" alt="Flea beetle — tiny dark beetle on a leaf with small round holes">
+            <span class="pest-caption">Flea beetle &mdash; tiny dark beetle, jumps when disturbed</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Epitrix</em> spp. &mdash; tiny but persistent</p>
@@ -449,7 +548,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Aphids_on_broccoli.jpg/320px-Aphids_on_broccoli.jpg" alt="Aphids — clusters of small green insects on plant stem">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Aphids_on_broccoli.jpg/480px-Aphids_on_broccoli.jpg" alt="Aphids — clusters of small green insects on plant stem">
+            <span class="pest-caption">Aphids &mdash; tiny green clusters on stems and leaf undersides</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Aphidoidea</em> &mdash; the most common garden pest worldwide</p>
@@ -513,7 +615,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Popillia_japonica.jpg/320px-Popillia_japonica.jpg" alt="Japanese beetle — metallic green and copper beetle on a leaf">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Popillia_japonica.jpg/480px-Popillia_japonica.jpg" alt="Japanese beetle — metallic green and copper beetle on a leaf">
+            <span class="pest-caption">Japanese beetle &mdash; metallic green head, copper wing covers</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Popillia japonica</em> &mdash; unmistakable metallic beauty</p>
@@ -574,7 +679,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Halyomorpha_halys_lab.jpg/320px-Halyomorpha_halys_lab.jpg" alt="Brown marmorated stink bug — shield-shaped brown bug with mottled pattern">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Halyomorpha_halys_lab.jpg/480px-Halyomorpha_halys_lab.jpg" alt="Brown marmorated stink bug — shield-shaped brown bug with mottled pattern">
+            <span class="pest-caption">Brown marmorated stink bug &mdash; shield-shaped, mottled brown</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Halyomorpha halys</em> &mdash; invasive, smelly, and destructive</p>
@@ -634,7 +742,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Trialeurodes_vaporariorum.jpg/320px-Trialeurodes_vaporariorum.jpg" alt="Whiteflies — tiny white winged insects on leaf underside">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Trialeurodes_vaporariorum.jpg/480px-Trialeurodes_vaporariorum.jpg" alt="Whiteflies — tiny white winged insects on leaf underside">
+            <span class="pest-caption">Whiteflies &mdash; tiny white moths on leaf underside, scatter when touched</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Trialeurodes vaporariorum</em> / <em>Bemisia tabaci</em></p>
@@ -692,7 +803,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Tetranychus_urticae_with_silk_threads.jpg/320px-Tetranychus_urticae_with_silk_threads.jpg" alt="Spider mites — tiny red mites with fine webbing on leaves">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Tetranychus_urticae_with_silk_threads.jpg/480px-Tetranychus_urticae_with_silk_threads.jpg" alt="Spider mites — tiny red mites with fine webbing on leaves">
+            <span class="pest-caption">Spider mites &mdash; tiny red/brown specks with fine silk webbing</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Tetranychus urticae</em> &mdash; thrives in hot, dry conditions</p>
@@ -751,7 +865,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Blossom_end_rot.jpg/320px-Blossom_end_rot.jpg" alt="Blossom end rot — dark sunken spot on bottom of tomato">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Blossom_end_rot.jpg/480px-Blossom_end_rot.jpg" alt="Blossom end rot — dark sunken spot on bottom of tomato">
+            <span class="pest-caption">Blossom end rot &mdash; dark, sunken patch on fruit bottom</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;">Not a pest or disease &mdash; a calcium uptake disorder caused by inconsistent watering</p>
@@ -812,7 +929,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Melanaspis_tenebricosa_%28gloomy_scale%29_on_Acer_rubrum.jpg/320px-Melanaspis_tenebricosa_%28gloomy_scale%29_on_Acer_rubrum.jpg" alt="Gloomy scale — gray-brown disc-shaped scale insects encrusting red maple bark">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Melanaspis_tenebricosa_%28gloomy_scale%29_on_Acer_rubrum.jpg/480px-Melanaspis_tenebricosa_%28gloomy_scale%29_on_Acer_rubrum.jpg" alt="Gloomy scale — gray-brown disc-shaped scale insects encrusting red maple bark">
+            <span class="pest-caption">Gloomy scale on red maple &mdash; gray-brown disc-shaped crusts on bark</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Melanaspis tenebricosa</em> &mdash; #1 pest of red maples in Durham/Raleigh</p>
@@ -871,7 +991,10 @@
       </div>
       <div class="pest-card-body">
         <div class="pest-layout">
-          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Fire_blight_%28Erwinia_amylovora%29.jpg/320px-Fire_blight_%28Erwinia_amylovora%29.jpg" alt="Fire blight — blackened, wilted shoot tip on pear tree forming a shepherd's crook shape">
+          <div class="pest-figure">
+            <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Fire_blight_%28Erwinia_amylovora%29.jpg/480px-Fire_blight_%28Erwinia_amylovora%29.jpg" alt="Fire blight — blackened, wilted shoot tip on pear tree forming a shepherd's crook shape">
+            <span class="pest-caption">Fire blight &mdash; blackened shoot tips curled into shepherd&rsquo;s crook</span>
+          </div>
           <div class="pest-id">
             <h4>How to Identify</h4>
             <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Erwinia amylovora</em> &mdash; bacterial disease, biggest threat to pear and apple trees</p>
