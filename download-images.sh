@@ -29,6 +29,10 @@ IMAGES = {
     "blossom-end-rot.jpg": "Blossom end rot.JPG",
     "gloomy-scale.jpg": "Melanaspis tenebricosa - inat 167116957.jpg",
     "fire-blight.jpg": "Apple tree with fire blight.jpg",
+    "aphids-closeup.jpg": "Green Aphid (31290392556).jpg",
+    "aphids-with-ants.jpg": "Aphids Macrosiphum rosae and ants on a red rose bud, by baby-bear.org.jpg",
+    "spider-mites-closeup.jpg": "Red spider mite (Tetranychus urticae).jpg",
+    "spider-mites-damage.jpg": "Spidermites-gardenia.jpg",
 }
 
 API = "https://commons.wikimedia.org/w/api.php"
