@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pest Guide — Durham Garden Plan 2026</title>
+  <style>
+    :root {
+      --green-900: #1a3a1a;
+      --green-800: #2d5a27;
+      --green-700: #3a7d32;
+      --green-600: #4a9e3f;
+      --green-100: #e8f5e9;
+      --green-50: #f1f8f1;
+      --earth-700: #5d4037;
+      --earth-600: #6d4c41;
+      --earth-500: #8d6e63;
+      --earth-100: #efebe9;
+      --sun-400: #fbc02d;
+      --sun-100: #fff9c4;
+      --tomato: #e53935;
+      --herb: #2e7d32;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #eeeeee;
+      --gray-300: #e0e0e0;
+      --gray-600: #757575;
+      --gray-700: #616161;
+      --gray-800: #424242;
+      --gray-900: #212121;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--gray-50); color: var(--gray-900); line-height: 1.6; }
+
+    .hero {
+      background: linear-gradient(135deg, #b71c1c 0%, #c62828 40%, var(--earth-600) 100%);
+      color: white; padding: 3rem 1.5rem; text-align: center;
+    }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero .subtitle { font-size: 1.15rem; opacity: 0.9; }
+    .hero .zone-badge { display: inline-block; background: var(--sun-400); color: var(--gray-900); padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; margin-top: 1rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0; }
+    section + section { border-top: 1px solid var(--gray-200); }
+
+    .section-label { display: inline-block; background: #c62828; color: white; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 4px; margin-bottom: 0.75rem; }
+    h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--green-900); }
+    .section-desc { color: var(--gray-600); margin-bottom: 2rem; max-width: 700px; }
+    .note { font-size: 0.8rem; color: var(--gray-600); margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: var(--gray-100); border-radius: 6px; border-left: 3px solid var(--green-600); }
+
+    .toc { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; }
+    .toc-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.25rem; align-items: center; }
+    .toc a { color: var(--green-800); text-decoration: none; font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 6px; transition: background 0.2s; white-space: nowrap; }
+    .toc a:hover { background: var(--green-100); }
+    .toc a.page-link { background: var(--earth-100); color: var(--earth-700); }
+    .toc a.page-link:hover { background: #d7ccc8; color: var(--earth-700); }
+
+    .threat-high { background: #ffcdd2; color: #b71c1c; }
+    .threat-med { background: #fff3e0; color: #e65100; }
+    .threat-low { background: #dcedc8; color: #33691e; }
+    .threat-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 100px; }
+
+    .pest-card {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .pest-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .pest-card-header .latin { font-weight: 400; font-size: 0.85rem; opacity: 0.85; font-style: italic; }
+    .pest-card-body { padding: 0 1.25rem 1.25rem; }
+
+    .pest-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .pest-img {
+      width: 200px;
+      height: 150px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-100);
+    }
+    .pest-id h4 { color: #b71c1c; margin: 0 0 0.35rem; font-size: 0.95rem; }
+    .pest-id ul { font-size: 0.85rem; color: var(--gray-700); padding-left: 1.1rem; line-height: 1.7; margin: 0; }
+
+    .pest-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .pest-detail-card {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 0.85rem;
+      border: 1px solid var(--gray-200);
+    }
+    .pest-detail-card h5 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .pest-detail-card h5.targets { color: #e65100; }
+    .pest-detail-card h5.treatment { color: var(--herb); }
+    .pest-detail-card h5.prevention { color: #1565c0; }
+    .pest-detail-card ul { font-size: 0.82rem; color: var(--gray-700); padding-left: 1rem; line-height: 1.7; margin: 0; }
+    .pest-detail-card p { font-size: 0.82rem; color: var(--gray-700); line-height: 1.7; margin: 0; }
+
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 100px; margin-right: 0.25rem; margin-bottom: 0.25rem; }
+    .tag-plant { background: #e8f5e9; color: #1b5e20; }
+    .tag-season { background: #e3f2fd; color: #0d47a1; }
+
+    .quick-ref { background: var(--white); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow-x: auto; }
+    .quick-ref table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 650px; }
+    .quick-ref thead th { background: #b71c1c; color: white; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .quick-ref td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--gray-100); }
+    .quick-ref tbody tr:hover { background: var(--gray-50); }
+
+    footer { text-align: center; padding: 2rem; color: var(--gray-600); font-size: 0.85rem; border-top: 1px solid var(--gray-200); }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 1.75rem; }
+      .pest-layout { grid-template-columns: 1fr; }
+      .pest-img { width: 100%; height: 180px; }
+      .pest-details { grid-template-columns: 1fr; }
+      .toc-inner { gap: 0; }
+      .toc a { padding: 0.35rem 0.5rem; font-size: 0.75rem; }
+      .container { padding: 0 1rem; }
+      section { padding: 2rem 0; }
+      h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Pest Identification &amp; Treatment</h1>
+  <p class="subtitle">Comprehensive guide to every pest threatening your Durham garden &mdash; what they look like, what they attack, and how to stop them naturally</p>
+  <span class="zone-badge">USDA Zone 8a</span>
+</div>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="index.html" class="page-link">&larr; Back Yard</a>
+    <a href="front-yard.html" class="page-link">Front Yard</a>
+    <a href="#quick-ref">Quick Reference</a>
+    <a href="#svb">Vine Borer</a>
+    <a href="#hornworm">Hornworm</a>
+    <a href="#cucumber-beetle">Cuc. Beetle</a>
+    <a href="#flea-beetle">Flea Beetle</a>
+    <a href="#aphids">Aphids</a>
+    <a href="#japanese-beetle">Jap. Beetle</a>
+    <a href="#stink-bug">Stink Bug</a>
+    <a href="#whitefly">Whitefly</a>
+    <a href="#spider-mite">Spider Mite</a>
+    <a href="#blossom-end-rot">BER</a>
+    <a href="#gloomy-scale">Gloomy Scale</a>
+    <a href="#fire-blight">Fire Blight</a>
+  </div>
+</nav>
+
+<!-- QUICK REFERENCE TABLE -->
+<section id="quick-ref">
+  <div class="container">
+    <span class="section-label">Overview</span>
+    <h2>Quick Reference</h2>
+    <p class="section-desc">Every pest and disease relevant to your garden, ranked by threat level. Click any row to jump to the full entry.</p>
+
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr><th>Pest / Disease</th><th>Threat</th><th>When</th><th>Your Plants at Risk</th><th>First Sign</th></tr>
+        </thead>
+        <tbody>
+          <tr onclick="location.href='#svb'" style="cursor:pointer"><td><strong>Squash Vine Borer</strong></td><td><span class="threat-badge threat-high">High</span></td><td>Jun &amp; Aug-Sep</td><td>All squash, watermelon</td><td>Sawdust-like frass at stem base</td></tr>
+          <tr onclick="location.href='#hornworm'" style="cursor:pointer"><td><strong>Tomato Hornworm</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Aug</td><td>Tomatoes, peppers, eggplant</td><td>Large dark droppings, stripped leaves</td></tr>
+          <tr onclick="location.href='#cucumber-beetle'" style="cursor:pointer"><td><strong>Cucumber Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Jul</td><td>Cucumbers, squash, melon</td><td>Small yellow-green beetles on flowers</td></tr>
+          <tr onclick="location.href='#flea-beetle'" style="cursor:pointer"><td><strong>Flea Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jun-Sep</td><td>Eggplant (primary), peppers</td><td>Tiny &ldquo;shot holes&rdquo; in leaves</td></tr>
+          <tr onclick="location.href='#aphids'" style="cursor:pointer"><td><strong>Aphids</strong></td><td><span class="threat-badge threat-low">Low</span></td><td>All season</td><td>Peppers, lettuce, eggplant, fruit trees</td><td>Sticky honeydew, curling leaves</td></tr>
+          <tr onclick="location.href='#japanese-beetle'" style="cursor:pointer"><td><strong>Japanese Beetle</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jul-Aug</td><td>Many plants, fruit trees, roses</td><td>Skeletonized leaves (veins left behind)</td></tr>
+          <tr onclick="location.href='#stink-bug'" style="cursor:pointer"><td><strong>Brown Marmorated Stink Bug</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jul-Oct</td><td>Tomatoes, peppers, fruit trees</td><td>Dimpled, discolored spots on fruit</td></tr>
+          <tr onclick="location.href='#whitefly'" style="cursor:pointer"><td><strong>Whitefly</strong></td><td><span class="threat-badge threat-low">Low</span></td><td>Jun-Sep</td><td>Tomatoes, peppers, eggplant</td><td>Tiny white flies scatter when leaves disturbed</td></tr>
+          <tr onclick="location.href='#spider-mite'" style="cursor:pointer"><td><strong>Spider Mites</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jul-Sep (hot/dry)</td><td>Tomatoes, cucumbers, eggplant, beans</td><td>Fine webbing on leaf undersides, stippled leaves</td></tr>
+          <tr onclick="location.href='#blossom-end-rot'" style="cursor:pointer"><td><strong>Blossom End Rot</strong></td><td><span class="threat-badge threat-med">Med</span></td><td>Jul-Aug</td><td>Tomatoes, peppers, squash, watermelon</td><td>Dark, sunken spot on fruit bottom</td></tr>
+          <tr onclick="location.href='#gloomy-scale'" style="cursor:pointer"><td><strong>Gloomy Scale</strong></td><td><span class="threat-badge threat-high">High</span></td><td>Year-round</td><td>Red maples</td><td>Gray-brown encrusted bark, thinning canopy</td></tr>
+          <tr onclick="location.href='#fire-blight'" style="cursor:pointer"><td><strong>Fire Blight</strong></td><td><span class="threat-badge threat-high">High</span></td><td>Spring (wet)</td><td>Pear tree, apple trees</td><td>Blackened shoot tips curled into &ldquo;shepherd&rsquo;s crook&rdquo;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INDIVIDUAL PEST CARDS ==================== -->
+
+<!-- SQUASH VINE BORER -->
+<section id="svb">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#b71c1c;">
+        Squash Vine Borer <span class="threat-badge threat-high" style="margin-left:auto;">High Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Melittia_cucurbitae_-_Squash_Vine_Borer_Moth_-_%2814530001918%29.jpg/320px-Melittia_cucurbitae_-_Squash_Vine_Borer_Moth_-_%2814530001918%29.jpg" alt="Squash vine borer moth — orange and black wasp-like day-flying moth">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Melittia cucurbitae</em> &mdash; the #1 killer of squash in Zone 8a</p>
+            <ul>
+              <li><strong>Adult moth:</strong> Bright orange-red abdomen with black wings, resembles a wasp. Flies during the day (unusual for moths). About 1&Prime; long.</li>
+              <li><strong>Larva:</strong> White grub with brown head, 1&Prime; long, found INSIDE the vine stem</li>
+              <li><strong>Eggs:</strong> Tiny (1mm), flat, reddish-brown, laid singly at the base of stems</li>
+              <li><strong>Frass:</strong> Sawdust-like orange-yellow mush oozing from holes at the stem base &mdash; this is the #1 sign you already have them</li>
+              <li><strong>Wilting:</strong> Vine suddenly wilts on a hot afternoon despite moist soil &mdash; the larva has severed the water flow inside the stem</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jun (1st wave)</span>
+        <span class="tag tag-season">Aug-Sep (2nd wave)</span>
+        <span class="tag tag-plant">Spaghetti Squash</span>
+        <span class="tag tag-plant">Crookneck</span>
+        <span class="tag tag-plant">Straightneck</span>
+        <span class="tag tag-plant">Watermelon</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>High risk:</strong> Spaghetti squash, crookneck, straightneck (all Cucurbita)</li>
+              <li><strong>Moderate risk:</strong> Watermelon (thinner stems, less preferred)</li>
+              <li><strong>Low risk:</strong> Cucumbers (usually too thin-stemmed)</li>
+              <li>Prefers thick, hollow stems &mdash; your trailing squash are prime targets</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Surgery:</strong> Slit the stem lengthwise with a razor where you see frass. Remove the grub. Bury the wounded stem section in moist soil to encourage re-rooting.</li>
+              <li><strong>Bt injection:</strong> Inject <em>Bacillus thuringiensis</em> (Bt) into the stem with a syringe at the entry hole</li>
+              <li><strong>Row covers:</strong> Cover plants until flowering begins (remove for pollination)</li>
+              <li><strong>Neem oil:</strong> Spray stem bases weekly from late May through July</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Wrap stems:</strong> Wrap the lower 3-4&Prime; of stems with aluminum foil or nylon stocking to block egg-laying</li>
+              <li><strong>Check stems weekly:</strong> Run your fingers along the base feeling for soft spots or frass from early June onward</li>
+              <li><strong>Encourage secondary rooting:</strong> Bury vine nodes where they touch soil &mdash; if the main stem is severed, the vine survives on secondary roots</li>
+              <li><strong>Succession planting:</strong> Plant a second round of squash in early July to replace anything killed by the first wave</li>
+              <li><strong>Fall cleanup:</strong> Remove and destroy all spent squash stems &mdash; pupae overwinter in the soil beneath them</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOMATO HORNWORM -->
+<section id="hornworm">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#2e7d32;">
+        Tomato Hornworm <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tobacco_hornworm.jpg/320px-Tobacco_hornworm.jpg" alt="Tomato hornworm — large green caterpillar with white diagonal stripes and red horn">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Manduca quinquemaculata</em> &mdash; impressive but destructive</p>
+            <ul>
+              <li><strong>Caterpillar:</strong> Massive green caterpillar (3-4&Prime; long) with white V-shaped stripes and a prominent horn on the rear. Masters of camouflage &mdash; hard to spot despite their size.</li>
+              <li><strong>Droppings:</strong> Large, dark green/black pellets on leaves and ground below &mdash; often the first clue. Look UP from the droppings.</li>
+              <li><strong>Damage:</strong> Entire branches stripped bare overnight. They eat leaves, stems, and even green fruit.</li>
+              <li><strong>Adult moth:</strong> Five-spotted hawk moth, large (4-5&Prime; wingspan), gray-brown, active at dusk. You may see them hovering at flowers like hummingbirds.</li>
+              <li><strong>Parasitized:</strong> If you see white cocoons (look like grains of rice) on the caterpillar&rsquo;s back, LEAVE IT. Those are braconid wasp eggs &mdash; the wasp larvae are killing the hornworm and will hatch to protect your garden.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jun-Aug</span>
+        <span class="tag tag-plant">Better Boy Tomato</span>
+        <span class="tag tag-plant">Yellow Pear Tomato</span>
+        <span class="tag tag-plant">Peppers</span>
+        <span class="tag tag-plant">Eggplant Gretel</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Primary:</strong> Both tomatoes (Better Boy, Yellow Pear)</li>
+              <li><strong>Secondary:</strong> Eggplant Gretel, all peppers</li>
+              <li>Anything in the nightshade (Solanaceae) family</li>
+              <li>A single hornworm can defoliate a tomato branch in one day</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Hand-pick:</strong> The most effective method. Check plants at dusk or dawn when they&rsquo;re actively feeding. Drop into soapy water.</li>
+              <li><strong>Black light:</strong> Hornworms glow under UV/blacklight at night &mdash; makes them much easier to find</li>
+              <li><strong>Bt spray:</strong> <em>Bacillus thuringiensis</em> var. <em>kurstaki</em> (Btk) &mdash; safe, organic caterpillar killer. Spray on foliage, they ingest it and stop feeding within hours.</li>
+              <li><strong>Spinosad:</strong> Organic insecticide effective against caterpillars. Apply in evening to protect pollinators.</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Basil companion planting:</strong> Your sweet basil in Bed 1 repels the adult hawk moths from laying eggs</li>
+              <li><strong>Attract parasitic wasps:</strong> Your chamomile and dill attract braconid wasps that parasitize hornworms</li>
+              <li><strong>Till in fall:</strong> Pupae overwinter 3-4&Prime; deep in soil. Turning the soil exposes them to birds and cold.</li>
+              <li><strong>Daily inspection:</strong> Look for droppings first, then trace upward. They&rsquo;re perfectly camouflaged against tomato foliage.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note" style="border-left-color:#2e7d32;"><strong>Leave parasitized hornworms alone!</strong> White rice-like cocoons on a hornworm&rsquo;s back are braconid wasp eggs. The wasp larvae are eating the hornworm alive and will hatch as adults that protect your garden for years. Killing a parasitized hornworm kills dozens of your best allies.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUCUMBER BEETLE -->
+<section id="cucumber-beetle">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#e65100;">
+        Cucumber Beetle <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Striped_cucumber_beetle.jpg/320px-Striped_cucumber_beetle.jpg" alt="Striped cucumber beetle — small yellow beetle with black stripes on a leaf">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Acalymma vittatum</em> (striped) / <em>Diabrotica undecimpunctata</em> (spotted)</p>
+            <ul>
+              <li><strong>Striped:</strong> 1/4&Prime; long, bright yellow with three black stripes down the back. The more common type in Durham.</li>
+              <li><strong>Spotted:</strong> Same size, yellow-green with 12 black spots. Less common but equally destructive.</li>
+              <li><strong>Behavior:</strong> Found inside flowers and on young leaves. Jump and fly when disturbed.</li>
+              <li><strong>Damage:</strong> Chew holes in leaves, flowers, and fruit rinds. The real danger is they spread <strong>bacterial wilt</strong> &mdash; the plant wilts and dies within days, and there is no cure once infected.</li>
+              <li><strong>Larvae:</strong> White, slender grubs in the soil eating roots (rarely noticed).</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jun-Jul</span>
+        <span class="tag tag-plant">Cucumbers</span>
+        <span class="tag tag-plant">All Squash</span>
+        <span class="tag tag-plant">Watermelon</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>High risk:</strong> Cucumbers (most susceptible to bacterial wilt they carry)</li>
+              <li><strong>Moderate:</strong> All squash varieties, watermelon</li>
+              <li>Bacterial wilt transmitted by beetles kills cucumbers within a week &mdash; no treatment exists once infected</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Hand-pick:</strong> Morning is best, when they&rsquo;re sluggish. Drop into soapy water.</li>
+              <li><strong>Yellow sticky traps:</strong> Place at soil level near cucumbers and squash</li>
+              <li><strong>Neem oil spray:</strong> Deters feeding and disrupts reproduction. Apply weekly to foliage.</li>
+              <li><strong>Kaolin clay (Surround):</strong> Creates a white film on leaves that confuses and deters beetles</li>
+              <li><strong>Spinosad:</strong> Apply in evening only &mdash; toxic to bees when wet</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Row covers:</strong> Most effective method. Cover seedlings until flowering, then remove for pollination.</li>
+              <li><strong>Trap crops:</strong> Plant Blue Hubbard squash nearby &mdash; beetles prefer it 10:1 over cucumbers</li>
+              <li><strong>Delay planting:</strong> The first beetle wave targets the earliest cucurbits. Later plantings face less pressure.</li>
+              <li><strong>Epazote:</strong> Your deck pot of epazote deters cucumber beetles with its strong aromatic oils</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEA BEETLE -->
+<section id="flea-beetle">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#5d4037;">
+        Flea Beetle <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flea_beetle.jpg/320px-Flea_beetle.jpg" alt="Flea beetle — tiny dark beetle on a leaf with small round holes">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Epitrix</em> spp. &mdash; tiny but persistent</p>
+            <ul>
+              <li><strong>Size:</strong> Extremely small (1/16&Prime; to 1/8&Prime;), dark colored (black, bronze, or metallic blue-green)</li>
+              <li><strong>Behavior:</strong> Jump like fleas when disturbed &mdash; hence the name. Very fast and hard to catch.</li>
+              <li><strong>Damage:</strong> Leaves covered in tiny round &ldquo;shot holes&rdquo; that look like someone took a hole punch to them. Heavy feeding makes leaves look lace-like.</li>
+              <li><strong>Worst on seedlings:</strong> Established plants tolerate the damage. Young transplants can be killed.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jun-Sep</span>
+        <span class="tag tag-plant">Eggplant Gretel</span>
+        <span class="tag tag-plant">Peppers (minor)</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Primary:</strong> Eggplant Gretel &mdash; eggplant is their #1 preferred host</li>
+              <li><strong>Minor:</strong> Peppers, tomatoes (usually cosmetic only)</li>
+              <li>Established plants can tolerate significant flea beetle feeding without yield loss</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Neem oil:</strong> Spray every 5-7 days, coating both leaf surfaces. Deters feeding and disrupts reproduction.</li>
+              <li><strong>Diatomaceous earth:</strong> Dust on dry leaves. The microscopic sharp edges damage beetle exoskeletons. Reapply after rain.</li>
+              <li><strong>Kaolin clay (Surround):</strong> White clay film on leaves makes them unpalatable</li>
+              <li><strong>Sticky traps:</strong> White or yellow sticky cards near eggplant</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Sage in Strip 2:</strong> Your sage between Bed 2 and Bed 3 is positioned exactly right &mdash; its strong oils deter flea beetles from the eggplant</li>
+              <li><strong>Row covers:</strong> Protect young transplants for the first 2-3 weeks</li>
+              <li><strong>Healthy, fast-growing plants:</strong> Well-fertilized eggplant outgrows the damage. Keep feeding.</li>
+              <li><strong>Mulch heavily:</strong> Adults overwinter in soil. Thick mulch disrupts their lifecycle.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APHIDS -->
+<section id="aphids">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#7cb342;">
+        Aphids <span class="threat-badge threat-low" style="margin-left:auto;">Low Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Aphids_on_broccoli.jpg/320px-Aphids_on_broccoli.jpg" alt="Aphids — clusters of small green insects on plant stem">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Aphidoidea</em> &mdash; the most common garden pest worldwide</p>
+            <ul>
+              <li><strong>Size:</strong> Very small (1/16&Prime; to 1/8&Prime;), soft-bodied, pear-shaped. Colors vary: green, black, yellow, pink, white.</li>
+              <li><strong>Clusters:</strong> Found in dense colonies on new growth, leaf undersides, and flower buds</li>
+              <li><strong>Honeydew:</strong> Excrete sticky, shiny residue on leaves. Black sooty mold grows on the honeydew.</li>
+              <li><strong>Curling leaves:</strong> Heavy infestations cause new leaves to curl, yellow, and distort</li>
+              <li><strong>Ants:</strong> Ants &ldquo;farm&rdquo; aphids for honeydew. If you see ant trails on your plants, check for aphid colonies.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">All Season</span>
+        <span class="tag tag-plant">Peppers</span>
+        <span class="tag tag-plant">Lettuce</span>
+        <span class="tag tag-plant">Eggplant</span>
+        <span class="tag tag-plant">Apple Trees</span>
+        <span class="tag tag-plant">Pear Tree</span>
+        <span class="tag tag-plant">Red Maples</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Raised beds:</strong> Peppers, lettuce, eggplant</li>
+              <li><strong>Front yard:</strong> Apple trees, pear tree, red maples</li>
+              <li><strong>Herbs:</strong> Rarely bothered &mdash; most herbs repel aphids</li>
+              <li>Low threat because natural predators (ladybugs, lacewings) usually keep populations in check</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Strong water blast:</strong> Knock them off with a hard spray from the hose. Most effective and simplest method. Repeat every 2-3 days.</li>
+              <li><strong>Insecticidal soap:</strong> Spray directly on colonies. Must contact the aphids to work. Reapply after rain.</li>
+              <li><strong>Neem oil:</strong> Disrupts feeding and reproduction. Apply weekly as preventive.</li>
+              <li><strong>Release ladybugs:</strong> Buy and release at dusk near infested plants. Each eats 50+ aphids per day.</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Your chives (Strip 1):</strong> Allium scent repels aphids from adjacent tomato beds</li>
+              <li><strong>Basil in Beds 1 &amp; 2:</strong> Aromatic oils confuse aphid navigation</li>
+              <li><strong>Chamomile &amp; dill:</strong> Attract hoverflies and lacewings that devour aphids</li>
+              <li><strong>Avoid over-fertilizing:</strong> Too much nitrogen produces soft, succulent growth that aphids prefer</li>
+              <li><strong>Don&rsquo;t kill ladybugs:</strong> They&rsquo;re your best defense. A single ladybug eats thousands of aphids in its lifetime.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JAPANESE BEETLE -->
+<section id="japanese-beetle">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#1565c0;">
+        Japanese Beetle <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Popillia_japonica.jpg/320px-Popillia_japonica.jpg" alt="Japanese beetle — metallic green and copper beetle on a leaf">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Popillia japonica</em> &mdash; unmistakable metallic beauty</p>
+            <ul>
+              <li><strong>Adult:</strong> 1/2&Prime; long, metallic green head and thorax, copper-bronze wing covers. Five tufts of white hair on each side of the abdomen.</li>
+              <li><strong>Damage:</strong> &ldquo;Skeletonize&rdquo; leaves &mdash; eat the tissue between veins, leaving a lace-like skeleton. Feed in groups, starting at the top of the plant.</li>
+              <li><strong>Behavior:</strong> Most active on warm, sunny days. Slow-moving in morning &mdash; easiest to hand-pick then.</li>
+              <li><strong>Grubs:</strong> White C-shaped larvae in lawn soil. Attract moles, skunks, and birds that dig up turf.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jul-Aug</span>
+        <span class="tag tag-plant">Apple Trees</span>
+        <span class="tag tag-plant">Pear Tree</span>
+        <span class="tag tag-plant">Red Maples</span>
+        <span class="tag tag-plant">Many garden plants</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Front yard:</strong> Apple trees, pear tree, red maples, roses</li>
+              <li><strong>Raised beds:</strong> Occasional damage to basil, peppers</li>
+              <li>They eat 300+ plant species &mdash; almost nothing is safe</li>
+              <li>Damage is mostly cosmetic on established plants but can weaken young trees</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Hand-pick into soapy water:</strong> The single most effective method. Do it in the morning when beetles are sluggish. Shake branches over a bucket.</li>
+              <li><strong>Neem oil:</strong> Deters feeding and is toxic to beetles when ingested. Apply to foliage.</li>
+              <li><strong>Milky spore:</strong> Apply to lawn in fall &mdash; kills grubs (the larval stage) in the soil. Takes 2-3 years to establish but lasts 15+ years.</li>
+              <li><strong>Beneficial nematodes:</strong> <em>Heterorhabditis bacteriophora</em> &mdash; apply to lawn in late summer to kill grubs</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>DO NOT use Japanese beetle traps:</strong> They attract MORE beetles to your yard than they catch. Your neighbor&rsquo;s beetles will come to your trap and stay for your garden.</li>
+              <li><strong>Geraniums:</strong> Naturally paralyze Japanese beetles (they eat the petals, become disoriented, fall off, and are eaten by predators)</li>
+              <li><strong>Treat the lawn:</strong> Milky spore and nematodes in your lawn kill the grub stage before they become adults</li>
+              <li><strong>Early morning patrol:</strong> 5 minutes of hand-picking per day during peak season is surprisingly effective</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note" style="border-left-color:#c62828;"><strong>Never use Japanese beetle bag traps.</strong> University research consistently shows they attract 3-5x more beetles to your property than they capture. The pheromone lure draws beetles from a wide radius, and many land on your plants instead of entering the bag.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STINK BUG -->
+<section id="stink-bug">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#6d4c41;">
+        Brown Marmorated Stink Bug <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Halyomorpha_halys_lab.jpg/320px-Halyomorpha_halys_lab.jpg" alt="Brown marmorated stink bug — shield-shaped brown bug with mottled pattern">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Halyomorpha halys</em> &mdash; invasive, smelly, and destructive</p>
+            <ul>
+              <li><strong>Adult:</strong> Shield-shaped, mottled brown, about 5/8&Prime; long. Alternating light and dark bands on the antennae and abdomen edges. Releases a strong, unpleasant odor when disturbed or crushed.</li>
+              <li><strong>Nymphs:</strong> Smaller, rounder, with red and black coloring when young. Look like tiny ticks on leaves.</li>
+              <li><strong>Eggs:</strong> Light green barrel-shaped clusters of 20-30 on leaf undersides</li>
+              <li><strong>Damage:</strong> Pierce-and-suck feeding creates dimpled, discolored, corky spots on tomatoes and fruit. Makes fruit unmarketable but still edible &mdash; just cut out the damaged spot.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jul-Oct</span>
+        <span class="tag tag-plant">Tomatoes</span>
+        <span class="tag tag-plant">Peppers</span>
+        <span class="tag tag-plant">Apple Trees</span>
+        <span class="tag tag-plant">Pear Tree</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Raised beds:</strong> Tomatoes, peppers (both sweet and hot)</li>
+              <li><strong>Front yard:</strong> Apple trees, pear tree</li>
+              <li>Feeds on 100+ host plants</li>
+              <li>Damage is cosmetic &mdash; fruit is still safe to eat</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Hand-pick into soapy water:</strong> Flick them into a jar of soapy water. Don&rsquo;t crush them unless you enjoy the smell.</li>
+              <li><strong>Kaolin clay (Surround):</strong> White clay barrier on fruit deters feeding</li>
+              <li><strong>Trap crop:</strong> Your sunflowers in the front yard are already serving as a trap crop &mdash; stink bugs prefer sunflowers over tomatoes</li>
+              <li><strong>Neem oil:</strong> Deters feeding but won&rsquo;t kill adults. More effective on nymphs.</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Sunflower trap crop:</strong> Your 4 sunflowers in the front yard draw stink bugs away from the raised beds</li>
+              <li><strong>Eliminate overwintering sites:</strong> They hide in houses, sheds, and debris over winter. Seal gaps in your shed.</li>
+              <li><strong>Attract parasitoid wasps:</strong> <em>Trissolcus japonicus</em> (samurai wasp) is establishing naturally in NC. Chamomile and dill support beneficial wasps generally.</li>
+              <li><strong>Remove egg masses:</strong> Check leaf undersides weekly. Scrape off the barrel-shaped green egg clusters.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHITEFLY -->
+<section id="whitefly">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#7cb342;">
+        Whitefly <span class="threat-badge threat-low" style="margin-left:auto;">Low Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Trialeurodes_vaporariorum.jpg/320px-Trialeurodes_vaporariorum.jpg" alt="Whiteflies — tiny white winged insects on leaf underside">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Trialeurodes vaporariorum</em> / <em>Bemisia tabaci</em></p>
+            <ul>
+              <li><strong>Adults:</strong> Tiny (1/16&Prime;), white, moth-like insects on leaf undersides. When you brush a plant and a cloud of tiny white specks flies up &mdash; those are whiteflies.</li>
+              <li><strong>Nymphs:</strong> Flat, translucent, scale-like dots on leaf undersides. Immobile and easy to miss.</li>
+              <li><strong>Honeydew:</strong> Like aphids, whiteflies excrete sticky honeydew that leads to black sooty mold.</li>
+              <li><strong>Yellowing:</strong> Heavy infestations cause leaf yellowing and premature drop.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jun-Sep</span>
+        <span class="tag tag-plant">Tomatoes</span>
+        <span class="tag tag-plant">Peppers</span>
+        <span class="tag tag-plant">Eggplant</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li>Tomatoes, peppers, eggplant &mdash; all nightshades</li>
+              <li>Rarely a serious problem outdoors &mdash; much worse in greenhouses</li>
+              <li>Natural predators usually keep outdoor populations manageable</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Yellow sticky traps:</strong> Highly effective. Whiteflies are attracted to yellow.</li>
+              <li><strong>Insecticidal soap:</strong> Must contact the insects directly. Spray undersides of leaves.</li>
+              <li><strong>Neem oil:</strong> Disrupts nymph development. Apply weekly.</li>
+              <li><strong>Strong water spray:</strong> Same as aphids &mdash; blast the undersides of leaves</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Basil and marigolds:</strong> Both repel whiteflies. You have basil in the beds and marigolds in Strip 3.</li>
+              <li><strong>Epazote:</strong> Your deck pot deters whiteflies with its strong scent</li>
+              <li><strong>Encourage lacewings:</strong> Lacewing larvae are voracious whitefly predators. Chamomile and dill attract adult lacewings.</li>
+              <li><strong>Reflective mulch:</strong> Aluminum foil strips laid around plants disorient whiteflies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPIDER MITES -->
+<section id="spider-mite">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#e65100;">
+        Spider Mites <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Tetranychus_urticae_with_silk_threads.jpg/320px-Tetranychus_urticae_with_silk_threads.jpg" alt="Spider mites — tiny red mites with fine webbing on leaves">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Tetranychus urticae</em> &mdash; thrives in hot, dry conditions</p>
+            <ul>
+              <li><strong>Nearly invisible:</strong> Barely visible to the naked eye (1/50&Prime;). Use a magnifying glass or tap a leaf over white paper &mdash; moving specks are mites.</li>
+              <li><strong>Webbing:</strong> Fine silk webbing on leaf undersides and between stems. This is the most visible sign of a heavy infestation.</li>
+              <li><strong>Stippling:</strong> Leaves develop tiny yellow or white dots (stippling), then turn bronze and dry out.</li>
+              <li><strong>Dusty look:</strong> Heavily infested leaves look dusty or dry even when watered.</li>
+              <li><strong>Worst in drought/heat:</strong> Populations explode during hot, dry spells in July-August. Durham&rsquo;s humidity actually slows them somewhat.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jul-Sep (peak in heat waves)</span>
+        <span class="tag tag-plant">Tomatoes</span>
+        <span class="tag tag-plant">Cucumbers</span>
+        <span class="tag tag-plant">Eggplant</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li>Tomatoes, cucumbers, eggplant, beans, strawberries</li>
+              <li>Worse on drought-stressed plants</li>
+              <li>Populations can double every 3 days in hot weather &mdash; act fast when spotted</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Hard water blast:</strong> Spray leaf undersides with a strong hose stream every 2-3 days. This alone can control mild infestations.</li>
+              <li><strong>Insecticidal soap:</strong> Must contact the mites. Spray undersides of leaves thoroughly.</li>
+              <li><strong>Neem oil:</strong> Suffocates mites on contact and disrupts reproduction. Apply in evening to avoid leaf burn.</li>
+              <li><strong>DO NOT use broad-spectrum insecticides:</strong> These kill predatory mites that keep spider mites in check, making the problem much worse.</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Consistent watering:</strong> Stressed, dry plants are magnets for spider mites. Your mulched raised beds help.</li>
+              <li><strong>Spray foliage during heat waves:</strong> A quick misting of leaves on hot days raises humidity around the plant &mdash; mites hate humidity.</li>
+              <li><strong>Don&rsquo;t kill the predators:</strong> Predatory mites, ladybugs, and lacewings eat spider mites. Avoid broad-spectrum sprays.</li>
+              <li><strong>Check weekly in July-August:</strong> Tap suspect leaves over a white paper. Any moving dots need immediate attention.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOSSOM END ROT -->
+<section id="blossom-end-rot">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#f57f17; color:#5d4037;">
+        Blossom End Rot <span class="threat-badge threat-med" style="margin-left:auto;">Medium Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Blossom_end_rot.jpg/320px-Blossom_end_rot.jpg" alt="Blossom end rot — dark sunken spot on bottom of tomato">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;">Not a pest or disease &mdash; a calcium uptake disorder caused by inconsistent watering</p>
+            <ul>
+              <li><strong>Appearance:</strong> Dark, sunken, leathery spot on the BOTTOM (blossom end) of the fruit. Starts small, expands to cover half the fruit.</li>
+              <li><strong>Which fruit:</strong> Usually the first fruits of the season. Often resolves on its own as the plant&rsquo;s root system matures.</li>
+              <li><strong>Not a pathogen:</strong> You can cut off the bad part and eat the rest. It&rsquo;s not rotten &mdash; just a calcium deficiency in that particular fruit.</li>
+              <li><strong>Cause:</strong> The soil almost always has enough calcium. The problem is inconsistent water prevents the roots from absorbing it. Hot spells followed by heavy watering are the classic trigger.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Jul-Aug (worst in heat)</span>
+        <span class="tag tag-plant">Tomatoes</span>
+        <span class="tag tag-plant">Peppers</span>
+        <span class="tag tag-plant">Squash</span>
+        <span class="tag tag-plant">Watermelon</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Most common:</strong> Tomatoes (especially large-fruited like Better Boy)</li>
+              <li><strong>Also affects:</strong> Peppers, squash, watermelon</li>
+              <li>Worst on the first fruits of the season &mdash; later fruit is usually fine</li>
+              <li>Your Daddy Pete&rsquo;s mushroom compost is a good calcium source</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Fix watering:</strong> This is the only real fix. Water deeply and consistently &mdash; same amount, same schedule, every time.</li>
+              <li><strong>Remove affected fruit:</strong> Pick off BER fruit so the plant redirects energy to healthy fruit</li>
+              <li><strong>Don&rsquo;t add calcium:</strong> Durham soil almost never lacks calcium. Adding eggshells or calcium spray rarely helps because the problem is water, not calcium.</li>
+              <li><strong>Mulch heavily:</strong> 2-3&Prime; of pine bark mulch keeps soil moisture consistent &mdash; this is the best preventive.</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Consistent watering:</strong> Same amount every 2-3 days. Never let soil dry out then flood it.</li>
+              <li><strong>Mulch:</strong> Your pine bark mulch evens out soil moisture between waterings</li>
+              <li><strong>Don&rsquo;t over-prune roots:</strong> Aggressive cultivation near tomato roots damages them and causes BER</li>
+              <li><strong>Avoid excess nitrogen:</strong> Too much nitrogen pushes leaf growth over fruit development, worsening calcium competition</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note" style="border-left-color:#f57f17;"><strong>The eggshell myth:</strong> Crushed eggshells take years to break down in soil. They will not prevent blossom end rot this season. Consistent watering and mulching will. Save the eggshells for your compost pile.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOOMY SCALE -->
+<section id="gloomy-scale">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#b71c1c;">
+        Gloomy Scale <span class="threat-badge threat-high" style="margin-left:auto;">High Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Melanaspis_tenebricosa_%28gloomy_scale%29_on_Acer_rubrum.jpg/320px-Melanaspis_tenebricosa_%28gloomy_scale%29_on_Acer_rubrum.jpg" alt="Gloomy scale — gray-brown disc-shaped scale insects encrusting red maple bark">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Melanaspis tenebricosa</em> &mdash; #1 pest of red maples in Durham/Raleigh</p>
+            <ul>
+              <li><strong>Scale covers:</strong> Tiny (~2mm) gray-brown disc-shaped bumps encrusting bark. Scrape with your thumbnail &mdash; a pink insect underneath confirms gloomy scale.</li>
+              <li><strong>Bark texture:</strong> Heavily infested bark looks rough, bumpy, like a rash. Branches feel gritty.</li>
+              <li><strong>Canopy decline:</strong> Thinning canopy, smaller leaves, branch dieback &mdash; especially in the upper crown</li>
+              <li><strong>Sooty mold:</strong> Black coating on bark and leaves from honeydew excretion</li>
+              <li><strong>Heat connection:</strong> NC State research proves trees near pavement and roads (like yours near S Roxboro) have dramatically higher scale populations due to radiated heat stress</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Year-round (crawlers Jun-Jul)</span>
+        <span class="tag tag-plant">Red Maples &times;2</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>Primary:</strong> Your two established red maples</li>
+              <li>Red maple (<em>Acer rubrum</em>) is the most susceptible host</li>
+              <li>Does not spread to fruit trees, blueberries, or garden plants</li>
+              <li>Worse on heat-stressed trees near impervious surfaces like roads</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Deep watering 2x/week:</strong> NC State research &mdash; single most effective long-term treatment. Reduces heat stress that drives scale populations.</li>
+              <li><strong>Dormant oil (Feb):</strong> Horticultural oil at dormant rate. Coat trunk and branches to smother overwintering scale.</li>
+              <li><strong>Power wash (Feb):</strong> Low-pressure wash on dormant trunk physically dislodges scale covers.</li>
+              <li><strong>Crawler sprays (Jun-Jul):</strong> Horticultural oil or insecticidal soap every 7-10 days during crawler emergence (mid-June peak in Durham).</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Mulch the root zone:</strong> 2-3&Prime; donut-shaped mulch ring. Reduces heat and retains moisture.</li>
+              <li><strong>Avoid high-nitrogen fertilizer:</strong> Promotes soft growth that scale prefer</li>
+              <li><strong>Plant buffer between trees and road:</strong> Groundcovers or mulch beds reduce radiated heat from S Roxboro pavement</li>
+              <li><strong>Takes 2-3 years:</strong> Consistent multi-season treatment is required. Goal is suppression, not elimination.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note"><strong>Durham County Extension:</strong> Contact NC Cooperative Extension at <strong>(919) 560-0525</strong> for current crawler timing and product recommendations. <a href="https://content.ces.ncsu.edu/gloomy-scale-1" style="color:var(--herb);">NC State gloomy scale fact sheet &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRE BLIGHT -->
+<section id="fire-blight">
+  <div class="container">
+    <div class="pest-card">
+      <div class="pest-card-header" style="background:#c62828;">
+        Fire Blight <span class="threat-badge threat-high" style="margin-left:auto;">High Threat</span>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-layout">
+          <img class="pest-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Fire_blight_%28Erwinia_amylovora%29.jpg/320px-Fire_blight_%28Erwinia_amylovora%29.jpg" alt="Fire blight — blackened, wilted shoot tip on pear tree forming a shepherd's crook shape">
+          <div class="pest-id">
+            <h4>How to Identify</h4>
+            <p style="font-size:0.82rem; color:var(--gray-600); margin-bottom:0.5rem;"><em>Erwinia amylovora</em> &mdash; bacterial disease, biggest threat to pear and apple trees</p>
+            <ul>
+              <li><strong>Shepherd&rsquo;s crook:</strong> Shoot tips blacken, wilt, and curl into a distinctive hooked shape. This is the hallmark sign.</li>
+              <li><strong>Bacterial ooze:</strong> Amber-colored sticky droplets on infected branches &mdash; highly contagious. Rain and insects spread it to other branches.</li>
+              <li><strong>Blackening:</strong> Leaves and blossoms turn black and stay attached (don&rsquo;t fall off). Looks like the branch was scorched by fire.</li>
+              <li><strong>Cankers:</strong> Sunken, dark, wet-looking areas on branches and trunk. Bark may crack around the canker edges.</li>
+              <li><strong>Trigger:</strong> Warm (65-85&deg;F), wet spring weather &mdash; exactly what Durham gets in April-May.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="tag tag-season">Spring (warm + wet)</span>
+        <span class="tag tag-plant">5-in-1 Pear Tree</span>
+        <span class="tag tag-plant">Columnar Apples &times;3</span>
+        <div class="pest-details" style="margin-top:1rem;">
+          <div class="pest-detail-card">
+            <h5 class="targets">Plants at Risk</h5>
+            <ul>
+              <li><strong>High risk:</strong> 5-in-1 European pear tree (pears are more susceptible than apples)</li>
+              <li><strong>Moderate risk:</strong> All three columnar apples</li>
+              <li>Multi-grafted trees are especially vulnerable &mdash; infection can spread from one graft to another</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="treatment">Natural Treatment</h5>
+            <ul>
+              <li><strong>Prune immediately:</strong> Cut 12&Prime; below visible infection into healthy wood. <strong>Sterilize pruners between EVERY cut</strong> with 10% bleach or 70% rubbing alcohol.</li>
+              <li><strong>Bag and trash cuttings:</strong> Never compost fire blight material</li>
+              <li><strong>Copper spray:</strong> Apply at 10% bloom and again at 50% bloom as preventive</li>
+              <li><strong>Trunk cankers:</strong> If infection reaches the main trunk, consult a certified arborist. Do not attempt trunk surgery yourself.</li>
+            </ul>
+          </div>
+          <div class="pest-detail-card">
+            <h5 class="prevention">Prevention</h5>
+            <ul>
+              <li><strong>Avoid overhead watering:</strong> Water at the base only. Splashing water spreads bacteria.</li>
+              <li><strong>Low nitrogen:</strong> High-nitrogen fertilizer promotes the succulent growth that blight prefers</li>
+              <li><strong>Don&rsquo;t prune when wet:</strong> Never prune during or right after rain</li>
+              <li><strong>Air circulation:</strong> Keep guild plants clear of the trunk base</li>
+              <li><strong>Remove mummified fruit:</strong> Bacteria overwinter in dried fruit left on the tree or ground</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note" style="border-left-color:#c62828;"><strong>The pruner sterilization rule is absolute.</strong> Fire blight bacteria on your pruners will infect every subsequent cut you make. Dip or spray with 10% bleach or 70% alcohol between EVERY SINGLE CUT &mdash; not just between trees, between cuts on the same tree.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Durham Pest Guide &mdash; Zone 8a &mdash; 2026</p>
+  <p style="margin-top:0.25rem;">
+    <a href="index.html" style="color:var(--green-700);">&larr; Back Yard &amp; Raised Beds</a> &nbsp;&bull;&nbsp;
+    <a href="front-yard.html" style="color:var(--green-700);">Front Yard &amp; Fruit Guide</a>
+  </p>
+</footer>
+
+</body>
+</html>
