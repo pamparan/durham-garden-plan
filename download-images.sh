@@ -26,7 +26,7 @@ IMAGES = {
     "stink-bug.jpg": "Marmorierte Baumwanze Halyomorpha halys 1.jpg",
     "whitefly.jpg": "CSIRO ScienceImage 7704 Silverleaf whitefly Bemisia tabaci biotype B.jpg",
     "spider-mites.jpg": "Tetranychus urticae with silk threads.jpg",
-    "blossom-end-rot.jpg": "Blossom end rot.jpg",
+    "blossom-end-rot.jpg": "Tomato with blossom end rot.jpg",
     "gloomy-scale.jpg": "Melanaspis tenebricosa - inat 167116957.jpg",
     "fire-blight.jpg": "Apple tree with fire blight.jpg",
 }
