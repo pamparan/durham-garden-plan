@@ -600,8 +600,9 @@
       white-space: nowrap;
     }
     .toc a:hover { background: var(--green-100); }
-    .toc a.page-link { background: var(--earth-100); color: var(--earth-700); }
-    .toc a.page-link:hover { background: var(--earth-400); color: white; }
+    .toc a.page-link { background: var(--green-800); color: #fff; border-radius: 6px; }
+    .toc a.page-link:hover { background: var(--green-700); color: #fff; }
+    .toc-divider { width: 1px; height: 1.4rem; background: var(--gray-300); flex-shrink: 0; margin: 0 0.35rem; }
 
     footer {
       text-align: center;
@@ -668,6 +669,9 @@
 
 <nav class="toc">
   <div class="toc-inner">
+    <a href="front-yard.html" class="page-link">Front Yard &rarr;</a>
+    <a href="pests.html" class="page-link">Pest Guide</a>
+    <span class="toc-divider"></span>
     <a href="#soilprep">Soil Prep</a>
     <a href="#beds">Raised Beds</a>
     <a href="#strips">Strips</a>
@@ -676,12 +680,9 @@
     <a href="#pomegranate">Pomegranate</a>
     <a href="#vines">Vine Management</a>
     <a href="#pests">Pest Defense</a>
-    <a href="pests.html" class="page-link">Full Pest Guide</a>
     <a href="#watering">Watering</a>
     <a href="#calendar">Calendar</a>
     <a href="#tally">Full Tally</a>
-    <span style="border-left:1px solid #ccc; margin:0 0.25rem; height:1.2rem;"></span>
-    <a href="front-yard.html" class="page-link">Front Yard Guide &rarr;</a>
   </div>
 </nav>
 
