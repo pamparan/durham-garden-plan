@@ -19,7 +19,7 @@ IMAGES = {
     "hornworm.jpg": "Tobacco Hornworm 1.jpg",
     "cucumber-beetle-striped.jpg": "Acalymma vittatum 1323034.jpg",
     "cucumber-beetle-spotted.jpg": "Spotted Cucumber Beetle (Diabrotica undecimpunctata).jpg",
-    "squash-beetle.jpg": "Epilachna borealis - inat 43982505.jpg",
+    "squash-beetle.jpg": "Southern Squash Ladybeetle.jpg",
     "flea-beetle.jpg": "Phyllotreta.vittula.jpg",
     "aphids.jpg": "Aphids May 2010-3.jpg",
     "japanese-beetle.jpg": "Japanese Beetles, Ottawa.jpg",
